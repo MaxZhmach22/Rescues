@@ -47,7 +47,30 @@ namespace Rescues
         {
             return _figureStruct.IndexOfFigure;
         }
+
+        public void SetFigureCurrentPosition(
+            int CurrentPositionX,
+            int CurrentPositionY)
+        {
+            _figureStruct.CurrentPositionX = CurrentPositionX;
+            _figureStruct.CurrentPositionY = CurrentPositionY;
+        }
+
+        public Vector2 GetFigureCurrentPosition()
+        {
+            return new Vector2(_figureStruct.CurrentPositionX, _figureStruct.CurrentPositionY);
+        }
         
+        public void SetFigureStartInfo(
+         int CurrentPositionX,
+         int CurrentPositionY
+        )
+        {
+            _figureStruct.CurrentPositionX = CurrentPositionX;
+            _figureStruct.CurrentPositionY = CurrentPositionY;
+            _figureStruct.EndPositionX = CurrentPositionX;
+            _figureStruct.EndPositionY = CurrentPositionY;
+        }
         #endregion
 
     }
