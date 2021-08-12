@@ -9,24 +9,29 @@ namespace Rescues
         #region Fields
 
         [SerializeField] private GameObject[] _availableFigures;
+        [SerializeField] private Transform _parentBoard;
         private Dictionary<ChessPuzzleFiguresTypes, GameObject> _availablePrefabsDictionary;
-        private Cell[,] Board = new Cell[8, 8];
+        private Cell[,] Board = new Cell[9, 9];
         private FigureCreationFactory _figureCreationFactory;
+        private List<Figure> _figureStructs;
+        private const int _indexOfMassive = 1;
         public event Action Loaded;
+        public event Action FigurePlacedOnNewPosition;
         
         public ChessPuzzleData _chessPuzzleData;
         #endregion
         
         #region UnityMethods
         
-        public void Start()
+        private void Start()
         {
             _availablePrefabsDictionary = new Dictionary<ChessPuzzleFiguresTypes, GameObject>();
+            _figureStructs = new List<Figure>();
             MakeADictionary();
             BoardInitialization();
             SetNullableBoard();
             _figureCreationFactory = new FigureCreationFactory(
-                _availablePrefabsDictionary);
+                _availablePrefabsDictionary,_parentBoard);
             Loaded.Invoke();
         }
 
@@ -47,9 +52,9 @@ namespace Rescues
         
         public void SetNullableBoard()
         {
-            for (int i = 0; i < 8; i++)
+            for (int i = 1; i <= 8; i++)
             {
-                for (int j = 0; j < 8; j++)
+                for (int j = 1; j <= 8; j++)
                 {
                    Board[i,j].SetTypeOfCell(ChessPuzzleFiguresTypes.None);
                 }
@@ -61,11 +66,14 @@ namespace Rescues
         private void BoardInitialization()
         {
             var realBoard = gameObject.GetComponentsInChildren<Cell>();
-            for (int i = 0; i < 8; i++)
+            for (int i = 1; i <= 8; i++)
             {
-                for (int j = 0; j < 8; j++)
+                for (int j = 1; j <= 8; j++)
                 {
-                    Board[i,j] = realBoard[i*8+j];
+                    var indexOfCell = (i - _indexOfMassive) * 8 + (j - _indexOfMassive);
+                    Board[i,j] = realBoard[indexOfCell];
+                    realBoard[indexOfCell].IndexX = (int)realBoard[indexOfCell].gameObject.transform.position.x;
+                    realBoard[indexOfCell].IndexY = (int)realBoard[indexOfCell].gameObject.transform.position.y;
                 }
             }
         }
@@ -76,12 +84,19 @@ namespace Rescues
             {
                 Board[figureStruct.CurrentPositionX, figureStruct.CurrentPositionY].
                     SetTypeOfCell(figureStruct.IndexOfFigure);
-                _availableFigures[0].GetType();
-                _figureCreationFactory.CreateAFigure(figureStruct.IndexOfFigure,
+                //_availableFigures[0].GetType();
+                var currentFigure = _figureCreationFactory.CreateAFigure(figureStruct.IndexOfFigure,
                      new Vector2(figureStruct.CurrentPositionX, figureStruct.CurrentPositionY));
+                currentFigure.OnPosition += newPosAlert;
+                _figureStructs.Add(currentFigure);
             }
         }
-        
+
+        private void newPosAlert()
+        {
+            FigurePlacedOnNewPosition.Invoke();
+        }
+
         #endregion
     }
 }

@@ -10,7 +10,8 @@ namespace Rescues
 
         [SerializeField] private ChessPuzzleData _chessPuzzleData;
         private ChessBoard _chessBoard;
-        //private 
+        private string _playersSequence;
+        private bool _isPlayerRight;
         #endregion
         
         
@@ -29,11 +30,12 @@ namespace Rescues
             _chessBoard = gameObject.GetComponentInChildren<ChessBoard>();
             _chessBoard._chessPuzzleData = _chessPuzzleData;
             _chessBoard.Loaded += BoardLoading;
+            _chessBoard.FigurePlacedOnNewPosition += LookingAtSequence;
         }
-
         private void OnDestroy()
         {
             _chessBoard.Loaded -= BoardLoading;
+            _chessBoard.FigurePlacedOnNewPosition -= LookingAtSequence;
         }
 
         private void OnEnable()
@@ -57,6 +59,11 @@ namespace Rescues
         {
             Debug.Log(_chessBoard);
             _chessBoard.SetPuzzledFigures();
+        }
+
+        private void LookingAtSequence()
+        {
+            Debug.Log("Смотрю на последовательность(нет)");
         }
 
         #endregion
