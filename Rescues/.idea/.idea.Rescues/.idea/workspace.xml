@@ -71,24 +71,9 @@
   <component name="ChangeListManager">
     <list default="true" id="48bd36b2-45ba-4ddc-be59-218c2703d472" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Puzzels/ChessPuzzlesData/ChessPuzzle.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Puzzels/ChessPuzzlesData/ChessPuzzle.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Bishop.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Bishop.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/ChessPuzzle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/ChessPuzzle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/King.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/King.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Knight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Pawn.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Pawn.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Queen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Queen.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Rook.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Rook.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ChessPuzzleData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ChessPuzzleData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/ChessController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/ChessController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/FigureCreationFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/FigureCreationFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Interface/IFigureFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Interface/IFigureFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Cell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Cell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessBoard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessPuzzle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessPuzzle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Figure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Figure.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/FigureStruct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/FigureStruct.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
     </list>
@@ -196,12 +181,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/FigureComposite.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Interface/IFigureFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Data/ChessPuzzleData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/ChessController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/FigureStruct.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Figure.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessPuzzle.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/FigureCreationFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessBoard.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessPuzzle.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/ChessController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Cell.cs" />
     </changedPaths>
   </component>
@@ -239,10 +224,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15072">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="15072" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -280,6 +265,7 @@
       <workItem from="1628784094404" duration="9644000" />
       <workItem from="1629300594996" duration="12528000" />
       <workItem from="1629388412047" duration="8405000" />
+      <workItem from="1629399584540" duration="3580000" />
     </task>
     <servers />
   </component>

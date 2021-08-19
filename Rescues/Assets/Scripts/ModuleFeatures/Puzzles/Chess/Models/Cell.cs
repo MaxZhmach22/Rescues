@@ -13,6 +13,7 @@ namespace Rescues
         private Collider2D _currentCollider;
         private Figure _currentFigure;
 
+        private Vector2 CorrectiveVector = new Vector2(1, 1);
         private int _indexOfMassive = 1;
         //небольшой костыль. хотя в теории норм решение,но...ну такое,но хз как заменить нормально.
         private Figure _ifBlockedFigure;
@@ -33,8 +34,8 @@ namespace Rescues
                     (_idOfFigurePlacedOnCell==0||_idOfFigurePlacedOnCell==other.gameObject.GetInstanceID()))
                 {
                     _currentFigure = other.gameObject.GetComponent<Figure>();
-                    _currentFigure.SetFigureCurrentPosition(IndexX-_indexOfMassive,
-                        IndexY-_indexOfMassive);
+                    _currentFigure.SetFigureCurrentPosition(IndexX,
+                        IndexY);
                     _currentFigure.OnPosition += PlaceAFigureInCell;
                     _currentCollider = other;
                     _idOfFigurePlacedOnCell = other.gameObject.GetInstanceID();
@@ -77,7 +78,7 @@ namespace Rescues
         private void Back(FigureStruct _figureStruct)
         {
             _ifBlockedFigure.gameObject.transform.localPosition =
-                _ifBlockedFigure.GetFigureCurrentPosition();
+                _ifBlockedFigure.GetFigureCurrentPosition()-CorrectiveVector;
             _ifBlockedFigure.OnPosition -= Back;
         }
         private void PlaceAFigureInCell(FigureStruct _figureStruct)

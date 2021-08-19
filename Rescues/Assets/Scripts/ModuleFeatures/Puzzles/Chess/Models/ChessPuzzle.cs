@@ -55,11 +55,8 @@ namespace Rescues
                 _playersSequence += _figureStruct.UnicSequenceID + " ";
             else
                 _playersSequence += "-1 ";
-            Debug.Log(_playersSequence);
-            if (_playersSequence.Length-1 > _chessPuzzleData.Sequence.Length)
-                ResetValues();
-            else
-                CheckComplete();
+            Debug.Log(_playersSequence); 
+            CheckComplete();
         }
 
         private bool CheckFigurePosition(FigureStruct figureStruct)
