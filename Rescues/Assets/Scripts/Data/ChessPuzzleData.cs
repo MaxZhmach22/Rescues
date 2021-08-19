@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 
 namespace Rescues
@@ -7,16 +8,12 @@ namespace Rescues
     public class ChessPuzzleData: ScriptableObject
     {
         #region Fields
-        //нужна последовательность
-        [Header("(Пример записи: 0,1,2 )")]
-        [Header("Последовательность активных элементов")]
-        [SerializeField]
+        [Header("Пример последовательности: 1 0 2")]
+        [Header("Последовательность активных элементов")] [SerializeField]
         public string Sequence;
-        // не особо хорошее решение. надо подумать как сделать лучше.
-        // нужны ограничения по Х и У
         [Header("Элементы на доске")]
-        public List<FigureStruct> BoardPosition;
-        
+        public List<FigureStruct> ElemntsOnBoard;
+
         #endregion
     }
 }

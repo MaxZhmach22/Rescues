@@ -5,6 +5,6 @@ namespace ModuleFeatures.Puzzles.Chess.Interface
 {
     public interface IFigureFactory
     {
-        Figure CreateAFigure(ChessPuzzleFiguresTypes figure,Vector2 pos);
+        Figure CreateAFigure(int id,ChessPuzzleFiguresTypes figure,Vector2 pos);
     }
 }

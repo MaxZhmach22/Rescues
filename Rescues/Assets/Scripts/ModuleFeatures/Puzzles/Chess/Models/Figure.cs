@@ -11,7 +11,7 @@ namespace Rescues
 
         private Vector2 _currentPositon;
         private bool _isMoving = false;
-        public event Action OnPosition;
+        public event Action<FigureStruct> OnPosition;
 
         #endregion
 
@@ -31,7 +31,7 @@ namespace Rescues
         private void OnMouseUp()
         {
             _isMoving = false;
-            OnPosition.Invoke();
+            OnPosition.Invoke(_figureStruct);
         }
         
         #endregion
@@ -62,10 +62,12 @@ namespace Rescues
         }
         
         public void SetFigureStartInfo(
+            int ID,
          int CurrentPositionX,
          int CurrentPositionY
         )
         {
+            _figureStruct.UnicSequenceID = ID;
             _figureStruct.CurrentPositionX = CurrentPositionX;
             _figureStruct.CurrentPositionY = CurrentPositionY;
             _figureStruct.EndPositionX = CurrentPositionX;

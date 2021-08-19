@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Rescues
 {
@@ -11,12 +12,14 @@ namespace Rescues
         private int _idOfFigurePlacedOnCell = 0;
         private Collider2D _currentCollider;
         private Figure _currentFigure;
-        
+
+        private int _indexOfMassive = 1;
         //небольшой костыль. хотя в теории норм решение,но...ну такое,но хз как заменить нормально.
         private Figure _ifBlockedFigure;
-        
+
         public int IndexX;
         public int IndexY;
+        
         #endregion
 
         #region UnityMethods
@@ -30,7 +33,8 @@ namespace Rescues
                     (_idOfFigurePlacedOnCell==0||_idOfFigurePlacedOnCell==other.gameObject.GetInstanceID()))
                 {
                     _currentFigure = other.gameObject.GetComponent<Figure>();
-                    _currentFigure.SetFigureCurrentPosition(IndexX,IndexY);
+                    _currentFigure.SetFigureCurrentPosition(IndexX-_indexOfMassive,
+                        IndexY-_indexOfMassive);
                     _currentFigure.OnPosition += PlaceAFigureInCell;
                     _currentCollider = other;
                     _idOfFigurePlacedOnCell = other.gameObject.GetInstanceID();
@@ -70,17 +74,16 @@ namespace Rescues
             _cellType = type;
         }
 
-        private void Back()
+        private void Back(FigureStruct _figureStruct)
         {
-            Debug.Log(_ifBlockedFigure.GetFigureCurrentPosition());
-            _ifBlockedFigure.gameObject.transform.position =
+            _ifBlockedFigure.gameObject.transform.localPosition =
                 _ifBlockedFigure.GetFigureCurrentPosition();
             _ifBlockedFigure.OnPosition -= Back;
         }
-        private void PlaceAFigureInCell()
+        private void PlaceAFigureInCell(FigureStruct _figureStruct)
         {
             var gm = _currentCollider.gameObject;
-            gm.transform.position = this.gameObject.transform.position;
+            gm.transform.localPosition = this.gameObject.transform.localPosition;
             SetTypeOfCell(_currentFigure.GetType());
         }
         #endregion

@@ -12,7 +12,8 @@ namespace Rescues
 
         private Dictionary<ChessPuzzleFiguresTypes, GameObject> _availableGameObjectsDictionary;
         private readonly Transform _parent;
-
+        private int _indexOfMassive = 1;
+        
         #endregion
         
         public FigureCreationFactory(Dictionary<ChessPuzzleFiguresTypes, GameObject>availableGameObjects,Transform parent)
@@ -22,12 +23,13 @@ namespace Rescues
         }
         
         
-        public Figure CreateAFigure(ChessPuzzleFiguresTypes figure,Vector2 pos)
+        public Figure CreateAFigure(int id,ChessPuzzleFiguresTypes figure,Vector2 pos)
         {
-            var newFigure =Object.Instantiate(_availableGameObjectsDictionary[figure], 
-                pos,new Quaternion(),_parent);
+            var newFigure =Object.Instantiate(_availableGameObjectsDictionary[figure],_parent);
+            newFigure.gameObject.transform.localPosition = pos;
             var parameters = newFigure.GetComponent<Figure>();
-            parameters.SetFigureStartInfo(Convert.ToInt32(pos.x),Convert.ToInt32(pos.y));
+            parameters.SetFigureStartInfo(id,Convert.ToInt32(pos.x),
+                Convert.ToInt32(pos.y));
             return parameters;
         }
     }
