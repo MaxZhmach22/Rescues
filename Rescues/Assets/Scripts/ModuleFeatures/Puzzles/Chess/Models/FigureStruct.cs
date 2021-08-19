@@ -6,6 +6,8 @@ namespace Rescues
     [Serializable]
     public class FigureStruct
     {
+        [Range(-1,32)]
+        public int UnicSequenceID = -1;
         public ChessPuzzleFiguresTypes IndexOfFigure;
         [Range(1, 8)]
         public int CurrentPositionX;

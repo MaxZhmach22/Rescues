@@ -226,6 +226,7 @@ MonoBehaviour:
   _delayAfterFinish: 1
   IsFinished: 0
   _chessPuzzleData: {fileID: 11400000, guid: 6bf1975b8e71dbf48aff5ed18eca68ec, type: 2}
+  _playersSequence: 
 --- !u!1 &6321229981554443839
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,13 +611,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2084606910572454273, guid: b18298f1db0f0d644aa8059249faacd0,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084606910572454273, guid: b18298f1db0f0d644aa8059249faacd0,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084606910572454273, guid: b18298f1db0f0d644aa8059249faacd0,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -7.32
       objectReference: {fileID: 0}
     - target: {fileID: 2084606910572454273, guid: b18298f1db0f0d644aa8059249faacd0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -7.59
       objectReference: {fileID: 0}
     - target: {fileID: 2084606910572454273, guid: b18298f1db0f0d644aa8059249faacd0,
         type: 3}

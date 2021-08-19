@@ -16,7 +16,7 @@ namespace Rescues
         private List<Figure> _figureStructs;
         private const int _indexOfMassive = 1;
         public event Action Loaded;
-        public event Action FigurePlacedOnNewPosition;
+        public event Action<FigureStruct> FigurePlacedOnNewPosition;
         
         public ChessPuzzleData _chessPuzzleData;
         #endregion
@@ -52,15 +52,30 @@ namespace Rescues
         
         public void SetNullableBoard()
         {
+            #region Set all Cells NONE
+
             for (int i = 1; i <= 8; i++)
             {
                 for (int j = 1; j <= 8; j++)
                 {
-                   Board[i,j].SetTypeOfCell(ChessPuzzleFiguresTypes.None);
+                    //TODO: очистка стола и очистка логики
+                    Board[i,j].SetTypeOfCell(ChessPuzzleFiguresTypes.None);
                 }
             }
-               
-            
+
+            #endregion
+
+            #region Clean a board and logic
+
+            foreach (var figure in _figureStructs)
+            {
+                figure.OnPosition -= newPosAlert;
+                Destroy(figure.gameObject);
+            }
+
+            if (_figureStructs.Count != 0)
+                _figureStructs.RemoveRange(0, _figureStructs.Count);
+            #endregion
         }
         
         private void BoardInitialization()
@@ -72,29 +87,29 @@ namespace Rescues
                 {
                     var indexOfCell = (i - _indexOfMassive) * 8 + (j - _indexOfMassive);
                     Board[i,j] = realBoard[indexOfCell];
-                    realBoard[indexOfCell].IndexX = (int)realBoard[indexOfCell].gameObject.transform.position.x;
-                    realBoard[indexOfCell].IndexY = (int)realBoard[indexOfCell].gameObject.transform.position.y;
+                    realBoard[indexOfCell].IndexX = j;
+                    realBoard[indexOfCell].IndexY = i;
                 }
             }
         }
 
         public void SetPuzzledFigures()
         {
-            foreach (var figureStruct in _chessPuzzleData.BoardPosition)
+            foreach (var figureStruct in _chessPuzzleData.ElemntsOnBoard)
             {
                 Board[figureStruct.CurrentPositionX, figureStruct.CurrentPositionY].
                     SetTypeOfCell(figureStruct.IndexOfFigure);
-                //_availableFigures[0].GetType();
-                var currentFigure = _figureCreationFactory.CreateAFigure(figureStruct.IndexOfFigure,
-                     new Vector2(figureStruct.CurrentPositionX, figureStruct.CurrentPositionY));
+                
+                var currentFigure = _figureCreationFactory.CreateAFigure(figureStruct.UnicSequenceID,figureStruct.IndexOfFigure,
+                     new Vector2(figureStruct.CurrentPositionX-_indexOfMassive, figureStruct.CurrentPositionY-_indexOfMassive));
                 currentFigure.OnPosition += newPosAlert;
                 _figureStructs.Add(currentFigure);
             }
         }
 
-        private void newPosAlert()
+        private void newPosAlert(FigureStruct _figureStruct)
         {
-            FigurePlacedOnNewPosition.Invoke();
+            FigurePlacedOnNewPosition.Invoke(_figureStruct);
         }
 
         #endregion

@@ -10,8 +10,9 @@ namespace Rescues
 
         [SerializeField] private ChessPuzzleData _chessPuzzleData;
         private ChessBoard _chessBoard;
-        private string _playersSequence;
         private bool _isPlayerRight;
+        
+        public string _playersSequence;
         #endregion
         
         
@@ -38,34 +39,37 @@ namespace Rescues
             _chessBoard.FigurePlacedOnNewPosition -= LookingAtSequence;
         }
 
-        private void OnEnable()
-        {
-           
-            // if (_startPositions.Count == 0)
-            // {
-            //     _wirePoints = GetComponentsInChildren<WirePoint>().ToList();
-            //     foreach (var wirePoint in _wirePoints)
-            //     {
-            //         _startPositions.Add(wirePoint.GetHashCode(), wirePoint.transform.localPosition);
-            //     }
-            // }
-        }
-
         #endregion
 
         #region Methods
 
         private void BoardLoading()
         {
-            Debug.Log(_chessBoard);
             _chessBoard.SetPuzzledFigures();
         }
 
-        private void LookingAtSequence()
+        private void LookingAtSequence(FigureStruct _figureStruct)
         {
-            Debug.Log("Смотрю на последовательность(нет)");
+            
+            if (CheckFigurePosition(_figureStruct))
+                _playersSequence += _figureStruct.UnicSequenceID + " ";
+            else
+                _playersSequence += "-1 ";
+            Debug.Log(_playersSequence);
+            if (_playersSequence.Length-1 > _chessPuzzleData.Sequence.Length)
+                ResetValues();
+            else
+                CheckComplete();
         }
 
+        private bool CheckFigurePosition(FigureStruct figureStruct)
+        {
+            if (figureStruct.EndPositionX == figureStruct.CurrentPositionX
+                && figureStruct.EndPositionY == figureStruct.CurrentPositionY)
+                return true;
+            else
+                return false;
+        }
         #endregion
         
     }

@@ -1,9 +1,16 @@
+using System.Linq;
 using UnityEngine;
 
 namespace Rescues
 {
     public class ChessController: IPuzzleController
     {
+        #region Fields
+
+        private string[] Sequence;
+        private bool firstActive=true;
+        #endregion
+        
         #region IPuzzleController
         public void Initialize(Puzzle puzzle)
         {
@@ -12,7 +19,6 @@ namespace Rescues
             puzzle.Finished += Finish;
             puzzle.CheckCompleted += CheckComplete;
             puzzle.ResetValuesToDefault += ResetValues;
-            
             puzzle.ForceClose();
         }
 
@@ -34,8 +40,16 @@ namespace Rescues
         public void CheckComplete(Puzzle puzzle)
         {
             var specificPuzzle = puzzle as ChessPuzzle;
-            // if (specificPuzzle != null && specificPuzzle.Connectors.All(s => s.IsCorrectWire))
-            //     Finish(specificPuzzle);
+            if (firstActive)
+            {
+                Sequence = specificPuzzle.ChessBoard._chessPuzzleData.Sequence.Split(' ');
+                firstActive=false;
+            }
+            var playersSequence = specificPuzzle._playersSequence.
+                Remove(specificPuzzle._playersSequence.Length-1).Split(' ');
+            if (specificPuzzle != null 
+                &&  Sequence.Take(Sequence.Length).SequenceEqual(playersSequence))
+                Finish(specificPuzzle);
         }
 
         public void Finish(Puzzle puzzle)
@@ -50,6 +64,7 @@ namespace Rescues
             if (specificPuzzle != null)
             {
                 specificPuzzle.ChessBoard.SetNullableBoard();
+                specificPuzzle._playersSequence = "";
                 specificPuzzle.ChessBoard.SetPuzzledFigures();
             }
         }

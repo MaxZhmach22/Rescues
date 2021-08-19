@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _figureStruct:
+    UnicSequenceID: 0
     IndexOfFigure: 2
     CurrentPositionX: 0
     CurrentPositionY: 0
