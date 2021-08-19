@@ -7,7 +7,7 @@ namespace Rescues
     {
         #region Fields
 
-        private string[] Sequence;
+        private string Sequence;
         private bool firstActive=true;
         #endregion
         
@@ -42,13 +42,14 @@ namespace Rescues
             var specificPuzzle = puzzle as ChessPuzzle;
             if (firstActive)
             {
-                Sequence = specificPuzzle.ChessBoard._chessPuzzleData.Sequence.Split(' ');
+                Sequence = specificPuzzle.ChessBoard._chessPuzzleData.Sequence;
                 firstActive=false;
             }
-            var playersSequence = specificPuzzle._playersSequence.
-                Remove(specificPuzzle._playersSequence.Length-1).Split(' ');
+            var playersSequence = specificPuzzle._playersSequence;//.
+            //     Remove(specificPuzzle._playersSequence.Length-1).Split(' ');
             if (specificPuzzle != null 
-                &&  Sequence.Take(Sequence.Length).SequenceEqual(playersSequence))
+               // &&  Sequence.Take(Sequence.Length).SequenceEqual(playersSequence))
+               && playersSequence.Contains(Sequence))
                 Finish(specificPuzzle);
         }
 
