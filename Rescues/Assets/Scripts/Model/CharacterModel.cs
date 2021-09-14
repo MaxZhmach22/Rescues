@@ -21,7 +21,7 @@ namespace Rescues
         private Animator _animator;
         private CurveWay _curveWay;
         private int _currentCurveWayPoint;
-        private float move = 0f;
+        private float distance = 0f;
         
         #endregion
 
@@ -219,13 +219,22 @@ namespace Rescues
         {
             _curveWay = curveWay;
             Transform.position = curveWay.GetStartPointPosition;
+            CorrectDistance();
+        }
+
+        private void CorrectDistance()
+        {
+            distance = 0;
+            //расчет сколько нам понадобится чтобы дойти до точки от 0(начало кривой).
+            distance = _curveWay.LeftmostPoint.x<0 ?
+                _curveWay.StartCharacterPosition.x - _curveWay.LeftmostPoint.x:
+                _curveWay.StartCharacterPosition.x + _curveWay.LeftmostPoint.x;
         }
         
         private void Move()
         {
-            move += _direction * _speed * Time.deltaTime;
-            Transform.position = _curveWay.PathCreator.path.GetPointAtDistance(move, EndOfPathInstruction.Stop);
-
+            distance += _direction * _speed * Time.deltaTime;
+            Transform.position = _curveWay.PathCreator.path.GetPointAtDistance(distance, EndOfPathInstruction.Stop);
             if (_direction == 0)
             {
                 StateIdle();               
