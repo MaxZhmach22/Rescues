@@ -39,7 +39,7 @@ namespace Rescues
             Vector2 inputAxis;
             inputAxis.x = Input.GetAxis("Horizontal");
             inputAxis.y = Input.GetAxis("Vertical");
-
+           
             _context.Character.SetScale();
             _context.Character.StateHandler();
             _context.Character.AnimationPlayTimer.UpdateTimer();
@@ -90,9 +90,10 @@ namespace Rescues
             if (Input.GetButtonUp("Use"))
             {
                 var puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
-                if (puzzleObject != null)
+                if (puzzleObject != null && !puzzleObject.Puzzle.IsFinished)
                 {
                     puzzleObject.Puzzle.Activate();
+                    Time.timeScale = 0;
                 }
 
                 var hidingPlace = GetInteractableObject<HidingPlaceBehaviour>(InteractableObjectType.HidingPlace);
@@ -187,6 +188,12 @@ namespace Rescues
                     {
                         CloseInterfaceWindow();
                     }
+                }
+
+                var puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
+                if (puzzleObject != null)
+                {
+                    puzzleObject.Puzzle.Close();                   
                 }
             }
 
