@@ -9,11 +9,13 @@ namespace Rescues
 {
     public class LocationController
     {
+        
 
         #region Properties
         
         private LevelController LevelController { get; }
         private GameContext Context { get; }
+        
         public List<LocationData> Locations { get; } = new List<LocationData>();
         public string LevelName { get; }
 
@@ -51,7 +53,7 @@ namespace Rescues
                     gate.ThisLocationName = location.LocationName;
                     gate.ThisLevelName = levelName;
                 }
-
+                
                 var triggers = location.LocationInstance.transform.GetComponentsInChildren<InteractableObjectBehavior>();
                 foreach (var trigger in triggers)
                 {
@@ -61,7 +63,7 @@ namespace Rescues
                 location.DisableOnScene();
                 Locations.Add(location);
             }
-
+            
         }
 
         #endregion

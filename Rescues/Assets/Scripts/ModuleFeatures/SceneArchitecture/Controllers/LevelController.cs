@@ -18,7 +18,8 @@ namespace Rescues
         private GameContext _context;
         private Services _services;
         private GameObject _levelParent;
-
+        private GateController _gateController;
+        
         #endregion
 
         
@@ -28,6 +29,7 @@ namespace Rescues
         {
             _context = context;
             _services = services;
+            _gateController = new GateController(context);
         }
 
         public void Initialize()
@@ -93,7 +95,9 @@ namespace Rescues
         {
             _locationController?.UnloadData();
             _curveWayController?.UnloadData();
+            _gateController?.TearDown();
             _locationController = new LocationController(this, _context, loadLevelName, _levelParent.transform);
+            _gateController?.Initialize();
         }
         
         #endregion
