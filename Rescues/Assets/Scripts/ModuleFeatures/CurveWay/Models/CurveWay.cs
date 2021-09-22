@@ -23,6 +23,7 @@ namespace Rescues
 
 		public PathCreator PathCreator => _pathCreator;
 		//public List<WayPoint> WayPoints => _wayPoints;
+		public Vector3 LeftmostPoint { get; set; }
 		public Vector3 Scale { get; set; } = Vector3.one;
 		public float KKoef { get; set; }
 		public float MKoef { get; set; }
