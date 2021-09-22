@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _delayAfterFinish: 3
   IsFinished: 0
+  IsActive: 0
 --- !u!61 &401722326059442766
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -222,111 +223,110 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4982309870240704559}
-        m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-        m_MethodName: SetQuestion
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: RingQuest
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 4982309870240704559}
-        m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-        m_MethodName: SetValue
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 4982309870240704559}
-        m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-        m_MethodName: AddActiveGameObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2668034248902124377}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 4982309870240704559}
-        m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-        m_MethodName: AddDeactiveGameObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6168885976161313263}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: RingQuest
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 4982309870240704559}
-        m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-        m_MethodName: CallDialogue
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: RingQuest
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 4982309870240704559}
-        m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-        m_MethodName: AddDeactiveGameObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 146422744201183376}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 4982309870240704559}
-        m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-        m_MethodName: AddActiveGameObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 7310077089850454317}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2440806988178800138}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents:
+  - IsRepeating: 0
+    Time: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4982309870240704559}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: SetQuestion
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: RingQuest
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4982309870240704559}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: SetValue
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4982309870240704559}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: AddActiveGameObject
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2668034248902124377}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4982309870240704559}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: AddDeactiveGameObject
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6168885976161313263}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4982309870240704559}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: CallDialogue
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: RingQuest
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4982309870240704559}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: AddDeactiveGameObject
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 146422744201183376}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4982309870240704559}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: AddDeactiveGameObject
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 146422744201183376}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2440806988178800138}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!61 &8046546384543181364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -529,87 +529,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 745334942490973400}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2381548320170023840}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7005924335067758457}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8027965070901141121}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 837434842879185855}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 7636082527695698721}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &6529071733760039619
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -732,63 +654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 837434842879185855}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7450674376957609035}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 8027965070901141121}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1351792131491958401}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &8918592438976660401
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -912,63 +780,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5516275600817685478}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 960548568780400993}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1413652127720214474}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 5516275600817685478}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &2440225473477278548
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1300,39 +1114,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 584633333882608083}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 584633333882608083}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _onTriggerEnterEvents:
+  - IsRepeating: 0
+    Time: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 584633333882608083}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - IsRepeating: 0
+    Time: 2
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 584633333882608083}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &6305094770879282870
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1538,63 +1356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1351792131491958401}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5786290284480149534}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 7450674376957609035}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3681474705457615883}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &1467776828884738306
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1718,87 +1482,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6063077688882822833}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5516275600817685478}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6063077688882822833}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 5516275600817685478}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5623448554326060400}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7180171545536368319}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &1048805686216841508
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2017,63 +1703,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1976564576717757575}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7281176422473760432}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2404215891201947790}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7904113792944674715}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &7892043182576342189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2170,51 +1802,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5268019815865968080}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5268019815865968080}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2381548320170023840}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!1 &2404215891201947790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2396,39 +1986,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4982309870240704559}
-        m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-        m_MethodName: CallDialogue
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: ReedDialogue
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2440806988178800138}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents:
+  - IsRepeating: 0
+    Time: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4982309870240704559}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: CallDialogue
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: ReedDialogue
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2440806988178800138}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &820631205039520125
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2594,87 +2183,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4982309870240704559}
-        m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-        m_MethodName: SetQuestion
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 1stHozDial-2
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4982309870240704559}
-        m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-        m_MethodName: SetValue
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4982309870240704559}
-        m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-        m_MethodName: AddActiveGameObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1104346005935161961}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4982309870240704559}
-        m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-        m_MethodName: AddActiveGameObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6949620804002145436}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 1stHozDial-2
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4982309870240704559}
-        m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-        m_MethodName: CallDialogue
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 1stHozDial-2
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4982309870240704559}
-        m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-        m_MethodName: AddDeactiveGameObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1118394703829469591}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents:
+  - IsRepeating: 0
+    Time: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4982309870240704559}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: SetQuestion
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 1stHozDial-2
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4982309870240704559}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: SetValue
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4982309870240704559}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: AddActiveGameObject
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6949620804002145436}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4982309870240704559}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: AddActiveGameObject
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1104346005935161961}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4982309870240704559}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: CallDialogue
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 1stHozDial-2
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &6070180465078884702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3003,75 +2579,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4288132170774010208}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3060815145078252384}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3060815145078252384}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5623448554326060400}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 4288132170774010208}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &821294668991617562
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3274,63 +2784,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3681474705457615883}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1214785507401832741}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 5786290284480149534}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6013899093714623772}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &1224304984071564311
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3605,7 +3061,6 @@ Transform:
   - {fileID: 2712639778731219827}
   - {fileID: 2403485513553578817}
   - {fileID: 8557766744963092567}
-  - {fileID: 2262716085768655147}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4514,75 +3969,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5563564120884882613}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4288132170774010208}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5563564120884882613}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 960548568780400993}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 4288132170774010208}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &6769813673647280600
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4912,63 +4301,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6013899093714623772}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2404215891201947790}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1214785507401832741}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1976564576717757575}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &3210517264776849044
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5174,39 +4509,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2926875825446737903}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2926875825446737903}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents:
+  - IsRepeating: 0
+    Time: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2926875825446737903}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - IsRepeating: 0
+    Time: 2
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2926875825446737903}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &5581237485430043769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5599,63 +4938,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5667635939283264217}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3378938621833942302}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 584633333882608083}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1104346005935161961}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents:
+  - IsRepeating: 0
+    Time: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3378938621833942302}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1118394703829469591}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - IsRepeating: 0
+    Time: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1104346005935161961}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 6949620804002145436}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &3890620553974208480
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5752,51 +5095,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6878558503253456712}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6878558503253456712}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7005924335067758457}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!1 &7112509066959186245
 GameObject:
   m_ObjectHideFlags: 0
@@ -5976,63 +5277,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3920162249289549574}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7180171545536368319}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7636082527695698721}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 3920162249289549574}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &439780042325917573
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6478,111 +5725,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7982679297650368183}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3920162249289549574}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3920162249289549574}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7982679297650368183}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 6168885976161313263}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 745334942490973400}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2381548320170023840}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 7005924335067758457}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &3542663243935467301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6787,63 +5932,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7904113792944674715}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3419836794956249972}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 7281176422473760432}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 9097577720140787274}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &6228622642101368073
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6949,131 +6040,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u0414\u0438\u043D\u044C-\u0414\u0438\u043D\u044C, \u043C\u0430\u0437\u0430\u0444\u0430\u043A\u0430!\n"
---- !u!1 &7997973347797344361
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8184744183863143442}
-  - component: {fileID: 7092075335043545917}
-  - component: {fileID: 6352407242325640273}
-  - component: {fileID: 8789131302253004235}
-  m_Layer: 0
-  m_Name: ChessTest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8184744183863143442
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7997973347797344361}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.58, y: -2.03, z: -21.610567}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2132265067942336059}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7092075335043545917
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7997973347797344361}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: f20b0eeef51f846b09607b908783da6d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.93029463, y: 2.1399999}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!61 &6352407242325640273
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7997973347797344361}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 2.9119148, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.48, y: 6.5}
-    newSize: {x: 0.93029463, y: 2.1399999}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.307787, y: 6.5}
-  m_EdgeRadius: 0
---- !u!114 &8789131302253004235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7997973347797344361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d450f2de19a94691a48156e7210b7dfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 5
-  Puzzle: {fileID: 4245532040982583555, guid: 95bcb8419cd7bb64b9e2a7f7561cf979, type: 3}
-  ItemData: {fileID: 11400000, guid: 1a1b66383686f9846827652daf6a3acb, type: 2}
 --- !u!1 &8027965070901141121
 GameObject:
   m_ObjectHideFlags: 0
@@ -7282,39 +6248,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5231153321012499600}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5231153321012499600}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents:
+  - IsRepeating: 0
+    Time: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6563563722184388999}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - IsRepeating: 0
+    Time: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9110399836751844220}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!61 &6581811759253200241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7437,87 +6407,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggerEntetEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4808705988594406729}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnButtonInTriggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9097577720140787274}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
-      - m_Target: {fileID: 4808705988594406729}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 3419836794956249972}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6949620804002145436}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1104346005935161961}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
 --- !u!61 &7801702366542782293
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7562,7 +6454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3750012365122911261
 Transform:
   m_ObjectHideFlags: 0
@@ -7779,468 +6671,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 44869555612493043}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &251032579551498573
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2132265067942336059}
-    m_Modifications:
-    - target: {fileID: 1155011987815508621, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155011987815508621, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319395421898191224, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319395421898191224, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025793582429503590, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025793582429503590, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025793582429503590, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -7.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025793582429503590, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025793582429503590, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025793582429503590, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025793582429503590, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025793582429503590, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025793582429503590, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025793582429503590, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025793582429503590, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2133254311392927333, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -12.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 2133254311392927333, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.3800001
-      objectReference: {fileID: 0}
-    - target: {fileID: 2133254311392927333, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7309796
-      objectReference: {fileID: 0}
-    - target: {fileID: 2133254311392927333, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.68239933
-      objectReference: {fileID: 0}
-    - target: {fileID: 2133254311392927333, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 86.063
-      objectReference: {fileID: 0}
-    - target: {fileID: 2267607880459353335, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_Name
-      value: CurveWay (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806689996685396427, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806689996685396427, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 3935044431383384638, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 3935044431383384638, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128022213378817315, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128022213378817315, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128022213378817315, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99966407
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128022213378817315, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.025919093
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128022213378817315, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 2.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 4766347024275980838, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: HoldEnterExitPoints
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5023464036662010370, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 5023464036662010370, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 5187847157481961975, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 5187847157481961975, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 7419133340827853152, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: HoldEnterExitPoints
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: _backScale
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: _scaleLine
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: _resolution
-      value: 0.007
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: _pathCreator
-      value: 
-      objectReference: {fileID: 9114148584985908379}
-    - target: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: _whoCanUseWay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: _allPointsCount
-      value: 391
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: CURVES_RESOLUTION
-      value: 0.007
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: _points.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: _points.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: _wayPoints.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: _wayPoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: _wayPoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: _wayPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: _wayPoints.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7975923991332875865, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 15.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 7975923991332875865, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData.vertexPathUpToDate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[0].x
-      value: 4.3728814
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[0].y
-      value: 0.20338964
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[1].x
-      value: 6.5663176
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[1].y
-      value: -0.6103053
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[2].x
-      value: 14.77621
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[2].y
-      value: 0.40266955
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[3].x
-      value: 14.863478
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[3].y
-      value: 0.42861462
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[4].x
-      value: 14.950746
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[4].y
-      value: 0.45455968
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[5].x
-      value: 1.8359904
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[5].y
-      value: 2.1215467
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[6].x
-      value: 14.863478
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[6].y
-      value: 0.42861462
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[7].x
-      value: 6.5663176
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[7].y
-      value: -0.6103053
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[8].x
-      value: 14.77621
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[8].y
-      value: 0.40266955
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[9].x
-      value: 14.863478
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[9].y
-      value: 0.42861462
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[10].x
-      value: 6.5663176
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[10].y
-      value: -0.6103053
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[11].x
-      value: 14.77621
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[11].y
-      value: 0.40266955
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[12].x
-      value: 14.863478
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[12].y
-      value: 0.42861462
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[13].x
-      value: 6.5663176
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[13].y
-      value: -0.6103053
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[14].x
-      value: 14.77621
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[14].y
-      value: 0.40266955
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[15].x
-      value: 14.863478
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.points.Array.data[15].y
-      value: 0.42861462
-      objectReference: {fileID: 0}
-    - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-        type: 3}
-      propertyPath: editorData._bezierPath.perAnchorNormalsAngle.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0499ba983373972449f210a507f57ad7, type: 3}
---- !u!114 &9114148584985908379 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
-    type: 3}
-  m_PrefabInstance: {fileID: 251032579551498573}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e5ac92bc18f545cc84cd886ece82b4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2262716085768655147 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2025793582429503590, guid: 0499ba983373972449f210a507f57ad7,
-    type: 3}
-  m_PrefabInstance: {fileID: 251032579551498573}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &647911261419348242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8251,12 +6681,17 @@ PrefabInstance:
     - target: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_Name
-      value: 3 to Hotel_Salon_5
+      value: 3 to Hotel_Salon_1
       objectReference: {fileID: 0}
     - target: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
+        type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
       objectReference: {fileID: 0}
     - target: {fileID: 4826721140499636313, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -8266,7 +6701,7 @@ PrefabInstance:
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: _goToGateId
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -8340,15 +6775,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a92e6ec87f5ad4c038229934453c278f, type: 3}
---- !u!1 &3378938621833942302 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
-    type: 3}
-  m_PrefabInstance: {fileID: 647911261419348242}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7765834663608035585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7149498112034572307, guid: a92e6ec87f5ad4c038229934453c278f,
+    type: 3}
+  m_PrefabInstance: {fileID: 647911261419348242}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3378938621833942302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
     type: 3}
   m_PrefabInstance: {fileID: 647911261419348242}
   m_PrefabAsset: {fileID: 0}
@@ -8694,12 +7129,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1361954268274479867}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3348956073461113521 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4368284925260640330, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1361954268274479867}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3261145141541282390 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4586713956279447725, guid: f01243d5917f8dd48afecb2b427b1ce6,
@@ -8712,6 +7141,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3348956073461113521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4368284925260640330, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361954268274479867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4387973460037871458
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2132265067942336059}
+    m_Modifications:
+    - target: {fileID: 5580870219888151408, guid: 14c18f9379d81c64cbc4ba752b1140ef,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580870219888151408, guid: 14c18f9379d81c64cbc4ba752b1140ef,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9336
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580870219888151408, guid: 14c18f9379d81c64cbc4ba752b1140ef,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.9051
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580870219888151408, guid: 14c18f9379d81c64cbc4ba752b1140ef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -21.610567
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580870219888151408, guid: 14c18f9379d81c64cbc4ba752b1140ef,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580870219888151408, guid: 14c18f9379d81c64cbc4ba752b1140ef,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580870219888151408, guid: 14c18f9379d81c64cbc4ba752b1140ef,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580870219888151408, guid: 14c18f9379d81c64cbc4ba752b1140ef,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580870219888151408, guid: 14c18f9379d81c64cbc4ba752b1140ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580870219888151408, guid: 14c18f9379d81c64cbc4ba752b1140ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580870219888151408, guid: 14c18f9379d81c64cbc4ba752b1140ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916521544802535179, guid: 14c18f9379d81c64cbc4ba752b1140ef,
+        type: 3}
+      propertyPath: m_Name
+      value: ChessTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916521544802535179, guid: 14c18f9379d81c64cbc4ba752b1140ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 14c18f9379d81c64cbc4ba752b1140ef, type: 3}
+--- !u!4 &8184744183863143442 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5580870219888151408, guid: 14c18f9379d81c64cbc4ba752b1140ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 4387973460037871458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4697608423133027833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8803,7 +7318,7 @@ PrefabInstance:
     - target: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_Name
-      value: 1 to Hotel_Reception_2
+      value: 1 to Hotel_Reception_1
       objectReference: {fileID: 0}
     - target: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -8818,7 +7333,7 @@ PrefabInstance:
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: _goToGateId
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
