@@ -68,7 +68,6 @@ namespace Rescues
             var pianoPuzzle = puzzle as PianoPuzzle;
             if (pianoPuzzle.PlayerCombination.Count == pianoPuzzle.WinCombination.Count)
             {
-                UnityEngine.Debug.Log("piano puzzle check");
                 Finish(puzzle);                
             }
         }

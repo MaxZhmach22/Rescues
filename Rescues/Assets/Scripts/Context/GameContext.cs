@@ -12,6 +12,7 @@ namespace Rescues
 
         public CharacterModel Character;
         public Inventory Inventory;
+        public GameMenuBehaviour gameMenu;
         public EnemyBehaviour Enemy;
         public LocationData ActiveLocation;
         

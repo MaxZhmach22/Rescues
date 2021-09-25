@@ -65,13 +65,11 @@ namespace Rescues
             {
                 _index += 1;
                 _pianoPuzzle.CurrentButton = _pianoPuzzle.Buttons[_index];
-                Debug.Log("index " + _index + " current button " + _pianoPuzzle.CurrentButton.name);
             }
             else
             {
                 _index -= 1;
                 _pianoPuzzle.CurrentButton = _pianoPuzzle.Buttons[_index];
-                Debug.Log("index " + _index + " current button " + _pianoPuzzle.CurrentButton.name);
             }
             _pianoPuzzle.CurrentButton.Outline.enabled = true;
         } 
