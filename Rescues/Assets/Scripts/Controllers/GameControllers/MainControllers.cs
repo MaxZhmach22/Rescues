@@ -11,7 +11,6 @@
             // Add(new InitializeEnemyController(context, services));
             Add(new TimeRemainingController());
             Add(new ItemActiveController(context, services));
-            Add(new GateController(context, services));
             Add(new MainPuzzleController(context, services));
             Add(new HidingPlaceController(context, services));
             // Add(new EnemyVisionController(context, services));
