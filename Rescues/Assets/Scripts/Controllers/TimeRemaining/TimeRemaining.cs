@@ -25,14 +25,6 @@ namespace Rescues
             IsRepeating = isRepeating;
         }
         
-        public TimeRemaining(EventData data)
-        {
-            Method = () => data.Event.Invoke();
-            Time = data.Time;
-            CurrentTime = data.Time;
-            IsRepeating = data.IsRepeating;
-        }
-        
         #endregion
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEngine.Events;
 
 
 namespace Rescues
@@ -45,7 +44,7 @@ namespace Rescues
             }
             _timeRemainings.Remove(value);
         }
-
+        
         #endregion
     }
 }

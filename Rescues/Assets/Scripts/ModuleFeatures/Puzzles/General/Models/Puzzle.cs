@@ -20,11 +20,10 @@ namespace Rescues
         public event Action<Puzzle> CheckCompleted = puzzle => { };
 
         public bool IsFinished = false;
-        public bool IsActive = false;
 
         #endregion
-
-
+        
+        
         #region Methods
 
         [ContextMenu("Activate puzzle")]
@@ -40,7 +39,6 @@ namespace Rescues
                 StartCoroutine(CloseWithDelay());
             else
                 Closed.Invoke(this);
-            Time.timeScale = 1;
         }
 
         public void Finish()

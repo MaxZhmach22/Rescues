@@ -7,6 +7,5 @@
         GameMenu  = 2,
         Settings  = 3,
         GameOver  = 4,
-        Load      = 5,
     }
 }

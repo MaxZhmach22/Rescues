@@ -33,6 +33,7 @@ namespace Rescues
                     ItemSlots[i].OnPointerEnterEvent += ShowTooltip;
                     ItemSlots[i].OnPointerExitEvent += HideTooltip;
                 }
+                CustomDebug.Log(ItemSlots.Count);
             }
 
         }

@@ -3465,7 +3465,7 @@ GameObject:
   - component: {fileID: 2132265067942336059}
   - component: {fileID: 1489210437266686043}
   m_Layer: 0
-  m_Name: Reception 1
+  m_Name: Reception
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

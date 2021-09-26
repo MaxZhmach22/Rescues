@@ -17,6 +17,11 @@ namespace Rescues
 
         #region UnityMethods
 
+        private void Awake()
+        {
+        
+        }
+
         private void Start()
         {
             GameContext context = new GameContext();
@@ -28,8 +33,6 @@ namespace Rescues
 
             context.Inventory = FindObjectOfType<Inventory>();
             context.Inventory.gameObject.SetActive(false);
-
-            Time.timeScale = 1;
         }
 
         private void FixedUpdate()

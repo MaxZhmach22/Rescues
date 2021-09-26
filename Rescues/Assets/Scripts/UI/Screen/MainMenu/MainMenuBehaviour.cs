@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 
 namespace Rescues
@@ -9,35 +8,32 @@ namespace Rescues
     {
         #region Fields
         
-        [SerializeField] private Button _newGameButton;
-        [SerializeField] private Button _loadButton;
+        [SerializeField] private Button _startGameButton;
         [SerializeField] private Button _settingsButton;
-        [SerializeField] private Button _exitButton;
-
-        #endregion
+        [SerializeField] private Text _currentLevelLabel;
+        
+        private LocationService _locationService;
+        
+        #endregion 
 
 
         #region UnityMethods
 
         private void OnEnable()
         {
-            _newGameButton.onClick.AddListener(NewGameButtonClick);
-            _loadButton.onClick.AddListener(LoadButtonClick);
+            _startGameButton.onClick.AddListener(StartGameButtonClick);
             _settingsButton.onClick.AddListener(ShowSettingsButtonClick);
-            _exitButton.onClick.AddListener(ExitButtonClick);
         }
 
         private void OnDisable()
         {
-            _newGameButton.onClick.RemoveListener(NewGameButtonClick);
-            _loadButton.onClick.RemoveListener(LoadButtonClick);
+            _startGameButton.onClick.RemoveListener(StartGameButtonClick);
             _settingsButton.onClick.RemoveListener(ShowSettingsButtonClick);
-            _exitButton.onClick.RemoveListener(ExitButtonClick);
         }
 
         #endregion
-
-
+        
+        
         #region Methods
 
         public override void Show()
@@ -50,38 +46,16 @@ namespace Rescues
         {
             gameObject.SetActive(false);
             HideUI.Invoke();
-        }    
-
-        private void NewGameButtonClick()
-        {
-            SceneManager.LoadSceneAsync("HotelScene");
         }
 
-        private void LoadButtonClick()
+        private void StartGameButtonClick()
         {
-            //TODO Need emplementation
-            Debug.Log("Not emplemented yet");
-            //ScreenInterface.GetInstance().Execute(ScreenType.Load);
+            ScreenInterface.GetInstance().Execute(ScreenType.GameMenu);
         }
 
         private void ShowSettingsButtonClick()
         {
-            //TODO Need emplementation
-            Debug.Log("Not emplemented yet");
-            //ScreenInterface.GetInstance().Execute(ScreenType.Settings);
-        }
-
-        private void ExitButtonClick()
-        {
-            #if (UNITY_EDITOR)
-            {
-                UnityEditor.EditorApplication.isPlaying = false;
-            }
-            #else
-            {
-                Application.Quit();
-            }
-            #endif
+            ScreenInterface.GetInstance().Execute(ScreenType.Settings);
         }
 
         #endregion
