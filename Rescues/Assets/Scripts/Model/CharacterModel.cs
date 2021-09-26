@@ -1,5 +1,5 @@
-﻿using System;
-using PathCreation;
+﻿using PathCreation;
+using System;
 using UnityEngine;
 
 
@@ -9,31 +9,35 @@ namespace Rescues
     {
         #region Fields
 
-        private readonly int _speed;
-        private SpriteRenderer _characterSprite;
+        public Action AfterSceneLoad = () => { };
+
+        private float _distance;
+        private float _speed;
+        private float _hidingDuration;
+        private int _direction;
+
+        private DragonBones.UnityArmatureComponent _characterArmature;
+        private DragonBones.Animation _characterAnimation;
+
         private CapsuleCollider2D _playerCollider;
         private Rigidbody2D _playerRigidbody2D;
-        private State _state;
-        public Timer AnimationPlayTimer;
-        private int _direction;
-        private Gate _gate;
+
         private HidingPlaceBehaviour _hidingPlaceBehaviour;
-        private Animator _animator;
         private CurveWay _curveWay;
-        private int _currentCurveWayPoint;
-        private float move = 0f;
         
         #endregion
 
 
         #region Properties
+
         public Transform Transform { get; }
-        private PlayerBehaviour PlayerBehaviour { get; }
         public AudioSource PlayerSound { get; }
-        public float AnimationTimer { get; set; }
-        public State PlayerState { get { return _state; } }
-        public InteractableObjectBehavior InteractableItem { get; set; }
-        public CurveWay CurentCurveWay => _curveWay;
+
+        public Timer AnimationPlayTimer { get; }
+        public Gate Gate { get; private set; }
+        public InteractableObjectBehavior InteractableItem { get; private set; }
+        public State PlayerState { get; private set; }
+
 
         #endregion
 
@@ -42,15 +46,16 @@ namespace Rescues
 
         public CharacterModel(Transform transform, PlayerData playerData)
         {
-            _speed = (int)playerData.Speed;
-            _characterSprite = transform.GetComponentInChildren<SpriteRenderer>();
+            _speed = playerData.Speed;
+
+            _characterArmature = transform.GetComponentInChildren<DragonBones.UnityArmatureComponent>();
+            _characterAnimation = _characterArmature.animation;
+
             _playerCollider = transform.GetComponentInChildren<CapsuleCollider2D>();
             _playerRigidbody2D = transform.GetComponentInChildren<Rigidbody2D>();
-            _animator = transform.GetComponentInChildren<Animator>();
             AnimationPlayTimer = new Timer();
+            PlayerSound = transform.GetComponentInChildren<AudioSource>();
             Transform = transform;
-            PlayerSound = Transform.GetComponentInChildren<AudioSource>();
-            PlayerBehaviour = Transform.GetComponent<PlayerBehaviour>();
         }
 
         #endregion
@@ -60,8 +65,11 @@ namespace Rescues
 
         public void StateIdle()
         {
-            SetState(State.Idle);
-            _animator.Play("Base Layer.Idle");
+            PlayerState = State.Idle;
+            if (_characterAnimation.lastAnimationName != "Idle")
+            {
+                _characterAnimation.FadeIn("Idle"); 
+            }
         }
 
         public void StateHideAnimation(HidingPlaceBehaviour hidingPlaceBehaviour)
@@ -69,18 +77,16 @@ namespace Rescues
             if (hidingPlaceBehaviour != null)
             {
                 _hidingPlaceBehaviour = hidingPlaceBehaviour;
-            }           
-            SetState(State.HideAnimation);                                           
+            }
+            PlayerState = State.HideAnimation;                                           
             StartHiding();
-            _animator.Play("Base Layer.HideAnimation");
         }
 
         public void StateHiding()
         {                            
             if (Hide())
             {
-                _animator.Play("Base Layer.Hiding");
-                SetState(State.Hiding);                             
+                PlayerState = State.Hiding;                             
             }
             else
             {
@@ -91,30 +97,27 @@ namespace Rescues
         public void StatePickUpAnimation(ItemBehaviour itemBehaviour)
         {
             InteractableItem = itemBehaviour;
-            SetState(State.PickUpAnimation);
-            _animator.Play("Base Layer.PickUpAnimation");
+            PlayerState = State.PickUpAnimation;
             AnimationPlayTimer.StartTimer(itemBehaviour.PickUpTime);           
         }
 
         public void StateCraftTrapAnimation(TrapBehaviour trapBehaviour)
         {
             InteractableItem = trapBehaviour;
-            SetState(State.CraftTrapAnimation);
-            _animator.Play("Base Layer.CraftTrapAnimation");
+            PlayerState = State.CraftTrapAnimation;
             AnimationPlayTimer.StartTimer(trapBehaviour.TrapInfo.BaseTrapData.CraftingTime);
         }
 
         public void StateTeleporting(Gate gate)
         {
-            SetState(State.GoByGateWay);
-            _gate = gate;
-            _animator.Play("Base Layer.Teleporting");
+            PlayerState = State.GoByGateWay;
+            Gate = gate;
             AnimationPlayTimer.StartTimer(gate.LocalTransferTime);
         }
 
         public void StateMoving(int direction)
         {
-            switch (_state)
+            switch (PlayerState)
             {
                 case State.Hiding:
                     {                       
@@ -137,26 +140,27 @@ namespace Rescues
                         return;
                     }
             }
-            SetState(State.Moving);
-            _animator.Play("Base Layer.Moving");
+
+            if (direction != 0 && _characterAnimation.lastAnimationName != "Walking")
+            {
+                _characterAnimation.FadeIn("Walking"); 
+            }
+
+            PlayerState = State.Moving;
             _direction = direction;
         }
-
-        private void SetState(State value)
-        {
-            _state = value;
-        }
+ 
 
         public void StateHandler()
         {
-            switch (_state)
+            switch (PlayerState)
             {
                 case State.Moving:
                     Move();
                     break;
 
                 case State.GoByGateWay:
-                    GoByGateWay();
+                    Gate.GoByGateWay();
                     break;
             }
         }
@@ -166,19 +170,33 @@ namespace Rescues
 
         #region Methods
 
-        public void GoByGateWay()
+        public void LocateCharacter(CurveWay curveWay)
         {
-            _gate.GoByGateWay();
+            _curveWay = curveWay;
+            Transform.position = curveWay.GetStartPointPosition;
+            CorrectDistance();
+            if (AfterSceneLoad.GetInvocationList().Length <= 1)
+            {
+                AfterSceneLoad = null;
+                AfterSceneLoad += SetScale;
+                AfterSceneLoad += StateHandler;
+                AfterSceneLoad += AnimationPlayTimer.UpdateTimer;
+            }
+        }
+
+        private void SetScale()
+        {
+            Transform.localScale = _curveWay.GetScale(Transform.position);
         }
 
         private void StartHiding()
         {
             PlayerSound.clip = _hidingPlaceBehaviour.HidingPlaceData.HidingSound;
-            AnimationTimer = _hidingPlaceBehaviour.HidingPlaceData.AnimationDuration;         
+            _hidingDuration = _hidingPlaceBehaviour.HidingPlaceData.AnimationDuration;         
             PlayAnimationWithTimer();
             if (_playerRigidbody2D.bodyType == RigidbodyType2D.Dynamic)
             {
-                _characterSprite.enabled = false; //чтобы спрайт выключался сразу, когда идет процесс пряток
+                _characterArmature.enabled = false; //чтобы спрайт выключался сразу, когда идет процесс пряток
             }
             else
             {
@@ -200,7 +218,7 @@ namespace Rescues
             {
                 _playerRigidbody2D.bodyType = RigidbodyType2D.Dynamic;
                 isHided = false;
-                _characterSprite.enabled = true; //чтобы спрайт выключался только тогда, когда персонаж уже вылез
+                _characterArmature.enabled = true; //чтобы спрайт выключался только тогда, когда персонаж уже вылез
             }
 
             return isHided;
@@ -212,43 +230,40 @@ namespace Rescues
             {
                 PlayerSound.Play();
             }          
-            AnimationPlayTimer.StartTimer(AnimationTimer);
+            AnimationPlayTimer.StartTimer(_hidingDuration);
         }
 
-        public void SetPositionAndCurveWay(CurveWay curveWay)
+        private void CorrectDistance()
         {
-            _curveWay = curveWay;
-            Transform.position = curveWay.GetStartPointPosition;
+            _distance = 0;
+            //расчет сколько нам понадобится чтобы дойти до точки от 0(начало кривой).
+            _distance = _curveWay.LeftmostPoint.x<0 ?
+                _curveWay.StartCharacterPosition.x - _curveWay.LeftmostPoint.x:
+                _curveWay.StartCharacterPosition.x + _curveWay.LeftmostPoint.x;
         }
         
         private void Move()
         {
-            move += _direction * _speed * Time.deltaTime;
-            Transform.position = _curveWay.PathCreator.path.GetPointAtDistance(move, EndOfPathInstruction.Stop);
-
+            _distance += _direction * _speed * Time.deltaTime;
+            Transform.position = _curveWay.PathCreator.path.GetPointAtDistance(_distance, EndOfPathInstruction.Stop);
             if (_direction == 0)
             {
                 StateIdle();               
             }
 
-            if (_direction > 0 && _characterSprite.flipX)
+            if (_direction > 0 && _characterArmature._armature.flipX)
             {
                 Flip();               
             }
-            else if (_direction < 0 && !_characterSprite.flipX)
+            else if (_direction < 0 && !_characterArmature._armature.flipX)
             {
                 Flip();            
             }
         }
-
-        public void SetScale()
-        {
-            Transform.localScale =  _curveWay.GetScale(Transform.position);
-        }
-        
+      
         private void Flip()
         {
-            _characterSprite.flipX = !_characterSprite.flipX;
+            _characterArmature._armature.flipX = !_characterArmature._armature.flipX;
         }
 
         #endregion

@@ -60,7 +60,7 @@ namespace Rescues
 			var closestPoints = new Dictionary<CurveWay, Vector3>();
 			foreach (var curve in chosenCurves)
 				closestPoints.Add(curve, curve.PathCreator.path.GetClosestPointOnPath(enterGate.transform.position));
-
+			
 			//Поиск ближайшей Curve к точке enterGate
 			var startDistance = float.MaxValue;
 			foreach (var curve in closestPoints)
@@ -70,10 +70,11 @@ namespace Rescues
 				{
 					startDistance = newDistance;
 					curve.Key.StartCharacterPosition = curve.Value;
+					curve.Key.LeftmostPoint = curve.Key.PathCreator.transform.position + 
+					                          curve.Key.PathCreator.path.localPoints[0];;
 					result = curve.Key;
 				}
 			}
-
 			return result;
 		}
 

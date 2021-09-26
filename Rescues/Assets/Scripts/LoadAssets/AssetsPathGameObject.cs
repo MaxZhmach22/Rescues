@@ -13,12 +13,14 @@ namespace Rescues
             { GameObjectType.Enemy, "Prefabs/Enemies/Prefabs_Enemies_Patrolling" },
             { GameObjectType.Canvas, "Prefabs/UI/Prefabs_UI_Canvas" },
             { GameObjectType.Levels, "Data/Levels" },
-            {GameObjectType.PuzzlesFolder, "Prefabs/Puzzles/"}
+            { GameObjectType.PuzzlesFolder, "Prefabs/Puzzles/"}
         };
 
         public static readonly Dictionary<ScreenType, string> Screens = new Dictionary<ScreenType, string>()
         {
             {ScreenType.GameOver, "Prefabs/UI/Screen/Prefabs_UI_Screen_GameOver"},
+            {ScreenType.MainMenu, "Prefabs/UI/Screen/MainMenu"},
+            {ScreenType.GameMenu, "Prefabs/UI/Screen/GameMenu"}
         };
 
         #endregion

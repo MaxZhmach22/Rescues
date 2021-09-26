@@ -12,6 +12,7 @@ namespace Rescues
         
         private LocationController _locationController;
         private CurveWayController _curveWayController;
+        private CurveWay _activeCurveWay;
         private LevelsData _levelsData;
         private BootScreen _defaultBootScreen;
         private BootScreen _customBootScreen;
@@ -84,8 +85,8 @@ namespace Rescues
 
                 _context.ActiveLocation = bootLocation;
                 _curveWayController = new CurveWayController(bootLocation.LocationInstance.СurveWays);
-                var activeCurveWay = _curveWayController.GetCurve(enterGate, WhoCanUseCurve.Character);
-                _context.Character.SetPositionAndCurveWay(activeCurveWay);
+                _activeCurveWay = _curveWayController.GetCurve(enterGate, WhoCanUseCurve.Character);
+                _context.Character.LocateCharacter(_activeCurveWay);
             }
         }
 
