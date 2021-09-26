@@ -53,7 +53,7 @@ namespace Rescues
                 var puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
                 if (puzzleObject != null && puzzleObject.Puzzle.IsActive)
                 {
-                    _physicsService.PauseSwitch();
+                    _physicsService.UnPause();
                     puzzleObject.Puzzle.Close();
                 }
                 else
@@ -119,7 +119,7 @@ namespace Rescues
                     if (puzzleObject != null && !puzzleObject.Puzzle.IsFinished)
                     {
                         puzzleObject.Puzzle.Activate();
-                        _physicsService.PauseSwitch();
+                        _physicsService.Pause();
                     }
 
                     var hidingPlace = GetInteractableObject<HidingPlaceBehaviour>(InteractableObjectType.HidingPlace);

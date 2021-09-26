@@ -19,7 +19,20 @@ namespace Rescues
 
         #region Properties
 
-        public bool IsPaused { get; private set; } 
+        public bool IsPaused 
+        {
+            get
+            {
+                if (Time.timeScale == 1)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        } 
 
         #endregion
 
@@ -125,18 +138,14 @@ namespace Rescues
             return result;
         }
 
-        public void PauseSwitch()
+        public void Pause()
         {
-            if (IsPaused)
-            {
-                Time.timeScale = 1;
-            }
-            else
-            {
-                Time.timeScale = 0;
-            }
-
-            IsPaused = !IsPaused;
+            Time.timeScale = 0;
+        }
+        
+        public void UnPause()
+        {
+            Time.timeScale = 1;
         }
 
         #endregion
