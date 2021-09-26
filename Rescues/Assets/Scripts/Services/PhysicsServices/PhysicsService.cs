@@ -16,7 +16,14 @@ namespace Rescues
 
         #endregion
 
-        
+
+        #region Properties
+
+        public bool IsPaused { get; private set; } 
+
+        #endregion
+
+
         #region ClassLifeCycles
 
         public PhysicsService(Contexts contexts) : base(contexts)
@@ -116,6 +123,20 @@ namespace Rescues
             }
 
             return result;
+        }
+
+        public void PauseSwitch()
+        {
+            if (IsPaused)
+            {
+                Time.timeScale = 1;
+            }
+            else
+            {
+                Time.timeScale = 0;
+            }
+
+            IsPaused = !IsPaused;
         }
 
         #endregion
