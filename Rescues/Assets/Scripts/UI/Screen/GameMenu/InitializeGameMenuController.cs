@@ -29,8 +29,8 @@ namespace Rescues
         public void Initialize()
         {
             _context.gameMenu = Object.FindObjectOfType<GameMenuBehaviour>();
-            _context.gameMenu.ShowUI += _physicServices.PauseSwitch;
-            _context.gameMenu.HideUI += _physicServices.PauseSwitch;
+            _context.gameMenu.ShowUI += _physicServices.Pause;
+            _context.gameMenu.HideUI += _physicServices.UnPause;
             _context.gameMenu.gameObject.SetActive(false);
         } 
 
