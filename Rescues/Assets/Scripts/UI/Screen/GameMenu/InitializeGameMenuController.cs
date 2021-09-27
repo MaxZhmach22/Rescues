@@ -8,7 +8,7 @@ namespace Rescues
         #region Fields
 
         private readonly GameContext _context;
-        private readonly PhysicsService _physicServices; 
+        private readonly PhysicalServices _physicServices; 
 
         #endregion
 
@@ -18,7 +18,7 @@ namespace Rescues
         public InitializeGameMenuController(GameContext context, Services services)
         {
             _context = context;
-            _physicServices = services.PhysicsService;
+            _physicServices = services.PhysicalServices;
         } 
 
         #endregion

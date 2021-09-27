@@ -12,7 +12,7 @@ namespace Rescues
 
         private readonly GameContext _context;
         private readonly CameraServices _cameraServices;
-        private readonly PhysicsService _physicsService;
+        private readonly PhysicalServices _physicsService;
         private GameObject _interfaceWindow;
 
         #endregion
@@ -24,7 +24,7 @@ namespace Rescues
         {
             _context = context;
             _cameraServices = services.CameraServices;
-            _physicsService = services.PhysicsService;
+            _physicsService = services.PhysicalServices;
         }
 
         #endregion
@@ -53,7 +53,6 @@ namespace Rescues
                 var puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
                 if (puzzleObject != null && puzzleObject.Puzzle.IsActive)
                 {
-                    _physicsService.UnPause();
                     puzzleObject.Puzzle.Close();
                 }
                 else
@@ -116,10 +115,9 @@ namespace Rescues
                 if (Input.GetButtonUp("Use"))
                 {
                     var puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
-                    if (puzzleObject != null && !puzzleObject.Puzzle.IsFinished)
+                    if (puzzleObject != null && !puzzleObject.Puzzle.IsFinished && !puzzleObject.Puzzle.IsActive)
                     {
                         puzzleObject.Puzzle.Activate();
-                        _physicsService.Pause();
                     }
 
                     var hidingPlace = GetInteractableObject<HidingPlaceBehaviour>(InteractableObjectType.HidingPlace);
@@ -137,7 +135,7 @@ namespace Rescues
                     var stand = GetInteractableObject<StandBehaviour>(InteractableObjectType.Stand);
                     if (stand != null)
                     {
-                        OpenInterfaceWindow(stand.StandWindow.gameObject, stand.StandWindow.GetComponent<StandUI>().StandItemSlots[0].gameObject);
+                        stand.StandWindow.SetActive(true);
                     }
                 }
 
