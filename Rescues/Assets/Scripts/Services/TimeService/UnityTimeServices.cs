@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Rescues
 {
-    public sealed class UnityTimeService: Service
+    public sealed class UnityTimeServices: Service
     {
         #region Fields
 
@@ -15,7 +15,7 @@ namespace Rescues
 
         #region ClassLifeCycles
 
-        public UnityTimeService(Contexts contexts) : base(contexts) { }
+        public UnityTimeServices(Contexts contexts) : base(contexts) { }
 
         #endregion
 

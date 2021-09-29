@@ -43,9 +43,8 @@ namespace Rescues
 
         public void Close(Puzzle puzzle)
         {
-            puzzle.gameObject.SetActive(false);
-            _pianoExecuteControllers.Clear();
             puzzle.ResetValues();
+            _pianoExecuteControllers.Clear();
         }
 
         public void Finish(Puzzle puzzle)
@@ -54,9 +53,7 @@ namespace Rescues
             pianoPuzzle.OnPianoButtonDown -= pianoPuzzle.AddToPlayerCombination;
             pianoPuzzle.OnPianoButtonDown -= pianoPuzzle.SoundPlay;
 
-            puzzle.IsFinished = true;
             puzzle.Close();
-            UnityEngine.Debug.Log("piano puzzle finish");
         }
 
         public void CheckComplete(Puzzle puzzle)
@@ -64,7 +61,7 @@ namespace Rescues
             var pianoPuzzle = puzzle as PianoPuzzle;
             if (pianoPuzzle.PlayerCombination.Count == pianoPuzzle.WinCombination.Count)
             {
-                Finish(puzzle);                
+                puzzle.Finish();                
             }
         }
 
@@ -76,12 +73,9 @@ namespace Rescues
 
         public void Execute()
         {
-            if (_pianoExecuteControllers != null && _pianoExecuteControllers.Count > 0)
+            for (int i = 0; i < _pianoExecuteControllers?.Count; i++)
             {
-                foreach (var controller in _pianoExecuteControllers)
-                {
-                    controller.Execute();
-                } 
+                _pianoExecuteControllers[i]?.Execute();
             }
         }
 

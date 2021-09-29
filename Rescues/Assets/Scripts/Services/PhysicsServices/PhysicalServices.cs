@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Rescues
 {
-    public sealed class PhysicsService : Service
+    public sealed class PhysicalServices : Service
     {
         #region Fields
 
@@ -39,7 +39,7 @@ namespace Rescues
 
         #region ClassLifeCycles
 
-        public PhysicsService(Contexts contexts) : base(contexts)
+        public PhysicalServices(Contexts contexts) : base(contexts)
         {
             _collidedObjects = new Collider2D[COLLIDED_OBJECT_SIZE];
             _castBuffer = new RaycastHit2D[64];

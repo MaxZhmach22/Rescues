@@ -36,22 +36,24 @@ namespace Rescues
         }
 
         public void Close()
-        {
+        {        
             if (_delayAfterFinish > 0)
             {
                 StartCoroutine(CloseWithDelay());
             }
             else
             {
-                ForceClose();
+                gameObject.SetActive(false);
             }
 
+            Closed.Invoke(this);
             IsActive = false;
         }
 
         public void Finish()
         {
             Finished.Invoke(this);
+            IsFinished = true;
         }
 
         public void ResetValues()
@@ -64,16 +66,17 @@ namespace Rescues
             CheckCompleted.Invoke(this);
         }
 
+        public void ForceClose()
+        {
+            Closed.Invoke(this);
+            gameObject.SetActive(false);
+            IsActive = false;
+        }
+
         private IEnumerator CloseWithDelay()
         {
             yield return new WaitForSeconds(_delayAfterFinish);
-            ForceClose();
-        }
-
-        public void ForceClose()
-        {
             gameObject.SetActive(false);
-            IsActive = false;
         }
         
         #endregion
