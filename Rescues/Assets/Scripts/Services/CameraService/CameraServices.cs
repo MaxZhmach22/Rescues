@@ -22,9 +22,10 @@ namespace Rescues
 
         public CameraServices(Contexts contexts) : base(contexts)
         {
-            CameraMain = Camera.main;           
-            _cameraDragSpeed = Data.CameraData.CameraDragSpeed;
-            _cameraFreeMoveLimit = Data.CameraData.CameraFreeMoveLimit;
+            CameraMain = Camera.main;
+            var context = contexts as GameContext;
+            _cameraDragSpeed = context.ActiveLocation.CameraData.CameraDragSpeed;
+            _cameraFreeMoveLimit = context.ActiveLocation.CameraData.CameraFreeMoveLimit;
         }
 
         #endregion
