@@ -2323,7 +2323,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 6
   StandWindow: {fileID: 82461972379826494}
-  _boxCollider2D: {fileID: 0}
 --- !u!114 &1677183718369130054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4104,7 +4103,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 823619f42070b1e4798d6d80eb608660, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.407
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8443,6 +8442,7 @@ MonoBehaviour:
   _type: 5
   Puzzle: {fileID: 5235566011315741230, guid: d0950d6b9c26b469dbaac675321a4991, type: 3}
   ItemData: {fileID: 11400000, guid: 94bbec4b67b144a889865f5e8a89cd34, type: 2}
+  finishEvents: []
 --- !u!1001 &44869555612493043
 PrefabInstance:
   m_ObjectHideFlags: 0
