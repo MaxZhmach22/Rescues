@@ -54,7 +54,7 @@ namespace Rescues
                     gate.ThisLevelName = levelName;
                 }
                 
-                var triggers = location.LocationInstance.transform.GetComponentsInChildren<InteractableObjectBehavior>();
+                var triggers = location.LocationInstance.transform.GetComponentsInChildren<InteractableObjectBehavior>(true);
                 foreach (var trigger in triggers)
                 {
                     Context.AddTriggers(trigger.Type, trigger);

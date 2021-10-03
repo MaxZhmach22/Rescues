@@ -14,14 +14,6 @@ namespace Rescues
         #endregion
 
 
-        #region Properties
-
-        public ItemSlot DraggedSlot { get => _draggedSlot; private set => _draggedSlot = value; }
-
-
-        #endregion
-
-
         #region ClassLifeCycles
 
         public InventoryController(GameContext context)
@@ -71,8 +63,11 @@ namespace Rescues
         }
 
         private void EndDrag(ItemSlot itemSlot)
-        {          
-            TryToUseItem();
+        {
+            if (_draggedSlot != null)
+            {
+                TryToUseItem(); 
+            }
             _inventory.draggableImage.enabled = false;
             _draggedSlot = null;
         }
