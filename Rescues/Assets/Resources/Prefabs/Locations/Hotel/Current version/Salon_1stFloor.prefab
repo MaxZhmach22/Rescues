@@ -1074,7 +1074,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 6
   StandWindow: {fileID: 4512934652594739860}
-  _boxCollider2D: {fileID: 0}
 --- !u!114 &8363147895211623692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1316,7 +1315,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 6
   StandWindow: {fileID: 5744476930202147897}
-  _boxCollider2D: {fileID: 0}
 --- !u!114 &5680359161039154596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1761,7 +1759,7 @@ GameObject:
   - component: {fileID: 6396838832741038242}
   - component: {fileID: 5907541622321360578}
   m_Layer: 0
-  m_Name: Salon
+  m_Name: Salon_1stFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1885,7 +1883,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 6
   StandWindow: {fileID: 1271464431589895794}
-  _boxCollider2D: {fileID: 0}
 --- !u!114 &5882156966435119747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3824,7 +3821,7 @@ PrefabInstance:
     - target: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_Name
-      value: 2 to Hotel_Salon_3
+      value: 2 to Hotel_Salon_2ndFloor_3
       objectReference: {fileID: 0}
     - target: {fileID: 4826721140499636313, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -3849,7 +3846,7 @@ PrefabInstance:
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: _goToLocationName
-      value: Salon
+      value: Salon_2ndFloor
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
