@@ -24,10 +24,7 @@ namespace Rescues
             services.Initialize(context);
 
             _activeController = new GameSystemsController(context, services);
-            _activeController.Initialize();
-
-            context.Inventory = FindObjectOfType<Inventory>();
-            context.Inventory.gameObject.SetActive(false);
+            _activeController.Initialize();          
 
             Time.timeScale = 1;
         }

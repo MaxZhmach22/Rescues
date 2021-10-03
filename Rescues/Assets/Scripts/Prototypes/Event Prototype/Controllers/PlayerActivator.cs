@@ -18,9 +18,9 @@ namespace Rescues
         {
             if (collision.gameObject.CompareTag("EditorOnly"))
             {
-                var curEvent = collision.GetComponent<OntriggerEvent>();
-                CurrentTrigger = curEvent;
-                curEvent.ActivateTriggerEnterEvent();
+                var enteredObject = collision.GetComponent<OntriggerEvent>();
+                CurrentTrigger = enteredObject;
+                CurrentTrigger?.ActivateTriggerEnterEvent();
             }
         }
 
@@ -29,7 +29,7 @@ namespace Rescues
             var exitedObject = collision.GetComponent<OntriggerEvent>();
             if (CurrentTrigger == exitedObject && CurrentTrigger != null)
             {
-                CurrentTrigger.ActivateTriggerExitEvent();
+                CurrentTrigger?.ActivateTriggerExitEvent();
                 CurrentTrigger = null;
             }
         }

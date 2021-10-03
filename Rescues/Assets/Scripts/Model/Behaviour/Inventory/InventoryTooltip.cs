@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 namespace Rescues
 {
-    public class InventoryTooltip : MonoBehaviour
+    public sealed class InventoryTooltip : MonoBehaviour
     {
         #region Fields
 
-        [SerializeField] Text ItemNameText;
-        [SerializeField] Text ItemDescriptionText;
+        [SerializeField] private Text ItemNameText;
+        [SerializeField] private Text ItemDescriptionText;
 
         #endregion
 
