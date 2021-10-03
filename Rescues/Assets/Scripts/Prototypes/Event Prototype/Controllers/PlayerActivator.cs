@@ -16,12 +16,9 @@ namespace Rescues
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("EditorOnly"))
-            {
-                var enteredObject = collision.GetComponent<OntriggerEvent>();
-                CurrentTrigger = enteredObject;
-                CurrentTrigger?.ActivateTriggerEnterEvent();
-            }
+            var enteredObject = collision.GetComponent<OntriggerEvent>();
+            CurrentTrigger = enteredObject;
+            CurrentTrigger?.ActivateTriggerEnterEvent();
         }
 
         private void OnTriggerExit2D(Collider2D collision)
