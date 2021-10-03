@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61d6f3809f2f7b34f8c8b8289db76ec8, type: 3}
-  m_Name: ItemRecipe
+  m_Script: {fileID: 11500000, guid: 909c073486854737afecf0d2b2c734a6, type: 3}
+  m_Name: Stand
   m_EditorClassIdentifier: 
-  ItemA: {fileID: 0}
-  ItemB: {fileID: 0}
-  ItemResult: {fileID: 0}
+  Name: Stand
+  Description: Just stand
+  Icon: {fileID: 21300000, guid: 283fb828759a0d64fbd0a11fa8577291, type: 3}
+  IsDestructuble: 0

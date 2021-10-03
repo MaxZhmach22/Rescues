@@ -11,7 +11,7 @@ namespace Rescues
         #region Fields
 
         public CharacterModel Character;
-        public Inventory Inventory;
+        public InventoryBehaviour Inventory;
         public GameMenuBehaviour gameMenu;
         public EnemyBehaviour Enemy;
         public LocationData ActiveLocation;
