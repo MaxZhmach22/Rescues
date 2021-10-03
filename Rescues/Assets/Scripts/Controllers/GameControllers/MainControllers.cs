@@ -12,9 +12,9 @@
             Add(new ItemActiveController(context, services));
             Add(new MainPuzzleController(context, services));
             Add(new HidingPlaceController(context, services));        
+            Add(new ActivatorController());
             Add(new InputController(context, services));
             Add(new InventoryController(context));
-            Add(new ActivatorController());
         }
 
         #endregion

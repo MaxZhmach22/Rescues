@@ -75,14 +75,7 @@ namespace Rescues
                 }
 
                 if (Input.GetButtonUp("PickUp"))
-                {
-                    var interactableObject = GetInteractableObject<ItemBehaviour>(InteractableObjectType.Item);
-                    if (interactableObject != null)
-                    {
-                        _context.Character.StatePickUpAnimation(interactableObject);
-                        interactableObject.gameObject.SetActive(false);
-                    }
-
+                {                    
                     var trapBehaviour = GetInteractableObject<TrapBehaviour>(InteractableObjectType.Trap);
                     if (trapBehaviour != null)
                     {
@@ -100,6 +93,13 @@ namespace Rescues
 
                 if (Input.GetButtonUp("Use"))
                 {
+                    var interactableObject = GetInteractableObject<ItemBehaviour>(InteractableObjectType.Item);
+                    if (interactableObject != null)
+                    {
+                        _context.Character.StatePickUpAnimation(interactableObject);
+                        interactableObject.gameObject.SetActive(false);
+                    }
+
                     var puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
                     if (puzzleObject != null && !puzzleObject.Puzzle.IsFinished && !puzzleObject.Puzzle.IsActive)
                     {
