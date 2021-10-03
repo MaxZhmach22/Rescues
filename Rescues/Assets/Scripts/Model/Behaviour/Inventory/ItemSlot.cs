@@ -10,7 +10,7 @@ namespace Rescues
     {
         #region Fields
 
-        [SerializeField] Image image;       
+        [SerializeField] private Image _image;       
         public event Action<ItemSlot> OnBeginDragEvent;
         public event Action<ItemSlot> OnEndDragEvent;
         public event Action<ItemSlot> OnDragEvent;
@@ -35,12 +35,12 @@ namespace Rescues
                 _item = value;
                 if (_item == null)
                 {
-                    image.color = _disabledColor;
+                    _image.color = _disabledColor;
                 }
                 else
                 {
-                    image.sprite = _item.Icon;
-                    image.color = _normalColor;
+                    _image.sprite = _item.Icon;
+                    _image.color = _normalColor;
                 }
             }
         }
@@ -52,9 +52,9 @@ namespace Rescues
 
         protected virtual void OnValidate()
         {
-            if (image == null)
+            if (_image == null)
             {
-                image = GetComponent<Image>();
+                _image = GetComponent<Image>();
             }
         }
 
@@ -70,13 +70,13 @@ namespace Rescues
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            if (Item != null) image.color = _dragColor;
+            if (Item != null) _image.color = _dragColor;
             OnBeginDragEvent?.Invoke(this);
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            if (Item != null) image.color = _normalColor;
+            if (Item != null) _image.color = _normalColor;
             OnEndDragEvent?.Invoke(this);
         }
 

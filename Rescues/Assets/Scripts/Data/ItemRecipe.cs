@@ -31,7 +31,7 @@ namespace Rescues
             return canCraft;
         }
 
-        public ItemData Craft(Inventory inventory)
+        public ItemData Craft(InventoryBehaviour inventory)
         {
             if(ItemA.IsDestructuble) inventory.RemoveItem(ItemA);
             if(ItemB.IsDestructuble) inventory.RemoveItem(ItemB);                      
