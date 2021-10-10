@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -13,7 +14,12 @@ namespace Rescues
         private readonly GameContext _context;
         private readonly CameraServices _cameraServices;
         private readonly PhysicalServices _physicsService;
+        private PlayerStates _playerState;
+        private PlayerStates _lastState;
         private GameObject _interfaceWindow;
+        private Action _cancelState = () => { };
+        private Vector2 _inputAxis;
+        private bool _isStateLocked;
 
         #endregion
 
@@ -35,7 +41,7 @@ namespace Rescues
         public void Execute()
         {
             if (Input.GetButtonUp("Cancel"))
-            {              
+            {
                 var puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
                 if (puzzleObject != null && puzzleObject.Puzzle.IsActive)
                 {
@@ -47,116 +53,41 @@ namespace Rescues
                 }
             }
 
-            if (!_physicsService.IsPaused)
+            _inputAxis.x = Input.GetAxis("Horizontal");
+            _inputAxis.y = Input.GetAxis("Vertical");
+
+            if (_physicsService.IsPaused == false && _isStateLocked == false)
             {
-                Vector2 inputAxis;
-                inputAxis.x = Input.GetAxis("Horizontal");
-                inputAxis.y = Input.GetAxis("Vertical");
-
-                _context.Character.AfterSceneLoad.Invoke();
-
-                if (inputAxis.x != 0)
-                {
-                    var direction = inputAxis.x > 0 ? 1 : -1;
-                    _context.Character.StateMoving(direction);
-                }
-                else
-                {
-                    _context.Character.StateMoving(0);
-                }
+                _context.character.OnSceneLoad(_inputAxis.x);
 
                 if (Input.GetButtonUp("Vertical"))
                 {
-                    var interactableObject = GetInteractableObject<Gate>(InteractableObjectType.Gate);
-                    if (interactableObject != null)
-                    {
-                        _context.Character.StateTeleporting(interactableObject);
-                    }
+                    _playerState = PlayerStates.GoByGateWay;
+                    SwitchState();                   
                 }
 
                 if (Input.GetButtonUp("PickUp"))
-                {                    
-                    var trapBehaviour = GetInteractableObject<TrapBehaviour>(InteractableObjectType.Trap);
-                    if (trapBehaviour != null)
-                    {
-                        if (_context.Inventory.Contains(trapBehaviour.TrapInfo.RequiredTrapItem))
-                        {
-                            _context.Character.StateCraftTrapAnimation(trapBehaviour);
-                        }
-                    }
+                {
+                    _playerState = PlayerStates.PickUp;
+                    SwitchState();                  
                 }
 
                 if (Input.GetButtonUp("Inventory"))
                 {
-                    _context.Inventory.gameObject.SetActive(!_context.Inventory.gameObject.activeSelf);
+                    _playerState = PlayerStates.Inventory;
+                    SwitchState();                    
+                }
+
+                if (Input.GetButtonUp("Notepad"))
+                {
+                    _playerState = PlayerStates.Notepad;
+                    SwitchState();                   
                 }
 
                 if (Input.GetButtonUp("Use"))
                 {
-                    var interactableObject = GetInteractableObject<ItemBehaviour>(InteractableObjectType.Item);
-                    if (interactableObject != null)
-                    {
-                        _context.Character.StatePickUpAnimation(interactableObject);
-                        interactableObject.gameObject.SetActive(false);
-                    }
-
-                    var puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
-                    if (puzzleObject != null && !puzzleObject.Puzzle.IsFinished && !puzzleObject.Puzzle.IsActive)
-                    {
-                        puzzleObject.Puzzle.Activate();
-                    }
-
-                    var hidingPlace = GetInteractableObject<HidingPlaceBehaviour>(InteractableObjectType.HidingPlace);
-                    if (_context.Character.PlayerState == State.Hiding)
-                    {
-                        _context.Character.StateHideAnimation(hidingPlace);
-                    }
-                    if (hidingPlace != null)
-                    {
-                        _context.Character.StateHideAnimation(hidingPlace);
-                    }
-
-                    var stand = GetInteractableObject<StandBehaviour>(InteractableObjectType.Stand);
-                    if (stand != null)
-                    {
-                        stand.StandWindow.SetActive(true);
-                    }
-                }
-
-
-                if (_context.Character.AnimationPlayTimer.IsEvent())
-                {
-                    switch (_context.Character.PlayerState)
-                    {
-                        case State.HideAnimation:
-                            {
-                                _context.Character.StateHiding();
-                                break;
-                            }
-
-                        case State.PickUpAnimation:
-                            {
-                                var item = _context.Character.InteractableItem as ItemBehaviour;
-                                _context.Inventory.AddItem(item.ItemData);
-                                _context.Character.StateIdle();
-                                break;
-                            }
-
-                        case State.CraftTrapAnimation:
-                            {
-                                var trap = _context.Character.InteractableItem as TrapBehaviour;
-                                trap.CreateTrap();
-                                _context.Inventory.RemoveItem(trap.TrapInfo.RequiredTrapItem);
-                                _context.Character.StateIdle();
-                                break;
-                            }
-                        case State.GoByGateWay:
-                            {
-                                _context.Character.Gate.GoByGateWay();
-                                _context.Character.StateIdle();
-                                break;
-                            }
-                    }
+                    _playerState = PlayerStates.Use;
+                    SwitchState();
                 }
 
                 if (Input.GetButtonDown("Mouse ScrollPressed"))
@@ -172,7 +103,7 @@ namespace Rescues
                 if (Input.GetButtonUp("Mouse ScrollPressed"))
                 {
                     _cameraServices.LockCamera();
-                } 
+                }
             }
         }
 
@@ -196,6 +127,125 @@ namespace Rescues
             }
 
             return behaviour;
+        }
+
+        private void SwitchState()
+        {
+            _cancelState.Invoke();
+
+            if (_playerState != _lastState)
+            {
+                switch (_playerState)
+                {
+                    case PlayerStates.GoByGateWay:
+                        {
+                            var gate = GetInteractableObject<Gate>(InteractableObjectType.Gate);
+                            if (gate != null)
+                            {
+                                _isStateLocked = true;
+                                TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(() =>
+                                {
+                                    gate.GoByGateWay();
+                                    _isStateLocked = false;
+                                },
+                                gate.LocalTransferTime));
+                            }
+
+                            _cancelState = () => { };
+                        }
+                        break;
+
+                    case PlayerStates.PickUp:
+                        {
+                            var trap = GetInteractableObject<TrapBehaviour>(InteractableObjectType.Trap);
+                            if (trap != null)
+                            {
+                                if (_context.inventory.Contains(trap.TrapInfo.RequiredTrapItem))
+                                {
+                                    _isStateLocked = true;
+                                    TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(() =>
+                                    {
+                                        trap.CreateTrap();
+                                        _context.inventory.RemoveItem(trap.TrapInfo.RequiredTrapItem);
+                                        _isStateLocked = false;
+                                    },
+                                    trap.TrapInfo.BaseTrapData.CraftingTime));
+                                }
+                            }
+
+                            _cancelState = () => { };
+                        }
+                        break;
+
+                    case PlayerStates.Inventory:
+                        {
+                            _context.inventory.gameObject.SetActive(true);
+
+                            _cancelState = () =>
+                            {
+                                _context.inventory.gameObject.SetActive(false);
+                            };
+                        }
+                        break;
+
+                    case PlayerStates.Notepad:
+                        {
+                            _context.notepad.gameObject.SetActive(true);
+
+                            _cancelState = () =>
+                            {
+                                _context.notepad.gameObject.SetActive(false);
+                            };
+                        }
+                        break;
+
+                    case PlayerStates.Use:
+                        {
+                            var item = GetInteractableObject<ItemBehaviour>(InteractableObjectType.Item);
+                            if (item != null)
+                            {
+                                _isStateLocked = true;
+                                TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(() =>
+                                {
+                                    item.gameObject.SetActive(false);
+                                    _context.inventory.AddItem(item.ItemData);
+                                    _isStateLocked = false;
+                                },
+                                item.PickUpTime));
+                            }
+
+                            var puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
+                            if (puzzleObject != null && !puzzleObject.Puzzle.IsFinished && !puzzleObject.Puzzle.IsActive)
+                            {
+                                puzzleObject.Puzzle.Activate();
+                            }
+
+                            var hidingPlace = GetInteractableObject<HidingPlaceBehaviour>(InteractableObjectType.HidingPlace);
+                            if (hidingPlace != null)
+                            {
+                                _context.character.StartHiding(hidingPlace);
+                            }
+
+                            _cancelState = () => { };
+
+                            var stand = GetInteractableObject<StandBehaviour>(InteractableObjectType.Stand);
+                            if (stand != null)
+                            {
+                                stand.StandWindow.SetActive(true);
+                                _cancelState = () =>
+                                {
+                                    stand.StandWindow.SetActive(false);
+                                };
+                            }                           
+                        }
+                        break; 
+                }
+                _lastState = _playerState;
+            }
+            else
+            {
+                _lastState = default;
+            }
         }
 
         #endregion

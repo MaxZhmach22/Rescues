@@ -8,7 +8,7 @@ namespace Rescues
     {
         #region Fields
 
-        public List<ItemEventsData> itemDependsEvents; 
+        public List<ItemEventsData> itemDependsEvents;
 
         #endregion
     }

@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
-using System;
+using UnityEngine.UI;
 
 
 namespace Rescues
@@ -10,7 +10,7 @@ namespace Rescues
     {
         #region Fields
 
-        [SerializeField] private Image _image;       
+        [SerializeField] private Image _image;
         public event Action<ItemSlot> OnBeginDragEvent;
         public event Action<ItemSlot> OnEndDragEvent;
         public event Action<ItemSlot> OnDragEvent;

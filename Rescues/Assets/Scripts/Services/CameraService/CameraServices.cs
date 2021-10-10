@@ -24,8 +24,8 @@ namespace Rescues
         {
             CameraMain = Camera.main;
             var context = contexts as GameContext;
-            _cameraDragSpeed = context.ActiveLocation.CameraData.CameraDragSpeed;
-            _cameraFreeMoveLimit = context.ActiveLocation.CameraData.CameraFreeMoveLimit;
+            _cameraDragSpeed = context.activeLocation.CameraData.CameraDragSpeed;
+            _cameraFreeMoveLimit = context.activeLocation.CameraData.CameraFreeMoveLimit;
         }
 
         #endregion
