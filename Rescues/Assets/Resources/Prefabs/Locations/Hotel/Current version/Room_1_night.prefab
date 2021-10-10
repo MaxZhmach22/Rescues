@@ -419,8 +419,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080513757402864829}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.06, y: -2.61, z: 2.645497}
-  m_LocalScale: {x: 1, y: 2.5802, z: 1}
+  m_LocalPosition: {x: -2.08, y: -2.73, z: 2.645497}
+  m_LocalScale: {x: 0.2301, y: 0.19764332, z: 1}
   m_Children: []
   m_Father: {fileID: 5398212372194542168}
   m_RootOrder: 1
@@ -432,7 +432,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080513757402864829}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -464,10 +464,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
-  m_Sprite: {fileID: 3625043607559282579, guid: 0d267bc78a0864eb48358689b29ed20a,
-    type: 3}
-  m_Color: {r: 0.8396226, g: 0.08317016, b: 0.08317016, a: 1}
+  m_SortingOrder: 21
+  m_Sprite: {fileID: 21300000, guid: 0ded2b9ded815304d8d6356475b47718, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 0
@@ -494,7 +493,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
+    oldSize: {x: 9.39, y: 7.47}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -834,13 +833,26 @@ MonoBehaviour:
             m_StringArgument: GootR
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 476598453178057439}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: 
-          m_Mode: 1
+          m_MethodName: SetQuestion
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C\u0441\u044F
+              \u0438\u0437 \u043A\u043E\u043C\u043D\u0430\u0442\u044B"
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 476598453178057439}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: SetValue
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1249,6 +1261,7 @@ GameObject:
   - component: {fileID: 913261962204116999}
   - component: {fileID: 4297514956555088300}
   - component: {fileID: 1898261558774818009}
+  - component: {fileID: 3074853108850302195}
   m_Layer: 0
   m_Name: ToothBrush
   m_TagString: Untagged
@@ -1263,13 +1276,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4815839604314195662}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.25, y: 3.45, z: 2.645497}
-  m_LocalScale: {x: 1, y: 2.5802, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.90690273, w: -0.4213401}
+  m_LocalPosition: {x: 6.04, y: 0.07, z: 2.645497}
+  m_LocalScale: {x: 0.15774372, y: 0.11169534, z: 1}
   m_Children: []
   m_Father: {fileID: 5398212372194542168}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 229.838}
 --- !u!212 &913261962204116999
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1310,13 +1323,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 3625043607559282579, guid: 0d267bc78a0864eb48358689b29ed20a,
-    type: 3}
-  m_Color: {r: 0.8396226, g: 0.08317016, b: 0.08317016, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b638e518dc76dbd40a1242041375e425, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 8.87, y: 12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1339,8 +1351,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
-    newSize: {x: 1, y: 0.5}
+    oldSize: {x: 8.87, y: 12}
+    newSize: {x: 8.87, y: 12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1355,14 +1367,46 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4815839604314195662}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57db5fc1402344f5aa215272e42ebff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
-  ItemData: {fileID: 0}
+  ItemData: {fileID: 11400000, guid: e346ba9fc758c1b41a92aef5ff4b6131, type: 2}
   PickUpTime: 0.5
+--- !u!114 &3074853108850302195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4815839604314195662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents:
+  - IsRepeating: 0
+    Time: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 476598453178057439}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: CallDialogue
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: BrushDialogue
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5042890428022809989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,7 +1468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2797779170396346468
 Transform:
   m_ObjectHideFlags: 0
@@ -1563,7 +1607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5398212372194542168
 Transform:
   m_ObjectHideFlags: 0
@@ -2172,7 +2216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1117081673826280387
 Transform:
   m_ObjectHideFlags: 0

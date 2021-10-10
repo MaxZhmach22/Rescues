@@ -239,7 +239,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: RingQuest
+            m_StringArgument: "\u041F\u043E\u0447\u0438\u043D\u0438\u0442\u044C \u0437\u0432\u043E\u043D\u043E\u043A"
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 4982309870240704559}
@@ -304,7 +304,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 4982309870240704559}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: AddDeactiveGameObject
+          m_MethodName: AddActiveGameObject
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 146422744201183376}
@@ -3024,18 +3024,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
-          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: AddActiveGameObject
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 0
         - m_Target: {fileID: 4982309870240704559}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: CallDialogue

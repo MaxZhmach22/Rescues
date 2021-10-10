@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <dialogue>
   <node id="0" text="" leftImage="" rightImage="">
-    <answer quest="CellorDoorQuest" send="3" greater="1" exit="True">Думаю эта трость может сгодиться</answer>
+    <answer quest="Попасть в подвал" send="3" greater="1" exit="True">Думаю эта трость может сгодиться</answer>
   </node>
 </dialogue>
