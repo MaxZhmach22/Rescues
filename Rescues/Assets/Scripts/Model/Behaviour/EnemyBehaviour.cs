@@ -65,12 +65,12 @@ namespace Rescues
 
         public void Vision()
         {
-            var hit = _physicsService.VisionDetectionPlayer(transform.position, _visionDirection, EnemyData.VisionDistance);
+            //var hit = _physicsService.VisionDetectionPlayer(transform.position, _visionDirection, EnemyData.VisionDistance);
 
-            if (hit)
-            {
-                ScreenInterface.GetInstance().Execute(ScreenType.GameOver);
-            }
+            // if (hit)
+            // {
+            //     ScreenInterface.GetInstance().Execute(ScreenType.GameOver);
+            // }
         }
 
         public void SetVisionDirection(Vector3 visionDirection)
