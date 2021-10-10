@@ -160,6 +160,72 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\u041E\u0447\u0435\u0440\u0442\u0430\u043D\u0438\u044F \u043D\u0430\u0448\u0435\u0439
     \u043C\u0430\u0448\u0438\u043D\u044B \u0435\u0434\u0432\u0430 \u0432\u0438\u0434\u043D\u044B."
+--- !u!1 &229890613726134837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 886096046028018046}
+  - component: {fileID: 4230270234727861076}
+  - component: {fileID: 8692372981926614631}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &886096046028018046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229890613726134837}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2861045581699026726}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4230270234727861076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229890613726134837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &8692372981926614631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229890613726134837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1 &729248413218700351
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,6 +729,7 @@ GameObject:
   - component: {fileID: 6699999546076180434}
   - component: {fileID: 3111318657101252345}
   - component: {fileID: 1053492685089547453}
+  - component: {fileID: 3722470114503844186}
   m_Layer: 0
   m_Name: Room1
   m_TagString: EditorOnly
@@ -678,7 +745,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2458636130452150299}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.69, y: -5.89, z: 1.6252437}
+  m_LocalPosition: {x: -23.23, y: -3.15, z: 1.6252437}
   m_LocalScale: {x: 0.049999997, y: 0.049999997, z: 0.049999997}
   m_Children: []
   m_Father: {fileID: 7139327554890453120}
@@ -755,13 +822,25 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5094340410611176424}
-          m_TargetAssemblyTypeName: Rescues.Gate, Assembly-CSharp
-          m_MethodName: GoByGateWay
-          m_Mode: 1
+        - m_Target: {fileID: 476598453178057439}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: CallDialogue
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: GootR
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -793,6 +872,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20, y: 20}
   m_EdgeRadius: 0
+--- !u!114 &3722470114503844186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2458636130452150299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd0fb566247d43e40a007c60cd0fbd9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDependsEvents:
+  - ItemData: {fileID: 11400000, guid: 30095eaf594323b42beb2df57250c6d4, type: 2}
+    Events:
+    - IsRepeating: 0
+      Time: 0
+      Event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+            m_MethodName: set_enabled
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
 --- !u!1 &2861045581157506318
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,7 +976,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 14
   m_Sprite: {fileID: 21300000, guid: cf7d2195670383944b092bef4c2b3d87, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -886,7 +997,7 @@ GameObject:
   - component: {fileID: 2861045581699026726}
   - component: {fileID: 2861045581699026727}
   m_Layer: 0
-  m_Name: Character`sRoom
+  m_Name: Room_1_night
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -915,6 +1026,8 @@ Transform:
   - {fileID: 8418874870812551204}
   - {fileID: 4588025646829333011}
   - {fileID: 7139327554890453120}
+  - {fileID: 5636689624283554828}
+  - {fileID: 886096046028018046}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1250,6 +1363,49 @@ MonoBehaviour:
   _type: 2
   ItemData: {fileID: 0}
   PickUpTime: 0.5
+--- !u!1 &5042890428022809989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4135785429707111563}
+  - component: {fileID: 476598453178057439}
+  m_Layer: 0
+  m_Name: Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4135785429707111563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5042890428022809989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5636689624283554828}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &476598453178057439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5042890428022809989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2e0860d9f423304a8e839f011572e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5076720352511983612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,34 +1510,17 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 476598453178057439}
+          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
+          m_MethodName: CallDialogue
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: GootR_1
             m_BoolArgument: 1
-          m_CallState: 2
-  - IsRepeating: 0
-    Time: 2
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
           m_CallState: 2
 --- !u!61 &3324273118835929523
 BoxCollider2D:
@@ -1710,6 +1849,37 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &6321867080525262356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5636689624283554828}
+  m_Layer: 0
+  m_Name: Behaviour
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5636689624283554828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6321867080525262356}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4135785429707111563}
+  m_Father: {fileID: 2861045581699026726}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7103058930978178990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,7 +2006,7 @@ GameObject:
   - component: {fileID: 579694316336747202}
   - component: {fileID: 7726381528954102999}
   m_Layer: 5
-  m_Name: Text_Pict
+  m_Name: Text_Door_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1902,10 +2072,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0421\u0442\u0440\u0430\u043D\u043D\u044B\u0439 \u0432\u044B\u0431\u043E\u0440
-    \u043A\u0430\u0440\u0442\u0438\u043D \u0432 \u044D\u0442\u043E\u043C \u043E\u0442\u0435\u043B\u0435.
-    \u041C\u0440\u0430\u0447\u043D\u043E\u0432\u0430\u0442\u043E, \u043D\u043E \u0447\u0442\u043E-\u0442\u043E
-    \u0432 \u044D\u0442\u043E\u043C \u0435\u0441\u0442\u044C."
+  m_Text: "\u041F\u043E\u0445\u043E\u0436\u0435 \u0435\u0451 \u0437\u0430\u043F\u0435\u0440\u043B\u0438
+    \u0441\u043D\u0430\u0440\u0443\u0436\u0438"
 --- !u!1 &7589124049908435685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,7 +2332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4770570578507872586
 Transform:
   m_ObjectHideFlags: 0
@@ -2363,7 +2531,7 @@ GameObject:
   - component: {fileID: 8482100771677519261}
   - component: {fileID: 6522074986996016124}
   m_Layer: 5
-  m_Name: Text_Room2
+  m_Name: Text_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2429,9 +2597,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0412\u0438\u0434\u0438\u043C\u043E \u044D\u0442\u043E \u0442\u0430 \u0441\u043C\u0435\u0436\u043D\u0430\u044F
-    \u043A\u043E\u043C\u043D\u0430\u0442\u0430 \u043F\u0440\u043E \u043A\u043E\u0442\u043E\u0440\u0443\u044E
-    \u0433\u043E\u0432\u043E\u0440\u0438\u0442 \u043C\u0435\u0442\u0440\u0434\u043E\u0442\u0435\u043B\u044C. "
+  m_Text: "\u041D\u0435 \u043C\u043E\u0433\u0443 \u043E\u0442\u043A\u0440\u044B\u0442\u044C
+    \u0434\u0432\u0435\u0440\u044C"
 --- !u!1001 &1724250493504135223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2442,17 +2609,22 @@ PrefabInstance:
     - target: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_Name
-      value: 2 to Hotel_Room_1_night_1
+      value: 1 to Hotel_Corridor_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826721140499636313, guid: a92e6ec87f5ad4c038229934453c278f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: _goToGateId
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: _thisGateId
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -2462,12 +2634,12 @@ PrefabInstance:
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: _goToLocationName
-      value: Room_1_night
+      value: Corridor
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: _localTransferTime
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7149498112034572307, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -2477,12 +2649,12 @@ PrefabInstance:
     - target: {fileID: 7149498112034572307, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.96
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 7149498112034572307, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.4
+      value: -7.69
       objectReference: {fileID: 0}
     - target: {fileID: 7149498112034572307, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -2526,18 +2698,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a92e6ec87f5ad4c038229934453c278f, type: 3}
---- !u!114 &5094340410611176424 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1724250493504135223}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12671e5468464ffb931aedbf36e82e97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &8418874870812551204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7149498112034572307, guid: a92e6ec87f5ad4c038229934453c278f,
@@ -3096,7 +3256,12 @@ PrefabInstance:
     - target: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_Name
-      value: 1 to Hotel_Corridor_2
+      value: 2 to Hotel_Corridor_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826721140499636313, guid: a92e6ec87f5ad4c038229934453c278f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -3106,7 +3271,7 @@ PrefabInstance:
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: _thisGateId
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}

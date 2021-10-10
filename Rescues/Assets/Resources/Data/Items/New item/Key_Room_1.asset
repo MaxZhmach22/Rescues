@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 909c073486854737afecf0d2b2c734a6, type: 3}
-  m_Name: Key_Room
+  m_Name: Key_Room_1
   m_EditorClassIdentifier: 
   Name: "\u041A\u043B\u044E\u0447 \u043E\u0442 \u043A\u043E\u043C\u043D\u0430\u0442\u044B"
   Description: "\u041A\u043B\u044E\u0447 \u043E\u0442 \u043D\u043E\u043C\u0435\u0440\u0430.
