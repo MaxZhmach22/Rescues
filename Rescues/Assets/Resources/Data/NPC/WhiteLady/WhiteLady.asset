@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: WhiteLady
   m_EditorClassIdentifier: 
   NpcStruct:
-    PatrollingSpeed: 0
-    InRageSpeed: 0
-    NPCvision: 0
-    NPCState: 0
+    index: 0
+    Prefab: {fileID: 3868648507233925796, guid: 141c02eccf3bec141954c28ffa3d34d3,
+      type: 3}
+    PatrollingSpeed: 3
+    InRageSpeed: 5
+    NPCState: 1
+    NPCvision: 5
+    NPCcatch: 2
