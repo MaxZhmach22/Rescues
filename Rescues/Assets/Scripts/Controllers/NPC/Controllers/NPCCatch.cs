@@ -5,7 +5,7 @@ namespace Rescues.NPC.Controllers
 {
     public sealed class NPCCatch
     {
-        public void CatchZoneCheck(BaseNPC baseNpc,PhysicsService physicsService,Vector3 visionDirection)
+        public void CatchZoneCheck(BaseNPC baseNpc,PhysicalServices physicsService,Vector3 visionDirection)
         {
             Vector3 upPosition = baseNpc.transform.position + Vector3.up;
             var hit = physicsService.VisionDetectionPlayer(upPosition,

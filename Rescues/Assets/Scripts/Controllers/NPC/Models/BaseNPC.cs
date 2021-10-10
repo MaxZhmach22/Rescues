@@ -20,7 +20,7 @@ namespace Rescues.NPC.Models
         public int Modificator { get => _modificator; }
 
         private int _modificator = 1;
-        private PhysicsService _physicsService;
+        private PhysicalServices _physicsService;
         private Vector3 _visionDirection;
         private Animator _animator;
         private TimeRemaining _timeRemaining;
@@ -33,7 +33,7 @@ namespace Rescues.NPC.Models
         private void Awake()
         {
             _timeRemaining = new TimeRemaining(ResetWaitState, 0.0f);
-            _physicsService = Services.SharedInstance.PhysicsService;
+            _physicsService = Services.SharedInstance.PhysicalServices;
             _animator = GetComponent<Animator>();
             _npcCatch = new NPCCatch();
             InRage = false;
