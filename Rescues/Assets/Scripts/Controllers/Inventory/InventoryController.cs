@@ -27,9 +27,9 @@ namespace Rescues
         #region IInitializeController
 
         public void Initialize()
-        {           
+        {
             _inventory = Object.FindObjectOfType<InventoryBehaviour>();
-            _context.Inventory = _inventory;
+            _context.inventory = _inventory;
             _inventory.gameObject.SetActive(false);
 
             if (_inventory.itemSlots != null)
@@ -66,7 +66,7 @@ namespace Rescues
         {
             if (_draggedSlot != null)
             {
-                TryToUseItem(); 
+                TryToUseItem();
             }
             _inventory.draggableImage.enabled = false;
             _draggedSlot = null;
@@ -109,7 +109,7 @@ namespace Rescues
             {
                 _draggedSlot.Item = dropSlot.Item;
                 dropSlot.Item = draggedItem;
-            }           
+            }
         }
 
         private void ShowTooltip(ItemSlot itemSlot)

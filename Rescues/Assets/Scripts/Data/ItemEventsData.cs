@@ -17,7 +17,7 @@ namespace Rescues
         /// <summary>
         /// The event which depends on your item
         /// </summary>
-        public List<EventData> Events; 
+        public List<EventData> Events;
 
         #endregion
     }

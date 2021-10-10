@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 
 namespace Rescues
@@ -10,16 +10,18 @@ namespace Rescues
     {
         #region Fields
 
-        public CharacterModel Character;
-        public InventoryBehaviour Inventory;
+        public CharacterModel character;
+        public InventoryBehaviour inventory;
         public GameMenuBehaviour gameMenu;
-        public EnemyBehaviour Enemy;
-        public LocationData ActiveLocation;
-        
-        public event Action<IInteractable> AddObjectHandler = delegate(IInteractable interactable) {  };
+        public EnemyBehaviour enemy;
+        public LocationData activeLocation;
+        public NotepadBehaviour notepad;
+        public DialogueBehaviour dialogueManager;
+
+        public event Action<IInteractable> AddObjectHandler = delegate (IInteractable interactable) { };
         private readonly SortedList<InteractableObjectType, List<IInteractable>> _onTriggers;
         private readonly List<IInteractable> _interactables;
-        
+
         #endregion
 
 
@@ -29,9 +31,9 @@ namespace Rescues
         {
             _onTriggers = new SortedList<InteractableObjectType, List<IInteractable>>();
             _interactables = new List<IInteractable>();
-            ActiveLocation = ScriptableObject.CreateInstance<LocationData>();
+            activeLocation = ScriptableObject.CreateInstance<LocationData>();
         }
-        
+
         #endregion
 
 
@@ -41,9 +43,9 @@ namespace Rescues
         {
             if (!_interactables.Contains(trigger))
             {
-                _interactables.Add(trigger); 
+                _interactables.Add(trigger);
             }
-            
+
             if (_onTriggers.ContainsKey(type))
             {
                 _onTriggers[type].Add(trigger);
@@ -55,7 +57,7 @@ namespace Rescues
                     trigger
                 });
             }
-            
+
             AddObjectHandler.Invoke(trigger);
         }
 
@@ -69,7 +71,7 @@ namespace Rescues
         {
             return _onTriggers.ContainsKey(type) ? _onTriggers[type].Select(trigger => trigger as T).ToList() : null;
         }
-        
+
         public List<IInteractable> GetTriggers(InteractableObjectType type)
         {
             return _onTriggers.ContainsKey(type) ? _onTriggers[type] : _onTriggers[type] = new List<IInteractable>();

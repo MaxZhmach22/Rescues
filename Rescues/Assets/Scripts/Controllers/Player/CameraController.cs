@@ -30,7 +30,7 @@ namespace Rescues
 
         public void Execute()
         {
-            if ( _activeLocationHash != _context.ActiveLocation.GetHashCode())
+            if ( _activeLocationHash != _context.activeLocation.GetHashCode())
                 SetCamera();
             
             if (_iSMoveableCameraMode)
@@ -49,7 +49,7 @@ namespace Rescues
         {
             _iSMoveableCameraMode = false;
 
-            switch (_context.ActiveLocation.CameraData.CameraMode)
+            switch (_context.activeLocation.CameraData.CameraMode)
             {
                 case CameraMode.None:
                     return;
@@ -63,33 +63,33 @@ namespace Rescues
                     break;
             }
             
-            _cameraServices.CameraMain.backgroundColor = _context.ActiveLocation.BackgroundColor;
-            _activeLocationHash = _context.ActiveLocation.GetHashCode();
+            _cameraServices.CameraMain.backgroundColor = _context.activeLocation.BackgroundColor;
+            _activeLocationHash = _context.activeLocation.GetHashCode();
         }
 
         private void PlaceCameraOnLocation()
         {
-            var position = _context.ActiveLocation.LocationInstance.CameraPosition;
+            var position = _context.activeLocation.LocationInstance.CameraPosition;
             _cameraServices.CameraMain.transform.position = new Vector3(position.x, position.y,
                 _cameraServices.CameraDepthConst);
-            _cameraServices.CameraMain.orthographicSize = _context.ActiveLocation.CameraData.CameraSize;
+            _cameraServices.CameraMain.orthographicSize = _context.activeLocation.CameraData.CameraSize;
         }
 
         private void MoveCameraToCharacter()
         {
-            var x = _context.Character.Transform.position.x + _context.ActiveLocation.CameraData.Position_X_Offset;
-            if (x < _context.ActiveLocation.CameraData.MoveLeftXLimit)
+            var x = _context.character.Transform.position.x + _context.activeLocation.CameraData.Position_X_Offset;
+            if (x < _context.activeLocation.CameraData.MoveLeftXLimit)
             {
-                x = _context.ActiveLocation.CameraData.MoveLeftXLimit;
+                x = _context.activeLocation.CameraData.MoveLeftXLimit;
             }
-            else if (x > _context.ActiveLocation.CameraData.MoveRightXLimit)
+            else if (x > _context.activeLocation.CameraData.MoveRightXLimit)
             {
-                x = _context.ActiveLocation.CameraData.MoveRightXLimit;
+                x = _context.activeLocation.CameraData.MoveRightXLimit;
             }
         
-            var y = _context.ActiveLocation.CameraData.Position_Y_Offset;
+            var y = _context.activeLocation.CameraData.Position_Y_Offset;
             _cameraServices.CameraMain.transform.position = new Vector3(x, y, _cameraServices.CameraDepthConst);
-            _cameraServices.CameraMain.orthographicSize = _context.ActiveLocation.CameraData.CameraSize;
+            _cameraServices.CameraMain.orthographicSize = _context.activeLocation.CameraData.CameraSize;
         }
       
         #endregion Methods

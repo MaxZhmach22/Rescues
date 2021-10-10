@@ -9,11 +9,11 @@ namespace Rescues
     public sealed class GameController : MonoBehaviour
     {
         #region Fields
-        
+
         private GameStateController _activeController;
 
         #endregion
-        
+
 
         #region UnityMethods
 
@@ -24,7 +24,7 @@ namespace Rescues
             services.Initialize(context);
 
             _activeController = new GameSystemsController(context, services);
-            _activeController.Initialize();          
+            _activeController.Initialize();
 
             Time.timeScale = 1;
         }
@@ -34,7 +34,7 @@ namespace Rescues
             _activeController.Execute(UpdateType.Fixed);
             _activeController.Cleanup(UpdateType.Fixed);
         }
-          
+
         private void Update()
         {
             _activeController.Execute(UpdateType.Update);
@@ -52,7 +52,7 @@ namespace Rescues
             _activeController.TearDown();
         }
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
 
         private void OnDrawGizmos()
         {
@@ -64,7 +64,7 @@ namespace Rescues
             _activeController.Cleanup(UpdateType.Gizmos);
         }
 
-        #endif
+#endif
 
         #endregion
     }
