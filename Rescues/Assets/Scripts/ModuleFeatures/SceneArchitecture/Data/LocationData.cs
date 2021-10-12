@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Rescues.NPC.Models;
 using UnityEngine;
 
 
@@ -12,6 +13,7 @@ namespace Rescues
 
         [NonSerialized] public List<Gate> Gates;
         [NonSerialized] public string LevelName;
+        
         [SerializeField] private string _locationName;
         [SerializeField] private Location _locationPrefab;
         [SerializeField] private Color _backgroundColor;
@@ -51,6 +53,7 @@ namespace Rescues
         public Location LocationPrefab => _locationPrefab;
         public Color BackgroundColor => _backgroundColor;
         public CameraData CameraData => _cameraData;
+        
         
         #endregion
 

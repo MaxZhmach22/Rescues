@@ -64,12 +64,12 @@ namespace Rescues
             hitPoint = hit.point;
             return true;
         }
-
-        public bool VisionDetectionPlayer(Vector3 rayOriginPosition, Vector3 rayTargetDirection, float detectionDistance)
+        
+        public RaycastHit2D VisionDetectionPlayer(Vector3 rayOriginPosition, Vector3 rayTargetDirection, float detectionDistance,Color color)
         {
             int layerMask = LayerManager.PlayerLayer;
             RaycastHit2D hit = Physics2D.Raycast(rayOriginPosition, rayTargetDirection, detectionDistance, layerMask);
-            Debug.DrawRay(rayOriginPosition, rayTargetDirection * detectionDistance, Color.red);
+            Debug.DrawRay(rayOriginPosition, rayTargetDirection * detectionDistance, color);
             return hit;
         }
 
