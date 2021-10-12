@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdd3b500a64940cb95a750703a11db0d, type: 3}
-  m_Name: Salon
+  m_Name: Room_1_night
   m_EditorClassIdentifier: 
-  _locationName: Salon
-  _locationPrefab: {fileID: 5907541622321360578, guid: 154857e0be2b35944a2b3de520ea663c,
+  _locationName: Room_1_night
+  _locationPrefab: {fileID: 2861045581699026727, guid: 9f4a0cf53300cbb4b940643a8820864c,
     type: 3}
-  _backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  _backgroundColor: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 0}
   _cameraData:
     CameraMode: 2
-    CameraSize: 10
-    Position_Y_Offset: -13
+    CameraSize: 14
+    Position_Y_Offset: 0
     Position_X_Offset: 0
-    MoveLeftXLimit: -20
-    MoveRightXLimit: 100
-    CameraFreeMoveLimit: 50
-    CameraDragSpeed: 50
+    MoveLeftXLimit: 0
+    MoveRightXLimit: 0
+    CameraFreeMoveLimit: 0
+    CameraDragSpeed: 0
   _customBootScreen: {fileID: 5293078557666880198, guid: 350dbdcc61ef74de087b99c5df45793d,
     type: 3}
