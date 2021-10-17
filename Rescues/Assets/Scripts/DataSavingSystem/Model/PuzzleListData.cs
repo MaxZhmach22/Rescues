@@ -1,6 +1,6 @@
 using System;
 
-namespace DefaultNamespace
+namespace Rescues
 {
     [Serializable]
     public struct PuzzleListData
