@@ -70,10 +70,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48bd36b2-45ba-4ddc-be59-218c2703d472" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/contentModel.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Data.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Data/DataSaving.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Data/DataSaving.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Data/WorldGameData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Data/WorldGameData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Enums/PuzzleCondition.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/ByteConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/ByteConverter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/FileContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/FileContext.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/GameSavingSerializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/GameSavingSerializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/PlayersProgress.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/PlayersProgress.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/PuzzleListData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/Serialization.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/Serialization.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/NPC/Controllers/NPCCatch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/NPC/Controllers/NPCCatch.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/NPC/Models/BaseNPC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/NPC/Models/BaseNPC.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +154,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/GameControllers/MainLateControllers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Helper/CustomDebug.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/GameControllers/MainControllers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/3a/9d1ada7d/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/PuzzleListData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/GameControllers/GameStateController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/GameControllers/GameSystemsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/Behaviour/TrapBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
@@ -156,6 +175,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/CurveWay/Models/CurveWay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/CharacterModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Controllers/LevelController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Enums/PuzzleCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/NPC/StateEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/NPC/InitializeEnemyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enum/ReactiveType.cs" root0="FORCE_HIGHLIGHTING" />
@@ -165,20 +185,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/CurveWay/Models/CurveWay.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enum/ChessPuzzleFiguresTypes.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/General/Controllers/PuzzlesControllers.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Wires/Models/WiresPuzzle.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Wires/Models/PapaConnector.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/FigureComposite.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Interface/IFigureFactory.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Data/ChessPuzzleData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/FigureStruct.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Figure.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/FigureCreationFactory.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessBoard.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessPuzzle.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/ChessController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Cell.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/NPC/Controllers/NPCAnimator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/NPC/Controllers/NPCState.cs" />
@@ -216,6 +222,20 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/NPC/Controllers/NPCLevelController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/NPC/Models/BaseNPC.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/NPC/Controllers/NPCCatch.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/FileContext.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/DataSaving.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/Serialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/WorldGameData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Enums/QuestListData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/QuestListData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Enums/QuestCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/PuzzleListData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/PlayersProgress.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/PlayersProgres.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/GameSavingSerializer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Model/ByteConverter.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/DataSavingSystem/Data/WorldGameData.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1V9bGpai1gZ6Kn1FGeYyMAj5KRa" />
@@ -304,6 +324,10 @@
       <workItem from="1633712607332" duration="8067000" />
       <workItem from="1633860518410" duration="7446000" />
       <workItem from="1633894350998" duration="177000" />
+      <workItem from="1633958932274" duration="1307000" />
+      <workItem from="1634021666881" duration="217000" />
+      <workItem from="1634022513128" duration="3159000" />
+      <workItem from="1634026877135" duration="1702000" />
     </task>
     <servers />
   </component>
@@ -335,6 +359,19 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs</url>
+          <line>234</line>
+          <properties documentPath="D:\Unity-Storage\Rescue_MyCopy\Rescues\Rescues\Assets\Scripts\Dialogue\DialogueManager.cs" initialLine="234" containingFunctionPresentation="method 'BuildDialogue'">
+            <startOffsets>
+              <option value="10562" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10563" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -18,7 +18,7 @@ namespace Rescues
         private Image _imageRight;
 
         private int offset = 10;
-        private string workFolder = "Data/Dialogue"; // общая папка локалей диалогов в Resources
+        private string workFolder = "Data/Dialogue"; // РѕР±С‰Р°СЏ РїР°РїРєР° Р»РѕРєР°Р»РµР№ РґРёР°Р»РѕРіРѕРІ РІ Resources
         private string locale = "Russian";
 
         private string fileName, lastName;
@@ -109,7 +109,7 @@ namespace Rescues
             return _instance;
         }
 
-        // Вызов диалога
+        // Р’С‹Р·РѕРІ РґРёР°Р»РѕРіР°
         public void CallDialogue(string fileName, Action callback = null)
         {
             this.fileName = fileName;
@@ -179,7 +179,7 @@ namespace Rescues
             }
             catch (System.Exception error)
             {
-                Debug.Log(this + " ошибка чтения файла диалога: " + fileName + ".xml | Error: " + error.Message);
+                Debug.Log(this + " РѕС€РёР±РєР° С‡С‚РµРЅРёСЏ С„Р°Р№Р»Р° РґРёР°Р»РѕРіР°: " + fileName + ".xml | Error: " + error.Message);
                 CloseWindow();
                 lastName = string.Empty;
             }
@@ -196,7 +196,7 @@ namespace Rescues
 
             ClearDialogue();
 
-            // Добавление изображений
+            // Р”РѕР±Р°РІР»РµРЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёР№
             if (!string.IsNullOrEmpty(node[current].leftImage))
             {
                 _imageLeft.gameObject.SetActive(true);
@@ -221,7 +221,7 @@ namespace Rescues
             {
                 int value = DialogueQuestManager.GetCurrentValue(node[current].answers[i].quest);
 
-                // Фильтр ответов, относительно текущего статуса квеста
+                // Р¤РёР»СЊС‚СЂ РѕС‚РІРµС‚РѕРІ, РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ С‚РµРєСѓС‰РµРіРѕ СЃС‚Р°С‚СѓСЃР° РєРІРµСЃС‚Р°
                 if (value > node[current].answers[i].greater && node[current].answers[i].greater != -1 && node[current].answers[i].less == -1 && node[current].answers[i].equal == -1 ||
                     value == node[current].answers[i].equal && node[current].answers[i].equal != -1 && node[current].answers[i].less == -1 && node[current].answers[i].greater == -1 ||
                     value < node[current].answers[i].less && node[current].answers[i].less != -1 && node[current].answers[i].greater == -1 && node[current].answers[i].equal == -1 ||
@@ -308,26 +308,26 @@ namespace Rescues
         }
 
 
-        // Событие, для управлением статуса, текущего квеста
+        // РЎРѕР±С‹С‚РёРµ, РґР»СЏ СѓРїСЂР°РІР»РµРЅРёРµРј СЃС‚Р°С‚СѓСЃР°, С‚РµРєСѓС‰РµРіРѕ РєРІРµСЃС‚Р°
         private void SetQuestStatus(Button button, string send, string quest, Action callback)
         {
             string t = quest + "|" + send;
             button.onClick.AddListener(() => QuestStatus(t, callback));
         }
 
-        // Событие, для перенаправления на другой узел диалога
+        // РЎРѕР±С‹С‚РёРµ, РґР»СЏ РїРµСЂРµРЅР°РїСЂР°РІР»РµРЅРёСЏ РЅР° РґСЂСѓРіРѕР№ СѓР·РµР» РґРёР°Р»РѕРіР°
         private void SetNextNode(Button button, int i, Action callback)
         {
             button.onClick.AddListener(() => BuildDialogue(i, callback));
         }
 
-        // Событие, для выхода из диалога
+        // РЎРѕР±С‹С‚РёРµ, РґР»СЏ РІС‹С…РѕРґР° РёР· РґРёР°Р»РѕРіР°
         private void SetExitDialogue(Button button)
         {
             button.onClick.AddListener(() => CloseWindow());
         }
 
-        // Меняем статус квеста
+        // РњРµРЅСЏРµРј СЃС‚Р°С‚СѓСЃ РєРІРµСЃС‚Р°
         private void QuestStatus(string s, Action callback)
         {
             string[] t = s.Split(new char[] { '|' });
