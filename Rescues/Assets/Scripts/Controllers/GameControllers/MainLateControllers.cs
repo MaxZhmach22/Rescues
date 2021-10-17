@@ -1,5 +1,4 @@
-﻿using Rescues.NPC.Controllers;
-
+﻿
 namespace Rescues
 {
     public sealed class MainLateControllers: Controllers

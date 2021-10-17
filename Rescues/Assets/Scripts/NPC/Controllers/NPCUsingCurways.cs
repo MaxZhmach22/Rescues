@@ -2,10 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using PathCreation;
-using Rescues.NPC.Models;
 using UnityEngine;
 
-namespace Rescues.NPC.Controllers
+namespace Rescues
 {
     public sealed class NPCUsingCurways
     {

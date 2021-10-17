@@ -1,6 +1,6 @@
 using System;
 
-namespace Controllers.DataSavingSystem.Model
+namespace Rescues
 {
     public static class ByteConverter
     {

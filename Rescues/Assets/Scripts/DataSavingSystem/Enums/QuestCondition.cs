@@ -1,6 +1,6 @@
 namespace Rescues
 {
-    public enum PuzzleCondition
+    public enum QuestCondition
     {
         InProgress = 0,
         Done = 1

@@ -1,8 +1,7 @@
 using System;
-using Rescues.NPC.Controllers;
 using UnityEngine;
 
-namespace Rescues.NPC.Models
+namespace Rescues
 {
     [Serializable]
     public struct NPCStruct

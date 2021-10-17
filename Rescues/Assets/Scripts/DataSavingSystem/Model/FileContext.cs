@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace Controllers.DataSavingSystem.Model
+namespace Rescues
 {
     public sealed class FileContext
     {
