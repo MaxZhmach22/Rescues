@@ -1,5 +1,4 @@
 using System;
-using Rescues.NPC.Models;
 using UnityEngine;
 
 namespace Rescues

@@ -1,8 +1,6 @@
 using System.Collections.Generic;
-using Rescues.NPC.Models;
-using UnityEngine;
 
-namespace Rescues.NPC.Controllers
+namespace Rescues
 {
     public sealed class NPCVisionController: IExecuteController
     {

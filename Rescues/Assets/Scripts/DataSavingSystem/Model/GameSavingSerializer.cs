@@ -3,7 +3,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-namespace Controllers.DataSavingSystem.Model
+namespace Rescues
 {
     public sealed class GameSavingSerializer
     {
