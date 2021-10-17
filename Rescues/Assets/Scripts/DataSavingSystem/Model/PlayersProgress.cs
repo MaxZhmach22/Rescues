@@ -1,10 +1,7 @@
-using DefaultNamespace;
-
-namespace Controllers.DataSavingSystem.Model
+namespace Rescues
 {
     public sealed class PlayersProgress
     {
-        //public QuestListData QuestListData;
-        public PuzzleListData PuzzleListData;
+        public int PlayerCurrentPositionInProgress;
     }
 }

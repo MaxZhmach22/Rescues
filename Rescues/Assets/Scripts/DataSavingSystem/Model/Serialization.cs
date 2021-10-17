@@ -1,4 +1,4 @@
-namespace Controllers.DataSavingSystem.Model
+namespace Rescues
 {
     public class Serialization
     {

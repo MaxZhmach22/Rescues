@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using Rescues.NPC.Models;
 
-namespace Rescues.NPC.Controllers
+namespace Rescues
 {
     public sealed class NPCMoveController: IInitializeController, IExecuteController
     {

@@ -1,19 +1,24 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
-namespace Controllers.DataSavingSystem.Model
+namespace Rescues
 {
     [Serializable]
     public sealed class WorldGameData
     {
         private string _playerPosition;
-        //public PlayersInventory PlayersInventory;
         public PlayersProgress PlayersProgress;
+        public Transform playersPosition;
+        public List<LevelProgress> LevelsProgress;
+        
+        
         public byte[] Serialize()
         {
-            var result = new byte[sizeof(int) + sizeof(int) + sizeof(byte) * 2 +
-                                  sizeof(byte) * Content.Length];
+            /*var result = new byte[sizeof(int) + sizeof(int) + sizeof(byte) * 2 +
+                                  sizeof(byte) * Content.Length];*/
             
             var offset = 0;
             offset += ByteConverter.AddToStream(Version, result, offset);

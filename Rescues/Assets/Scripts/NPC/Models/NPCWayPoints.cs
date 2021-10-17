@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Rescues.NPC.Models
+namespace Rescues
 {
     [Serializable]
     public sealed class NPCWayPoints: MonoBehaviour
