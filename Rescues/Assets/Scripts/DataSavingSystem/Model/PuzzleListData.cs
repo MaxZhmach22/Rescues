@@ -1,11 +1,11 @@
 using System;
 
-namespace Rescues
+namespace DefaultNamespace
 {
     [Serializable]
-    public struct PuzzleListData:SavingStruct
+    public struct PuzzleListData
     {
         public string Name { get; set; }
-        public PuzzleCondition PuzzleCondition { get; set; }
+        public PuzzleCondition QuestCondition { get; set; }
     }
 }
