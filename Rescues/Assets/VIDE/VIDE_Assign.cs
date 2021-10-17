@@ -91,7 +91,7 @@ public class VIDE_Assign : MonoBehaviour, ISerializationCallbackReceiver
     /// <summary>
     /// Saves the current state of this VA component.
     /// </summary>
-    /// <param name="filename">Name to save under.</param>
+    /// <param name="filename">PlayerName to save under.</param>
     public void SaveState(string filename)
     {
         Dictionary<string, object> dict = new Dictionary<string, object>();
@@ -110,7 +110,7 @@ public class VIDE_Assign : MonoBehaviour, ISerializationCallbackReceiver
     /// <summary>
     /// Loads a state to this VA component.
     /// </summary>
-    /// <param name="filename">Name of the state to load.</param>
+    /// <param name="filename">PlayerName of the state to load.</param>
     public void LoadState(string filename)
     {
 

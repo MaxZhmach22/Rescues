@@ -47,7 +47,7 @@ public class VIDEDemoPlayer : MonoBehaviour
         {
             transform.Rotate(0, Input.GetAxis("Mouse X") * 5, 0);
             float move = Input.GetAxisRaw("Vertical");
-            transform.position += transform.forward * 7 * move * Time.deltaTime;
+            transform.position += transform.forward * (7 * move * Time.deltaTime);
             blue.SetFloat("speed", move);
         }
 

@@ -243,7 +243,7 @@ namespace VIDE_Data
         /// <summary>
         /// Saves current VD state, which includes current language and modified EVs and comment visibility for all loaded dialogues. 
         /// </summary>
-        /// <param name="filename">Name to save the JSON file under.</param>
+        /// <param name="filename">PlayerName to save the JSON file under.</param>
         /// <param name="saveAssigned">Optionally, save every VA state found within the current scene.</param>
         public static void SaveState(string filename, bool saveAssigned)
         {
@@ -1759,7 +1759,7 @@ namespace VIDE_Data
         /// <summary>
         /// Update a Dialogue node comment.
         /// </summary>
-        /// <param name="dialogueName">Name of the dialogue to modify a node from</param>
+        /// <param name="dialogueName">PlayerName of the dialogue to modify a node from</param>
         /// <param name="nodeID">The ID of the Dialogue node</param>
         /// <param name="commentIndex">The comment index of a Player node</param>
         /// <param name="newComment">The new comment</param>
@@ -1972,7 +1972,7 @@ namespace VIDE_Data
         /// <summary>
         /// Gets the dialogue's non-component VIDE_Assign.
         /// </summary>
-        /// <param name="dialogueName">Name of the dialogue. Make sure it exists.</param>
+        /// <param name="dialogueName">PlayerName of the dialogue. Make sure it exists.</param>
         /// <returns></returns>
         public static VIDE_Assign GetAssigned(string dialogueName)
         {
@@ -2000,7 +2000,7 @@ namespace VIDE_Data
         /// <summary>
         /// Sets the dialogue's non-component VIDE_Assign.
         /// </summary>
-        /// <param name="dialogueName">Name of the dialogue. Make sure it exists.</param>
+        /// <param name="dialogueName">PlayerName of the dialogue. Make sure it exists.</param>
         /// <param name="alias">alias</param>
         /// <param name="ovr">override Start Node. -1 is default.</param>
         /// <param name="playerSprite">Default player Sprite. Null is default.</param>
@@ -3026,7 +3026,7 @@ namespace VIDE_Data
         /// <summary>
         /// Saves current VD2 state which includes modified EVs and comment visibility. 
         /// </summary>
-        /// <param name="filename">Name to save the JSON file under.</param>
+        /// <param name="filename">PlayerName to save the JSON file under.</param>
         /// <param name="saveAssigned">Optionally, save every VA state found within the current scene.</param>
         public void SaveState(string filename, bool saveAssigned)
         {
@@ -3710,7 +3710,7 @@ namespace VIDE_Data
         /// <summary>
         /// Update a Dialogue node comment.
         /// </summary>
-        /// <param name="dialogueName">Name of the dialogue to modify a node from</param>
+        /// <param name="dialogueName">PlayerName of the dialogue to modify a node from</param>
         /// <param name="nodeID">The ID of the Dialogue node</param>
         /// <param name="commentIndex">The comment index of a Player node</param>
         /// <param name="newComment">The new comment</param>
@@ -3847,7 +3847,7 @@ namespace VIDE_Data
         /// <summary>
         /// Gets the dialogue's non-component VIDE_Assign.
         /// </summary>
-        /// <param name="dialogueName">Name of the dialogue. Make sure it exists.</param>
+        /// <param name="dialogueName">PlayerName of the dialogue. Make sure it exists.</param>
         /// <returns></returns>
         public VIDE_Assign GetAssigned(string dialogueName)
         {
@@ -3875,7 +3875,7 @@ namespace VIDE_Data
         /// <summary>
         /// Sets the dialogue's non-component VIDE_Assign.
         /// </summary>
-        /// <param name="dialogueName">Name of the dialogue. Make sure it exists.</param>
+        /// <param name="dialogueName">PlayerName of the dialogue. Make sure it exists.</param>
         /// <param name="alias">alias</param>
         /// <param name="ovr">override Start Node. -1 is default.</param>
         /// <param name="playerSprite">Default player Sprite. Null is default.</param>
