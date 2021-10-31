@@ -3,9 +3,9 @@ using System;
 namespace Rescues
 {
     [Serializable]
-    public struct PuzzleListData
+    public struct PuzzleListData:SavingStruct
     {
         public string Name { get; set; }
-        public PuzzleCondition QuestCondition { get; set; }
+        public PuzzleCondition PuzzleCondition { get; set; }
     }
 }

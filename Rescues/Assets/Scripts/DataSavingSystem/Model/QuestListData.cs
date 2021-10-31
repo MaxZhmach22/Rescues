@@ -3,7 +3,7 @@ using System;
 namespace Rescues
 {
     [Serializable]
-    public struct QuestListData
+    public struct QuestListData:SavingStruct
     {
         public string Name { get; set; }
         public QuestCondition QuestCondition { get; set; }
