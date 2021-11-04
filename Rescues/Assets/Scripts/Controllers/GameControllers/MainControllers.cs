@@ -16,6 +16,7 @@
             Add(new InputController(context, services));
             Add(new InventoryController(context));
             Add(new InitializeNotepadController(context));
+            Add(new DialogueUIController(context, services));
         }
 
         #endregion

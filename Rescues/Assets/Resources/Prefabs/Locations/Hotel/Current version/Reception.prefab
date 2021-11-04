@@ -138,6 +138,8 @@ GameObject:
   - component: {fileID: 4278204720713619901}
   - component: {fileID: 6667423842141647229}
   - component: {fileID: 8046546384543181364}
+  - component: {fileID: 4672800081982748541}
+  - component: {fileID: 3182759525283869638}
   m_Layer: 0
   m_Name: Ring
   m_TagString: EditorOnly
@@ -230,90 +232,6 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4982309870240704559}
-          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: SetQuestion
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: "\u041F\u043E\u0447\u0438\u043D\u0438\u0442\u044C \u0437\u0432\u043E\u043D\u043E\u043A"
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
-          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: SetValue
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 4
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
-          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: AddActiveGameObject
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2668034248902124377}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
-          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: AddDeactiveGameObject
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6168885976161313263}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
-          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: CallDialogue
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: RingQuest
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
-          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: AddDeactiveGameObject
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 146422744201183376}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
-          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: AddActiveGameObject
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 146422744201183376}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 2440806988178800138}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
@@ -321,18 +239,6 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
-          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: AddDeactiveGameObject
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 3185578100954045379}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -456,6 +362,438 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &4672800081982748541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146422744201183376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8b99d8a12e39e4b94d2d7162c7c978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diags:
+  - 1stDialHoz
+  - Charlie
+  - CommentModifier
+  - CrazyCap
+  - DEMO_Condition
+  - demo_Narration
+  - Example3Dialogue
+  - Example4_dialogue
+  - Item_LookUp
+  - Laura
+  - MrCube
+  - NPCOnly
+  - QuestChartDemo
+  - Test_1
+  - TriggeredDude
+  - Witch
+  assignedIndex: 0
+  assignedID: 79672
+  assignedDialogue: 1stDialHoz
+  interactionCount: 0
+  alias: "\u0417\u0432\u043E\u043D\u043E\u043A"
+  overrideStartNode: -1
+  defaultNPCSprite: {fileID: 21300000, guid: c438947a01291e34db8ab2df540dc13a, type: 3}
+  defaultPlayerSprite: {fileID: 21300000, guid: 84a9114ab28f94e469a62b9feae04bf0,
+    type: 3}
+  targetManager: {fileID: 0}
+  preload: 1
+  notuptodate: 0
+  startp: 0
+  loadtag: 
+  langs: []
+  S_playerDiags:
+  - commentCount: 1
+    s_comment:
+    - text: "\u0414\u043E\u0431\u0440\u044B\u0439 \u0432\u0435\u0447\u0435\u0440!
+        \u0412\u044B \u0447\u0442\u043E-\u0442\u043E \u0445\u043E\u0442\u0435\u043B\u0438?"
+      extraData: ExtraData
+      inputSetIndex: 0
+      outputNodeIndex: 1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 0
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 4
+    s_comment:
+    - text: "\u0414\u043E\u0431\u0440\u044B\u0439 \u0432\u0435\u0447\u0435\u0440!
+        \u041C\u044B \u043E\u043A\u0430\u0437\u0430\u043B\u0438\u0441\u044C \u043F\u0440\u043E\u0435\u0437\u0434\u043E\u043C
+        \u0432 \u0432\u0430\u0448\u0435\u043C \u0433\u043E\u0440\u043E\u0434\u0435,
+        \u0438 \u0445\u043E\u0442\u0435\u043B\u0438 \u0431\u044B \u0441\u043D\u044F\u0442\u044C
+        \u043A\u043E\u043C\u043D\u0430\u0442\u0443 \u043D\u0430 \u043D\u043E\u0447\u044C."
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: 2
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u0425\u043E\u0442\u0435\u043B, \u043D\u043E \u0443\u0432\u0438\u0434\u0435\u0432
+        \u0432 \u043A\u0430\u043A\u043E\u043C \u0437\u0434\u0435\u0441\u044C \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0438
+        \u0432\u0441\u0451 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F,
+        \u0443\u0436\u0435 \u0434\u0430\u0436\u0435 \u043D\u0435 \u0437\u043D\u0430\u044E..."
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: 10
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u0410 \u0443 \u0432\u0430\u0441 \u0442\u0443\u0442 \u0432\u0441\u0435\u0433\u0434\u0430
+        \u0442\u0430\u043A\u043E\u0435 \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u0435
+        \u043A \u043A\u043B\u0438\u0435\u043D\u0430\u0442\u0430\u043C?"
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: 12
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u0414\u0443\u043C\u0430\u044E \u043C\u044B \u043F\u0435\u0440\u0435\u043D\u043E\u0447\u0443\u0435\u043C
+        \u0432 \u0434\u0440\u0443\u0433\u043E\u043C \u043C\u0435\u0441\u0442\u0435."
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: 15
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 1
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0414\u0430, \u043A\u043E\u043D\u0435\u0447\u043D\u043E, \u0432 \u044D\u0442\u043E
+        \u0432\u0440\u0435\u043C\u044F \u0433\u043E\u0434\u0430 \u0443 \u043D\u0430\u0441
+        \u043D\u0435 \u0442\u0430\u043A \u043C\u043D\u043E\u0433\u043E \u0433\u043E\u0441\u0442\u0435\u0439,
+        \u0442\u0430\u043A \u0447\u0442\u043E \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u044B\u0435
+        \u043A\u043E\u043C\u043D\u0430\u0442\u044B \u0435\u0441\u0442\u044C."
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: 3
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 2
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "\u041E\u0442\u043B\u0438\u0447\u043D\u043E. \u0421\u043E \u043C\u043D\u043E\u0439
+        \u0436\u0435\u043D\u0430 \u0438 \u0441\u044B\u043D, \u043E\u043D\u0438 \u0432
+        \u043C\u0430\u0448\u0438\u043D\u0435, \u0442\u0430\u043A \u0447\u0442\u043E
+        \u043D\u0430\u043C \u0445\u0432\u0430\u0442\u0438\u0442 \u043E\u0434\u043D\u043E\u0433\u043E
+        \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u043E\u0433\u043E
+        \u043D\u043E\u043C\u0435\u0440\u0430."
+      extraData: ExtraData
+      inputSetIndex: 3
+      outputNodeIndex: 4
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 3
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u041F\u0440\u043E\u0448\u0443 \u043F\u0440\u043E\u0449\u0435\u043D\u0438\u044F,
+        \u043D\u043E \u0443 \u043D\u0430\u0441 \u043D\u0435\u0442 \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0445
+        \u043D\u043E\u043C\u0435\u0440\u043E\u0432. \u041D\u043E \u043C\u043E\u0433\u0443
+        \u0432\u0430\u043C \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0438\u0442\u044C
+        \u0434\u0432\u0430 \u0441\u043C\u0435\u0436\u043D\u044B\u0445 \u043E\u0434\u043D\u043E\u043C\u0435\u0441\u0442\u043D\u044B\u0445.
+        \u0412\u0430\u0441 \u044D\u0442\u043E \u0443\u0441\u0442\u0440\u043E\u0438\u0442?"
+      extraData: ExtraData
+      inputSetIndex: 4
+      outputNodeIndex: 5
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 4
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: "\u041D\u0443 \u043F\u043E\u043B\u0430\u0433\u0430\u044E, \u0447\u0442\u043E
+        \u0434\u0430."
+      extraData: ExtraData
+      inputSetIndex: 5
+      outputNodeIndex: 6
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u042D\u0442\u043E \u043D\u0435 \u0441\u043E\u0432\u0441\u0435\u043C
+        \u0443\u0434\u043E\u0431\u043D\u043E. \u0422\u043E\u0447\u043D\u043E \u0434\u0440\u0443\u0433\u0438\u0445
+        \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u043E\u0432 \u043D\u0435\u0442?"
+      extraData: ExtraData
+      inputSetIndex: 5
+      outputNodeIndex: 7
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 5
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0422\u043E\u0433\u0434\u0430 \u0441\u0435\u0439\u0447\u0430\u0441
+        \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043B\u044E \u043A\u043B\u044E\u0447\u0438."
+      extraData: ExtraData
+      inputSetIndex: 6
+      outputNodeIndex: 9
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 6
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "\u0423\u0432\u044B \u043D\u0435\u0442. \u0418 \u043A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E,
+        \u044D\u0442\u043E \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
+        \u043E\u0442\u0435\u043B\u044C \u0432 \u043D\u0430\u0448\u0435\u043C \u0433\u043E\u0440\u043E\u0434\u0435."
+      extraData: ExtraData
+      inputSetIndex: 7
+      outputNodeIndex: 8
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 7
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "\u0422\u043E\u0433\u0434\u0430 \u043C\u044B \u0432\u043E\u0437\u044C\u043C\u0451\u043C
+        \u044D\u0442\u0438 \u0434\u0432\u0430 \u043D\u043E\u043C\u0435\u0440\u0430."
+      extraData: ExtraData
+      inputSetIndex: 8
+      outputNodeIndex: 6
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 8
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0411\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044E \u0432\u0430\u0441."
+      extraData: ExtraData
+      inputSetIndex: 9
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 9
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 2
+    s_comment:
+    - text: "\u041F\u0443\u0441\u0442\u044C \u0432\u0430\u0441 \u043D\u0435 \u0441\u043C\u0443\u0449\u0430\u0435\u0442
+        \u0432\u043D\u0435\u0448\u043D\u0438\u0439 \u0432\u0438\u0434! \u0423\u0432\u0435\u0440\u044F\u044E,
+        \u0432\u044B \u0431\u0443\u0434\u0435\u0442\u0435 \u0434\u043E\u0432\u043E\u043B\u044C\u043D\u044B
+        \u043D\u043E\u043C\u0435\u0440\u043E\u043C \u0438 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435\u043C."
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: 11
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u0414\u0430 \u0438 \u043A \u0442\u043E\u043C\u0443 \u0436\u0435, \u044D\u0442\u043E
+        \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
+        \u043E\u0442\u0435\u043B\u044C \u0432 \u0433\u043E\u0440\u043E\u0434\u0435."
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 10
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "\u041D\u0443 \u0437\u043D\u0430\u0447\u0438\u0442 \u0432\u044B\u0431\u043E\u0440
+        \u043D\u0435\u0432\u0435\u043B\u0438\u043A. \u0425\u043E\u0440\u043E\u0448\u043E,
+        \u0441\u043E \u043C\u043D\u043E\u0439 \u0436\u0435\u043D\u0430 \u0438 \u0441\u044B\u043D,
+        \u0442\u0430\u043A \u0447\u0442\u043E \u043C\u044B \u0432\u043E\u0437\u044C\u043C\u0435\u043C
+        \u043E\u0434\u0438\u043D \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0439
+        \u043D\u043E\u043C\u0435\u0440."
+      extraData: ExtraData
+      inputSetIndex: 11
+      outputNodeIndex: 4
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 11
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u041F\u0440\u043E\u0448\u0443 \u043F\u0440\u043E\u0449\u0435\u043D\u0438\u044F!
+        \u041F\u0440\u043E\u0441\u0442\u043E \u0441\u0435\u0439\u0447\u0430\u0441
+        \u043D\u0435 \u0441\u0435\u0437\u043E\u043D \u0438 \u0432 \u044D\u0442\u043E\u043C
+        \u0432\u0440\u0435\u043C\u044F \u0433\u043E\u0434\u0430 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432
+        \u043F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438 \u043D\u0435\u0442.
+        \u0422\u0430\u043A \u0447\u0442\u043E \u044F \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E
+        \u0440\u0430\u0441\u0441\u043B\u0430\u0431\u0438\u043B\u0441\u044F. \u041D\u043E
+        \u044F \u0431\u0443\u0434\u0443 \u0440\u0430\u0434 \u0437\u0430\u0433\u043B\u0430\u0434\u0438\u0442\u044C
+        \u0441\u0432\u043E\u044E \u0432\u0438\u043D\u0443 \u0438 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0438\u0442\u044C
+        \u0432\u0430\u043C \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439
+        \u0437\u0430\u0432\u0442\u0440\u0430\u043A."
+      extraData: ExtraData
+      inputSetIndex: 12
+      outputNodeIndex: 13
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 12
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: "\u0427\u0442\u043E-\u0436, \u0437\u0432\u0443\u0447\u0438\u0442 \u0437\u0430\u043C\u0430\u043D\u0447\u0438\u0432\u043E.
+        \u0422\u043E\u0433\u0434\u0430 \u044F \u0431\u044B \u0445\u043E\u0442\u0435\u043B
+        \u0441\u043D\u044F\u0442\u044C \u043E\u0434\u0438\u043D \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0439
+        \u043D\u043E\u043C\u0435\u0440. \u0421\u043E \u043C\u043D\u043E\u0439 \u0436\u0435\u043D\u0430
+        \u0438 \u0441\u044B\u043D, \u043E\u043D\u0438 \u0441\u0435\u0439\u0447\u0430\u0441
+        \u0432 \u043C\u0430\u0448\u0438\u043D\u0435. "
+      extraData: ExtraData
+      inputSetIndex: 13
+      outputNodeIndex: 4
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u041E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u0432\u0430\u0448\u0438
+        \u0436\u0430\u043B\u043A\u0438\u0435 \u043F\u043E\u0434\u0430\u0447\u043A\u0438
+        \u0441\u0435\u0431\u0435! \u042F \u043B\u0443\u0447\u044C\u0448\u0435 \u043F\u043E\u0438\u0449\u0443
+        \u0434\u0440\u0443\u0433\u043E\u0439 \u043E\u0442\u0435\u043B\u044C, \u0441
+        \u0431\u043E\u043B\u0435\u0435 \u043A\u043E\u043C\u043F\u0435\u0442\u0435\u043D\u0442\u043D\u044B\u043C
+        \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u043E\u043C. "
+      extraData: ExtraData
+      inputSetIndex: 13
+      outputNodeIndex: 14
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 13
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0416\u0430\u043B\u044C \u0432\u0430\u0441 \u0440\u0430\u0437\u043E\u0447\u0430\u0440\u043E\u0432\u044B\u0432\u0430\u0442\u044C,
+        \u043D\u043E \u044D\u0442\u043E \u0435\u0434\u0438\u043D\u0442\u0441\u0432\u0435\u043D\u043D\u044B\u0439
+        \u043E\u0442\u0435\u043B\u044C \u0432 \u0433\u043E\u0440\u043E\u0434\u0435.
+        \u0414\u043E \u0434\u0440\u0443\u0433\u043E\u0433\u043E \u0431\u043B\u0438\u0436\u0430\u0439\u0448\u0435\u0433\u043E
+        \u043E\u043A\u043E\u043B\u043E \u0434\u0432\u0443\u0445 \u0441\u043E\u0442\u0435\u043D
+        \u043A\u0438\u043B\u043E\u043C\u0435\u0442\u0440\u043E\u0432. "
+      extraData: ExtraData
+      inputSetIndex: 14
+      outputNodeIndex: 11
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 14
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Comment...
+      extraData: ExtraData
+      inputSetIndex: 15
+      outputNodeIndex: 14
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 15
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  S_actionNodes: []
+--- !u!114 &3182759525283869638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146422744201183376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7474e83aabceed745ac79fec3fc3aa40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 7
+  _isInteractionLocked: 0
+  assignDialog: {fileID: 4672800081982748541}
 --- !u!1 &584633333882608083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,7 +1442,7 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4982309870240704559}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: SetQuestion
           m_Mode: 5
@@ -1116,7 +1454,7 @@ MonoBehaviour:
             m_StringArgument: 1stHozDial-2
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: SetValue
           m_Mode: 3
@@ -1128,7 +1466,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: AddActiveGameObject
           m_Mode: 2
@@ -1140,7 +1478,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: AddActiveGameObject
           m_Mode: 2
@@ -1152,7 +1490,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: CallDialogue
           m_Mode: 5
@@ -2197,6 +2535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 6
+  _isInteractionLocked: 0
   StandWindow: {fileID: 82461972379826494}
 --- !u!114 &1677183718369130054
 MonoBehaviour:
@@ -2767,7 +3106,7 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4982309870240704559}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: CallDialogue
           m_Mode: 5
@@ -2988,7 +3327,7 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4982309870240704559}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: SetQuestion
           m_Mode: 5
@@ -3001,7 +3340,7 @@ MonoBehaviour:
               \u043C\u0435\u0442\u0440\u043E\u0434\u0435\u043B\u0435\u043C"
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: SetValue
           m_Mode: 3
@@ -3013,7 +3352,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: AddActiveGameObject
           m_Mode: 2
@@ -3025,7 +3364,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 4982309870240704559}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: CallDialogue
           m_Mode: 5
@@ -3266,6 +3605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
+  _isInteractionLocked: 0
   ItemData: {fileID: 11400000, guid: 8e2f62e3303b76c4b9c020b00a63b7ce, type: 2}
   PickUpTime: 0.5
 --- !u!1 &3060815145078252384
@@ -4134,7 +4474,6 @@ Transform:
   - {fileID: 2712639778731219827}
   - {fileID: 2403485513553578817}
   - {fileID: 8557766744963092567}
-  - {fileID: 1904408177308566235}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4436,6 +4775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
+  _isInteractionLocked: 0
   ItemData: {fileID: 11400000, guid: 881618781bbba7d4881c1084c90e0772, type: 2}
   PickUpTime: 0.5
 --- !u!1 &5231153321012499600
@@ -5298,7 +5638,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2907920079285232263}
-  - component: {fileID: 4982309870240704559}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
@@ -5320,18 +5659,6 @@ Transform:
   m_Father: {fileID: 3687792698990983659}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4982309870240704559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5791358434562949576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2e0860d9f423304a8e839f011572e70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6013899093714623772
 GameObject:
   m_ObjectHideFlags: 0
@@ -5931,6 +6258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
+  _isInteractionLocked: 0
   ItemData: {fileID: 11400000, guid: a074f039d3208c84e8b3c490bac913ea, type: 2}
   PickUpTime: 0.5
 --- !u!1 &6615082887903989357
@@ -6240,6 +6568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
+  _isInteractionLocked: 0
   ItemData: {fileID: 11400000, guid: 30095eaf594323b42beb2df57250c6d4, type: 2}
   PickUpTime: 0.5
 --- !u!114 &415659509285051064
@@ -7399,7 +7728,7 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4982309870240704559}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: CallDialogue
           m_Mode: 5
@@ -8434,6 +8763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 5
+  _isInteractionLocked: 0
   Puzzle: {fileID: 5235566011315741230, guid: d0950d6b9c26b469dbaac675321a4991, type: 3}
   ItemData: {fileID: 11400000, guid: 94bbec4b67b144a889865f5e8a89cd34, type: 2}
   finishEvents: []
@@ -8661,15 +8991,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a92e6ec87f5ad4c038229934453c278f, type: 3}
---- !u!4 &7765834663608035585 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7149498112034572307, guid: a92e6ec87f5ad4c038229934453c278f,
-    type: 3}
-  m_PrefabInstance: {fileID: 647911261419348242}
-  m_PrefabAsset: {fileID: 0}
 --- !u!58 &5333988818720211275 stripped
 CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 4826721140499636313, guid: a92e6ec87f5ad4c038229934453c278f,
+    type: 3}
+  m_PrefabInstance: {fileID: 647911261419348242}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7765834663608035585 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7149498112034572307, guid: a92e6ec87f5ad4c038229934453c278f,
     type: 3}
   m_PrefabInstance: {fileID: 647911261419348242}
   m_PrefabAsset: {fileID: 0}
@@ -8982,6 +9312,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01243d5917f8dd48afecb2b427b1ce6, type: 3}
+--- !u!114 &2447833192819331355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3683611760846947296, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361954268274479867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &592498292535014297 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1936081914070884706, guid: f01243d5917f8dd48afecb2b427b1ce6,
@@ -9012,30 +9354,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1361954268274479867}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1123209695992716035 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2121427922097555960, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1361954268274479867}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2447833192819331355 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3683611760846947296, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1361954268274479867}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &2712639778731219827 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3982195482189203848, guid: f01243d5917f8dd48afecb2b427b1ce6,
@@ -9048,141 +9366,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1361954268274479867}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1591555841673964627
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2132265067942336059}
-    m_Modifications:
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 372.35672
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 190.26852
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -208.88689
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076660, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_Name
-      value: UIManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: assignedIndex
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[0]
-      value: 1stDialHoz
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[1]
-      value: Charlie
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[8]
-      value: Item_LookUp
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[9]
-      value: Laura
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[10]
-      value: MrCube
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[11]
-      value: NPCOnly
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[12]
-      value: QuestChartDemo
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[13]
-      value: Test_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[14]
-      value: TriggeredDude
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[15]
-      value: Witch
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2, type: 3}
---- !u!4 &1904408177308566235 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
+--- !u!114 &1123209695992716035 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2121427922097555960, guid: f01243d5917f8dd48afecb2b427b1ce6,
     type: 3}
-  m_PrefabInstance: {fileID: 1591555841673964627}
+  m_PrefabInstance: {fileID: 1361954268274479867}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3225600468652466311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10440,12 +10635,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0499ba983373972449f210a507f57ad7, type: 3}
---- !u!4 &7279175044454976698 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2025793582429503590, guid: 0499ba983373972449f210a507f57ad7,
-    type: 3}
-  m_PrefabInstance: {fileID: 8726220868228386012}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1409379292779858023 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7680569595454145723, guid: 0499ba983373972449f210a507f57ad7,
@@ -10458,3 +10647,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc6ef444231fe34eb7c22b25f4b52c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &7279175044454976698 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2025793582429503590, guid: 0499ba983373972449f210a507f57ad7,
+    type: 3}
+  m_PrefabInstance: {fileID: 8726220868228386012}
+  m_PrefabAsset: {fileID: 0}

@@ -16,7 +16,6 @@ namespace Rescues
         private readonly PhysicalServices _physicsService;
         private PlayerStates _playerState;
         private PlayerStates _lastState;
-        private GameObject _interfaceWindow;
         private Action _cancelState = () => { };
         private Vector2 _inputAxis;
         private bool _isStateLocked;
@@ -201,6 +200,12 @@ namespace Rescues
 
                     case PlayerStates.Use:
                         {
+                            var dialogue = GetInteractableObject<DialogueBehaviour>(InteractableObjectType.Dialogue);
+                            if (dialogue != null)
+                            {
+                                _context.dialogueUI.Interact(dialogue.assignDialog);
+                            }
+
                             var item = GetInteractableObject<ItemBehaviour>(InteractableObjectType.Item);
                             if (item != null)
                             {

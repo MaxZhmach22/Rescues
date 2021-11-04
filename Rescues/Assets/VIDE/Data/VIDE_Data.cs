@@ -1626,10 +1626,10 @@ namespace VIDE_Data
         public static void LoadDialogues()
         {
             FetchDiags();
-            foreach (Diags d in diags)
+            for (int i = 0; i < diags.Count; i++)
             {
-                currentDiag = diags.IndexOf(d);
-                Load(d.name);
+                currentDiag = i;
+                Load(diags[i].name);
             }
 
             if (OnLoaded != null)

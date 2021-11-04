@@ -27,6 +27,7 @@ namespace Rescues
 
         #region Properties
 
+        public string Name { get; private set; }
         public Transform Transform { get; }
         public AudioSource PlayerSound { get; }
 
@@ -39,6 +40,7 @@ namespace Rescues
         public CharacterModel(Transform transform, PlayerData playerData)
         {
             _speed = playerData.Speed;
+            Name = playerData.Name;
 
             _characterArmature = transform.GetComponentInChildren<DragonBones.UnityArmatureComponent>();
             _characterAnimation = _characterArmature.animation;

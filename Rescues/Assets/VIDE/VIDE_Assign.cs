@@ -1,9 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System;
-using MiniJSON_VIDE;
+using UnityEngine;
 using VIDE_Data;
 
 public class VIDE_Assign : MonoBehaviour, ISerializationCallbackReceiver
@@ -161,7 +159,7 @@ public class VIDE_Assign : MonoBehaviour, ISerializationCallbackReceiver
     public bool preload;
     public bool notuptodate = false;
     public int startp;
-    public string loadtag; 
+    public string loadtag;
 
     public List<DialogueNode> playerDiags = new List<DialogueNode>();
     public List<ActionNode> actionNodes = new List<ActionNode>();

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 899460704229076616}
   - component: {fileID: 899460704229076663}
-  - component: {fileID: 899460704229076662}
   - component: {fileID: 899460704229076661}
+  - component: {fileID: 4787635856438918820}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -46,27 +46,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diags:
+  - 1stDialHoz
   - Charlie
-  - ChTest
   - CommentModifier
   - CrazyCap
   - DEMO_Condition
   - demo_Narration
   - Example3Dialogue
   - Example4_dialogue
-  - IlyaTest
   - Item_LookUp
   - Laura
   - MrCube
-  - MyDialogue
   - NPCOnly
   - QuestChartDemo
-  - Test
+  - Test_1
   - TriggeredDude
   - Witch
-  assignedIndex: 1
-  assignedID: 72570
-  assignedDialogue: ChTest
+  assignedIndex: 0
+  assignedID: 79672
+  assignedDialogue: 1stDialHoz
   interactionCount: 0
   alias: 
   overrideStartNode: -1
@@ -81,35 +79,6 @@ MonoBehaviour:
   langs: []
   S_playerDiags: []
   S_actionNodes: []
---- !u!114 &899460704229076662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 899460704229076660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cac108d1721536344840e2555b012822, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _containerNpc: {fileID: 0}
-  _imageNpc: {fileID: 0}
-  _imageNpcIcon: {fileID: 0}
-  _enableColorNpc: {r: 1, g: 1, b: 1, a: 1}
-  _disableColorNpc: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
-  _textNpc: {fileID: 0}
-  _containerPlayer: {fileID: 0}
-  _playerName: {fileID: 0}
-  _playerNameColor: {r: 0, g: 0, b: 0, a: 0}
-  _textChoices:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _background: {fileID: 0}
-  _audioSource: {fileID: 899460704229076661}
-  _continueButton: 32
 --- !u!82 &899460704229076661
 AudioSource:
   m_ObjectHideFlags: 0
@@ -206,3 +175,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4787635856438918820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899460704229076660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7474e83aabceed745ac79fec3fc3aa40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  containerNpc: {fileID: 0}
+  imageNpc: {fileID: 0}
+  imageNpcIcon: {fileID: 0}
+  enableColorNpc: {r: 0, g: 0, b: 0, a: 0}
+  disableColorNpc: {r: 0, g: 0, b: 0, a: 0}
+  textNpc: {fileID: 0}
+  containerPlayer: {fileID: 0}
+  playerName: {fileID: 0}
+  playerNameColor: {r: 0, g: 0, b: 0, a: 0}
+  textChoices: []
+  background: {fileID: 0}
+  audioSource: {fileID: 0}
+  videAssign: {fileID: 899460704229076663}
+  destroyClip: {fileID: 0}
+  continueButton: 32

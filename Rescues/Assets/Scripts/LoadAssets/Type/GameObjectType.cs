@@ -7,6 +7,7 @@
         Enemy     = 2,
         Canvas    = 3,
         Levels    = 4,
-        PuzzlesFolder = 5
+        Puzzles = 5,
+        DialoguesComponents = 6
     }
 }
