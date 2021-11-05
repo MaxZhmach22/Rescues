@@ -44,8 +44,9 @@ namespace Rescues
                     _listOfInputField.Add(newOne.gameObject.GetComponentInChildren<SaveLoadBaseBehaviour>());
                     _listOfInputField.Last().InputField.text = fileName.FileName.Split('/','\\').Last();
                     _listOfInputField.Last().InputField.readOnly = true;
-                    _listOfInputField.Last().InputFieldSelected += SelectedInput;
+                    _listOfInputField.Last().se.AddListener(SelectedInput);
                 }
+                //SetSaveLoad(SaveOrLoad);
                 if (SaveOrLoad)
                 {
                     _saveLoadButton.onClick.AddListener(SaveButtonClick);
@@ -53,12 +54,12 @@ namespace Rescues
                         _saveLoadingPanelFactory.Create("SaveLoadingBase", _scrollView.transform)
                             .gameObject.GetComponentInChildren<SaveLoadBaseBehaviour>());
                     _listOfInputField.Last().InputField.readOnly = false;
-                    _listOfInputField.Last().InputFieldSelected += SelectedInput;
+                    _listOfInputField.Last().se.AddListener(SelectedInput);
                 }
                 else
                     _saveLoadButton.onClick.AddListener(LoadButtonClick);
+                _saveLoadButton.enabled = false;
                 
-                SetSaveLoad(SaveOrLoad);
             }
         }
 
@@ -80,6 +81,7 @@ namespace Rescues
         private void SelectedInput(string obj)
         {
             _selectedInputInfo = obj;
+            _saveLoadButton.enabled = true;
         }
         public override void Show()
         {
@@ -123,11 +125,13 @@ namespace Rescues
         private void LoadButtonClick()
         {
             Loading?.Invoke(_selectedInputInfo);
+            Hide();
         }
 
         private void SaveButtonClick()
         {
             Saving?.Invoke(_selectedInputInfo);
+            Hide();
         }
         #endregion
     }

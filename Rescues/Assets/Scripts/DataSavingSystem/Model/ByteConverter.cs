@@ -33,7 +33,11 @@ namespace Rescues
                 counts[2] = 0;
                 IEnumerable<byte> LevelBytes = Encoding.ASCII.GetBytes("[").Concat(Encoding.ASCII.GetBytes("[")).
                     Concat(Encoding.ASCII.GetBytes(levelProgress.LevelsName)).Concat(Encoding.ASCII.GetBytes("]"));
-                
+                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("[")).
+                    Concat(Encoding.ASCII.GetBytes(levelProgress.LastGate.GoToLevelName+",")).
+                    Concat(Encoding.ASCII.GetBytes(levelProgress.LastGate.GoToLocationName+",")).
+                    Concat(Encoding.ASCII.GetBytes(levelProgress.LastGate.GoToGateId+"")).
+                    Concat(Encoding.ASCII.GetBytes("]"));
                 LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("["));
                 foreach (var item in levelProgress.ItemBehaviours)
                 {
@@ -100,6 +104,10 @@ namespace Rescues
                 elemCounter++;
                 levelsProgress.Add(new LevelProgress());
                 levelsProgress[i].LevelsName = data[elemCounter+offsetIndex];
+                elemCounter++;
+                string[] levelLastGate = data[elemCounter+offsetIndex].Split(separatorChars, StringSplitOptions.RemoveEmptyEntries);
+                levelsProgress[i].LastGate = 
+                    GateDataMock.GetMock(levelLastGate[0], levelLastGate[1], Convert.ToInt32(levelLastGate[2]));
                 elemCounter++;
                 levelsProgress[i].ItemBehaviours = new List<ItemListData>();
                 levelsProgress[i].PuzzleListData = new List<PuzzleListData>();
