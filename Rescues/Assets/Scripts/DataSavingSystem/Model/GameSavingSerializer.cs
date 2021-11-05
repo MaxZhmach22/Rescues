@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -36,19 +37,22 @@ namespace Rescues
             //var formatter = new BinaryFormatter();
             Directory.CreateDirectory(Serialization.path+"/"+$"{Serialization.SAVING_PATH}");
             var savePath = $"{Serialization.path}/{Serialization.SAVING_PATH}/{fileName}{Serialization.DEFEND_EXTENSION}";
-             //var savePath2 = $"{Serialization.path}/{Serialization.SAVING_PATH}/{fileName}.ttt";
+            //var savePath2 = $"{Serialization.path}/{Serialization.SAVING_PATH}/{fileName}.ttt";
             File.WriteAllBytes(savePath, data.Serialize());
             // using (FileStream stream = File.Create(savePath2))
             //     formatter.Serialize(stream, data);
             //UnityEditor.EditorUtility.RevealInFinder(savePath);
         }
         
-        public WorldGameData Load(string fileName)
+        public void Load(string fileName)
         {
             var savePath = $"{Serialization.path}/{Serialization.SAVING_PATH}/{fileName}{Serialization.DEFEND_EXTENSION}";
-            if (File.Exists(savePath) == false)
-                return null;
-            return WorldGameData.Deserialize(File.ReadAllBytes(savePath));
+            if (!File.Exists(savePath) == false)
+                WorldGameData.Deserialize(File.ReadAllBytes(savePath));
+            else
+            {
+                throw new Exception("OPYAT ETA UNITY SBOIT");
+            }
         }
         
     }

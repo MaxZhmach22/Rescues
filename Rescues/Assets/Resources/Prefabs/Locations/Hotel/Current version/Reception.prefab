@@ -9117,6 +9117,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
+    - target: {fileID: 899460704229076660, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
         type: 3}
       propertyPath: assignedIndex

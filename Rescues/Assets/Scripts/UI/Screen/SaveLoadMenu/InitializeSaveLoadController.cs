@@ -34,6 +34,7 @@ namespace Rescues
         {
             _context.saveLoadBehaviour = Object.FindObjectOfType<SaveLoadBehaviour>();
             _context.saveLoadBehaviour.ReEnable += UpdateListOfSaves;
+            _context.gameMenu.CalledSaveLoad += _context.saveLoadBehaviour.SetSaveLoad;
             _context.gameMenu.CalledSaveLoad += _context.saveLoadBehaviour.SwitchState;
             _context.saveLoadBehaviour.BackAction += _context.saveLoadBehaviour.SwitchState;
             _context.saveLoadBehaviour.Saving += Saving;
@@ -47,7 +48,10 @@ namespace Rescues
 
         private void Loading(string obj)
         {
+            Debug.Log("Load Data");
             _gameSavingSerializer.Load(obj);
+            Debug.Log("Invoking");
+            _context.WorldGameData.RestartLevel.Invoke();
         }
 
         private void Saving(string name)
