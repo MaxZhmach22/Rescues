@@ -8,6 +8,7 @@ namespace Rescues
         #region Fields
 
         private GameMenuBehaviour _gameMenu;
+        private SaveLoadBehaviour _saveLoadBehaviour;
         private MainMenuBehaviour _mainMenu;
         private GameOverBehaviour _gameOverMenu;
         private Canvas _canvas;
@@ -45,6 +46,16 @@ namespace Rescues
                 _gameMenu = Object.Instantiate(resources, GetCanvas().transform.position, Quaternion.identity, GetCanvas().transform);
             }
             return _gameMenu;
+        }
+        
+        public SaveLoadBehaviour GetSaveLoadBehaviour()
+        {
+            if (_saveLoadBehaviour == null)
+            {
+                var resources = Resources.Load<SaveLoadBehaviour>(AssetsPathGameObject.Screens[ScreenType.Load]);
+                _saveLoadBehaviour = Object.Instantiate(resources, GetCanvas().transform.position, Quaternion.identity, GetCanvas().transform);
+            }
+            return _saveLoadBehaviour;
         }
 
         public MainMenuBehaviour GetMainMenu()

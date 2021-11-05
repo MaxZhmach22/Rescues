@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -42,6 +43,7 @@ namespace Rescues
             _defaultBootScreen = Object.Instantiate((BootScreen)_levelsData.BootScreen, _levelParent.transform);
             _defaultBootScreen.name = "DefaultBootScreen";
             _defaultBootScreen.gameObject.SetActive(false);
+            
             LoadLevel(_levelsData.GetGate);
         }
 
@@ -98,7 +100,27 @@ namespace Rescues
             _locationController = new LocationController(this, _context, loadLevelName, _levelParent.transform);
             _gateController?.Initialize();
         }
-        
+
+        private void AddLocation(Location location)
+        {
+            _context.WorldGameData.
+                AddNewLevelInfoToLevelsProgress(new LevelProgress()
+                    {LevelsName = location.name});
+            foreach (Transform transform in location._items.transform)
+                _context.WorldGameData.
+                    AddInLevelProgressItem(0,new ItemListData()
+                    {
+                        Name = transform.name,
+                        ItemCondition = (ItemCondition)1
+                    });
+            foreach (Transform transform in location._puzzles.transform)
+                _context.WorldGameData.
+                    AddInLevelProgressPuzzle(0,new PuzzleListData()
+                    {
+                        Name = transform.name,
+                        PuzzleCondition = (PuzzleCondition)1
+                    });
+        }
         #endregion
     }
 }

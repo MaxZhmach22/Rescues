@@ -16,6 +16,7 @@ namespace Rescues
         [SerializeField] private Button _settigns;
         [SerializeField] private Button _mainMenu;
         [SerializeField] private Button _exit;
+        public event Action<bool> CalledSaveLoad;
         
         #endregion
 
@@ -78,14 +79,12 @@ namespace Rescues
 
         private void Save()
         {
-            //TODO Need emplementation
-            Debug.Log("Not emplemented yet");
+            CalledSaveLoad?.Invoke(true);
         }
 
         private void Load()
         {
-            //TODO Need emplementation
-            Debug.Log("Not emplemented yet");
+            CalledSaveLoad?.Invoke(false);
         }
 
         private void Settigns()
@@ -113,5 +112,6 @@ namespace Rescues
         }
 
         #endregion
+
     }
 }
