@@ -7,11 +7,10 @@ namespace Rescues
 {
     public sealed class GameSavingSerializer
     {
-        private string path =Path.GetFullPath(
-            Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), @"..\..\"));
+        
         public IEnumerable<FileContext> GetAllSaves()
         {
-            var path = $"{this.path}/{Serialization.SAVING_PATH}";
+            var path = $"{Serialization.path}/{Serialization.SAVING_PATH}";
             if (Directory.Exists(path) == false)
             {
                 yield break;
@@ -27,26 +26,26 @@ namespace Rescues
         public void Delete(string fileName)
         {
             
-            var savePath = $"{path}/{Serialization.SAVING_PATH}/{fileName}{Serialization.DEFEND_EXTENSION}";
+            var savePath = $"{Serialization.path}/{Serialization.SAVING_PATH}/{fileName}{Serialization.DEFEND_EXTENSION}";
             if(File.Exists(savePath))
                 File.Delete(savePath);
         }
         
         public void Save(WorldGameData data, string fileName)
         {
-            var formatter = new BinaryFormatter();
-            Directory.CreateDirectory(path+"/"+$"{Serialization.SAVING_PATH}");
-            var savePath = $"{path}/{Serialization.SAVING_PATH}/{fileName}{Serialization.DEFEND_EXTENSION}";
-            var savePath2 = $"{path}/{Serialization.SAVING_PATH}/{fileName}.ttt";
+            //var formatter = new BinaryFormatter();
+            Directory.CreateDirectory(Serialization.path+"/"+$"{Serialization.SAVING_PATH}");
+            var savePath = $"{Serialization.path}/{Serialization.SAVING_PATH}/{fileName}{Serialization.DEFEND_EXTENSION}";
+             //var savePath2 = $"{Serialization.path}/{Serialization.SAVING_PATH}/{fileName}.ttt";
             File.WriteAllBytes(savePath, data.Serialize());
-            using (FileStream stream = File.Create(savePath2))
-                formatter.Serialize(stream, data);
+            // using (FileStream stream = File.Create(savePath2))
+            //     formatter.Serialize(stream, data);
             //UnityEditor.EditorUtility.RevealInFinder(savePath);
         }
         
         public WorldGameData Load(string fileName)
         {
-            var savePath = $"{path}/{Serialization.SAVING_PATH}/{fileName}{Serialization.DEFEND_EXTENSION}";
+            var savePath = $"{Serialization.path}/{Serialization.SAVING_PATH}/{fileName}{Serialization.DEFEND_EXTENSION}";
             if (File.Exists(savePath) == false)
                 return null;
             return WorldGameData.Deserialize(File.ReadAllBytes(savePath));

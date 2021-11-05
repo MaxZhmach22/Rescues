@@ -58,7 +58,8 @@ namespace Rescues
         {
             _levelsProgress[levelsIndex].ItemBehaviours.Remove(itemListData);
         }
-
+        
+        
         #endregion
 
         #region Quests
@@ -76,6 +77,7 @@ namespace Rescues
         {
             _levelsProgress[levelsIndex].QuestListData.Remove(itemListData);
         }
+        
 
         #endregion
 
@@ -94,15 +96,19 @@ namespace Rescues
         {
             _levelsProgress[levelsIndex].PuzzleListData.Remove(itemListData);
         }
-
-        #endregion
         
+        
+        #endregion
         public byte[] Serialize()
         {
+            
             IEnumerable<byte> position = Encoding.ASCII.GetBytes(_playerPosition);
             var playerProgress =  ByteConverter.AddToStreamPlayersProgress(_playersProgress);
             var levels = ByteConverter.AddToStreamLevelProgress(_levelsProgress);
-            IEnumerable<byte> total = position.Concat(Encoding.ASCII.GetBytes("/")).Concat(playerProgress).Concat(levels);
+            IEnumerable<byte> total = Encoding.ASCII.GetBytes("[").Concat(position).Concat(Encoding.ASCII.GetBytes("]")).
+                Concat(Encoding.ASCII.GetBytes("[")).Concat(playerProgress).Concat(Encoding.ASCII.GetBytes("]")).
+                Concat(levels);
+            
             byte[] result = total.ToArray();
             return result;
         }

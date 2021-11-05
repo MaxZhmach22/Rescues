@@ -56,7 +56,9 @@ namespace Rescues
                 case ScreenType.GameOver:
                     _currentWindow = _screenFactory.GetGameOver();
                     break;
-
+                case ScreenType.Load:
+                    _currentWindow = _screenFactory.GetSaveLoadBehaviour();
+                    break;
                 default:
                     break;
             }
@@ -83,7 +85,11 @@ namespace Rescues
                     _screenFactory.GetGameOver().HideUI += listenerScreen.HideScreen;
                     _screenFactory.GetGameOver().Hide();
                     break;
-
+                case ScreenType.Load:
+                    _screenFactory.GetSaveLoadBehaviour().ShowUI += listenerScreen.ShowScreen;
+                    _screenFactory.GetSaveLoadBehaviour().HideUI += listenerScreen.HideScreen;
+                    _screenFactory.GetSaveLoadBehaviour().Hide();
+                    break;
                 default:
                     break;
             }
@@ -108,7 +114,11 @@ namespace Rescues
                     _screenFactory.GetGameOver().HideUI -= listenerScreen.HideScreen;
                     _screenFactory.GetGameOver().Hide();
                     break;
-
+                case ScreenType.Load:
+                    _screenFactory.GetSaveLoadBehaviour().ShowUI -= listenerScreen.ShowScreen;
+                    _screenFactory.GetSaveLoadBehaviour().HideUI -= listenerScreen.HideScreen;
+                    _screenFactory.GetSaveLoadBehaviour().Hide();
+                    break;
                 default:
                     break;
             }

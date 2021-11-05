@@ -4152,6 +4152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cameraPosition: {fileID: 1825434204502899449}
   _levelNPC: []
+  _items: {fileID: 750451049117727287}
+  _puzzles: {fileID: 7699450335834157549}
 --- !u!1 &4773672457513666626
 GameObject:
   m_ObjectHideFlags: 0

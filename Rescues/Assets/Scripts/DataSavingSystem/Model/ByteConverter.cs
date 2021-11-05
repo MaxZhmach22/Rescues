@@ -18,124 +18,118 @@ namespace Rescues
         public static IEnumerable<byte> AddToStreamPlayersProgress(PlayersProgress playersProgress)
         {
             IEnumerable<byte> playersProgressBytes = AddToIntStream(playersProgress.PlayerCurrentPositionInProgress);
-            playersProgressBytes = playersProgressBytes.Concat(Encoding.ASCII.GetBytes("/"));
             return playersProgressBytes;
         }
 
         public static IEnumerable<byte> AddToStreamLevelProgress(List<LevelProgress> levelProgresses)
         {
-            // Сначала хранятся количество данных
-            // Затем уже вещественные
+            int[] counts = new int[3];
+            int levelCounter = 0;
             IEnumerable<byte> AllLevelsBytes = Encoding.ASCII.GetBytes("");
             foreach (var levelProgress in levelProgresses)
             {
-                IEnumerable<byte> LevelBytes = Encoding.ASCII.GetBytes(levelProgress.LevelsName);
-                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("|"));
+                counts[0] = 0;
+                counts[1] = 0;
+                counts[2] = 0;
+                IEnumerable<byte> LevelBytes = Encoding.ASCII.GetBytes("[").Concat(Encoding.ASCII.GetBytes("[")).
+                    Concat(Encoding.ASCII.GetBytes(levelProgress.LevelsName)).Concat(Encoding.ASCII.GetBytes("]"));
+                
+                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("["));
                 foreach (var item in levelProgress.ItemBehaviours)
                 {
+                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("["));
                     ConvertInputs(item.Name, (int) item.ItemCondition, LevelBytes, out LevelBytes);
-                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"\"));
+                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"]"));
+                    counts[0]++;
                 }
-                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"|"));
+                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("]"));
+                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"["));
                 foreach (var puzzle in levelProgress.PuzzleListData)
                 {
+                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("["));
                     ConvertInputs(puzzle.Name, (int) puzzle.PuzzleCondition, LevelBytes, out LevelBytes);
-                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"\"));
+                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"]"));
+                    counts[1]++;
                 }
-                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"|"));
+                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("]"));
+                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"["));
                 foreach (var quest in levelProgress.QuestListData)
                 {
+                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("["));
                     ConvertInputs(quest.Name, (int) quest.QuestCondition, LevelBytes, out LevelBytes);
-                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"\"));
+                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"]"));
+                    counts[2]++;
                 }
-                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"#"));
-                AllLevelsBytes = AllLevelsBytes.Concat(LevelBytes);
+                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("]"));
+                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"]"));
+                AllLevelsBytes = AllLevelsBytes.
+                    Concat(Encoding.ASCII.GetBytes("[")).
+                    Concat(Encoding.ASCII.GetBytes($"{counts[0]},{counts[1]},{counts[2]}").
+                    Concat(Encoding.ASCII.GetBytes("]")).
+                    Concat(LevelBytes));
+                levelCounter++;
             }
-            return AllLevelsBytes;
+            return Encoding.ASCII.GetBytes("["). 
+                Concat(Encoding.ASCII.GetBytes(levelCounter.ToString())).
+                Concat(Encoding.ASCII.GetBytes("]")).
+                Concat(AllLevelsBytes);
         }
         private static void ConvertInputs(string name, int condition,IEnumerable<byte> mass,out IEnumerable<byte> LevelBytes)
         {
             var Name = Encoding.ASCII.GetBytes(name);
             var Condition = AddToIntStream(condition);
-            LevelBytes = mass.Concat(Name).Concat(Encoding.ASCII.GetBytes("-")).Concat(Condition);
+            LevelBytes = mass.Concat(Name).Concat(Encoding.ASCII.GetBytes("~")).Concat(Condition);
         }
-        public static int ReturnFromStream(byte[] source, int offset, out byte destination)
-        {
-            destination = source[offset];
-            return 1;
-        }
-
-        public static int ReturnFromStream(byte[] source, int offset, out int destination)
-        {
-            destination = 0;
-            destination |= source[offset] << 24;
-            destination |= source[offset + 1] << 16;
-            destination |= source[offset + 2] << 8;
-            destination |= source[offset + 3];
-            return 4;
-        }
-
-        public static List<LevelProgress> ReturnFromStreamLevelProgress()
-        {
-            List<LevelProgress> levelProgresses = new List<LevelProgress>();
-            return levelProgresses;
-        }
-        //
-        // private static string _playerPosition;
-        // private static PlayersProgress _playersProgress;
-        // private static List<LevelProgress> _levelsProgress;
         public static void DataReader(string dataString,
             out string playerPosition,
             out PlayersProgress playersProgress,
             out List<LevelProgress> levelsProgress)
         {
-            string[] data = dataString.Split('/');
+            string[] separatingStrings = { "[","]" };
+            string[] data = dataString.Split(separatingStrings,StringSplitOptions.RemoveEmptyEntries);
             playerPosition = data[0];
             playersProgress = new PlayersProgress(){PlayerCurrentPositionInProgress = Convert.ToInt32(data[1])};
             levelsProgress = new List<LevelProgress>();
-            string[] levels = data[2].Split('#');
-            levels = levels.Reverse().Skip(1).Reverse().ToArray();//hmm...expencive......
-            int counter = 0;
-            foreach (var level in levels)
+            int countOfLevelsInfo = Convert.ToInt32(data[2]);
+            int offsetIndex = 3;
+            int elemCounter = 0;
+            for (int i = 0; i < countOfLevelsInfo; i++)
             {
+                char[] separatorChars = {','};
+                string[] levelCounters = data[elemCounter+offsetIndex].Split(separatorChars, StringSplitOptions.RemoveEmptyEntries);
+                elemCounter++;
                 levelsProgress.Add(new LevelProgress());
-                var levelInside = level.Split('|');
-                levelsProgress[counter].LevelsName = levelInside[0];
-                levelInside = levelInside.Skip(1).ToArray();
-                levelsProgress[counter].ItemBehaviours = new List<ItemListData>();
-                levelsProgress[counter].PuzzleListData = new List<PuzzleListData>();
-                levelsProgress[counter].QuestListData = new List<QuestListData>();
-                var items = levelInside[0].Split('\\');
-                items = items.Reverse().Skip(1).Reverse().ToArray();
-                foreach (var part in items) 
+                levelsProgress[i].LevelsName = data[elemCounter+offsetIndex];
+                elemCounter++;
+                levelsProgress[i].ItemBehaviours = new List<ItemListData>();
+                levelsProgress[i].PuzzleListData = new List<PuzzleListData>();
+                levelsProgress[i].QuestListData = new List<QuestListData>();
+                for (int j = 0; j < Convert.ToInt32(levelCounters[0]); j++)
                 {
-                    
-                    ConvertInputs(out var name,out var condition,part);
-                    levelsProgress[counter].ItemBehaviours.Add(new ItemListData() 
+                    ConvertInputs(out var name,out var condition,data[elemCounter+offsetIndex]);
+                    levelsProgress[i].ItemBehaviours.Add(new ItemListData() 
                         {Name = name, ItemCondition = (ItemCondition)condition});
+                    elemCounter++;
                 }
-                var puzzles = levelInside[1].Split('\\');
-                puzzles = puzzles.Reverse().Skip(1).Reverse().ToArray();
-                foreach (var part in puzzles) 
+                for (int j = 0; j < Convert.ToInt32(levelCounters[1]); j++)
                 {
-                    ConvertInputs(out var name,out var condition,part);
-                    levelsProgress[counter].PuzzleListData.Add(new PuzzleListData() 
+                    ConvertInputs(out var name,out var condition,data[elemCounter+offsetIndex]);
+                    levelsProgress[i].PuzzleListData.Add(new PuzzleListData() 
                         {Name = name, PuzzleCondition = (PuzzleCondition)condition});
+                    elemCounter++;
                 }
-                var quests = levelInside[2].Split('\\');
-                quests = quests.Reverse().Skip(1).Reverse().ToArray();
-                foreach (var part in quests) 
+                for (int j = 0; j < Convert.ToInt32(levelCounters[2]); j++)
                 {
-                    ConvertInputs(out var name,out var condition,part);
-                    levelsProgress[counter].QuestListData.Add(new QuestListData() 
+                    ConvertInputs(out var name,out var condition,data[elemCounter+offsetIndex]);
+                    levelsProgress[i].QuestListData.Add(new QuestListData() 
                         {Name = name, QuestCondition = (QuestCondition)condition});
+                    elemCounter++; 
                 }
-                counter++;
             }
         }
         private static void ConvertInputs(out string name,out int condition, string part)
         {
-            var splitedPart = part.Split('-');
+            var splitedPart = part.Split('~');
             name = splitedPart[0];
             condition = Convert.ToInt32(splitedPart[1]);
         }
