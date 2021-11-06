@@ -3,23 +3,32 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 namespace Rescues
 {
+    [RequireComponent(typeof(TextMeshProUGUI))]
+    [RequireComponent(typeof(Button))]
     public sealed class PossibleAnswer : MonoBehaviour
     {
-        private TextMeshProUGUI _text;
-        private Button _button;
+        #region Fields
+
+        [SerializeField] private TextMeshProUGUI _text;
+        [SerializeField] private Button _button;
+
+        #endregion
+
+
+        #region Properties
 
         public string Text
         {
             set => _text.text = value;
         }
 
-        private void Awake()
-        {
-            _button = GetComponent<Button>();
-            _text = GetComponentInChildren<TextMeshProUGUI>();
-        }
+        #endregion
+
+
+        #region Methods
 
         public void Enable()
         {
@@ -45,5 +54,7 @@ namespace Rescues
         {
             _button.onClick.AddListener(action.Invoke);
         }
+
+        #endregion
     }
 }

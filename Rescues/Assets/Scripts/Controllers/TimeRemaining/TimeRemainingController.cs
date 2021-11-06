@@ -10,8 +10,8 @@ namespace Rescues
         private readonly List<ITimeRemaining> _timeRemainings;
         private readonly List<List<ITimeRemaining>> _sequentialTimeRemainings;
         private readonly UnityTimeServices _timeService;
-        private int k = 0;
-        private int j = 0;
+        private int _currentSequenceIndex = 0;
+        private int _currentSeqElementIndex = 0;
 
         #endregion
 
@@ -51,30 +51,27 @@ namespace Rescues
                 }
             }
 
-            if (_sequentialTimeRemainings.Count > k && _sequentialTimeRemainings[k].Count > j)
+            if (_sequentialTimeRemainings.Count > _currentSequenceIndex &&
+                _sequentialTimeRemainings[_currentSequenceIndex].Count > _currentSeqElementIndex)
             {
-                var sequence = _sequentialTimeRemainings[k][j];
-                sequence.CurrentTime -= time;
-                if (sequence.CurrentTime <= 0.0f)
+                var sequenceElement = _sequentialTimeRemainings[_currentSequenceIndex][_currentSeqElementIndex];
+                sequenceElement.CurrentTime -= time;
+                if (sequenceElement.CurrentTime <= 0.0f)
                 {
-                    sequence?.Method?.Invoke();
-                    j++;
+                    sequenceElement?.Method?.Invoke();
+                    _currentSeqElementIndex++;
                 }
-                if (j >= _sequentialTimeRemainings[k].Count)
+
+                if (_currentSeqElementIndex >= _sequentialTimeRemainings[_currentSequenceIndex].Count)
                 {
-                    _sequentialTimeRemainings[k].RemoveSequentialTimeRemaining();
-                    j = 0;
-                    k++;
-                }
-                if (k >= _sequentialTimeRemainings.Count)
-                {
-                    k = 0;
+                    _sequentialTimeRemainings[_currentSequenceIndex].RemoveSequentialTimeRemaining();
+                    _currentSequenceIndex++;
                 }
             }
             else
             {
-                k = 0;
-                j = 0;
+                _currentSequenceIndex = 0;
+                _currentSeqElementIndex = 0;
             }
         }
 
