@@ -3,6 +3,7 @@
 
 namespace Rescues
 {
+    [RequireComponent(typeof(ItemData))]
     public sealed class ItemBehaviour: InteractableObjectBehavior
     {
         #region Fields

@@ -1,5 +1,4 @@
 ﻿using PathCreation;
-using System;
 using UnityEngine;
 
 
@@ -9,16 +8,16 @@ namespace Rescues
     {
         #region Fields
 
-        public Action<float> OnSceneLoad = (distance) => { };
-
         private float _distance;
         private float _speed;
+        private bool _canMove;
 
         private DragonBones.UnityArmatureComponent _characterArmature;
         private DragonBones.Animation _characterAnimation;
 
         private CapsuleCollider2D _playerCollider;
         private Rigidbody2D _playerRigidbody2D;
+        private MeshRenderer _playerMesh;
 
         private CurveWay _curveWay;
 
@@ -27,6 +26,7 @@ namespace Rescues
 
         #region Properties
 
+        public string Name { get; private set; }
         public Transform Transform { get; }
         public AudioSource PlayerSound { get; }
 
@@ -39,9 +39,12 @@ namespace Rescues
         public CharacterModel(Transform transform, PlayerData playerData)
         {
             _speed = playerData.Speed;
+            Name = playerData.Name;
 
             _characterArmature = transform.GetComponentInChildren<DragonBones.UnityArmatureComponent>();
             _characterAnimation = _characterArmature.animation;
+            _playerMesh = transform.GetComponentInChildren<MeshRenderer>();
+            _playerMesh.enabled = false;
 
             _playerCollider = transform.GetComponentInChildren<CapsuleCollider2D>();
             _playerRigidbody2D = transform.GetComponentInChildren<Rigidbody2D>();
@@ -54,36 +57,43 @@ namespace Rescues
 
         #region StateMachine     
 
-        public void Moving(float direction)
+        public void Move(float direction)
         {
-            if (direction != 0 && _characterAnimation.lastAnimationName != "Walking")
+            if (_canMove)
             {
-                _characterAnimation.FadeIn("Walking");
-            }
+                if (_characterAnimation.lastAnimationName != "Walking")
+                {
+                    _characterAnimation.FadeIn("Walking");
+                }
 
-            if (direction == 0 && _characterAnimation.lastAnimationName != "Idle")
+                if (direction > 0 && _characterArmature._armature.flipX)
+                {
+                    FlipCharacter();
+                }
+                else if (direction < 0 && !_characterArmature._armature.flipX)
+                {
+                    FlipCharacter();
+                }
+
+                ChangePosition(direction);
+            }
+        }
+
+        public void SetIdle()
+        {
+            if (_characterAnimation.lastAnimationName != "Idle")
             {
-                _characterAnimation.FadeIn("Idle");
+                _characterAnimation.FadeIn("Idle");               
             }
-
-            if (direction != 0)
+        }
+        
+        public void ForceSetIdle()
+        {
+            if (_characterAnimation.lastAnimationName != "Idle")
             {
-                direction = direction > 0 ? 1 : -1; 
+                _characterAnimation.Stop();
+                _characterAnimation.Play("Idle");               
             }
-
-            _distance += direction * _speed * Time.deltaTime;
-            Transform.position = _curveWay.PathCreator.path.GetPointAtDistance(_distance, EndOfPathInstruction.Stop);
-
-            if (direction > 0 && _characterArmature._armature.flipX)
-            {
-                Flip();
-            }
-            else if (direction < 0 && !_characterArmature._armature.flipX)
-            {
-                Flip();
-            }
-
-            SetScale();
         }
 
         public void StartHiding(HidingPlaceBehaviour hidingPlaceBehaviour)
@@ -94,13 +104,13 @@ namespace Rescues
             {
                 _playerRigidbody2D.bodyType = RigidbodyType2D.Static;
                 hidingPlaceBehaviour.HidedSprite.enabled = true; //чтобы спрайт хайдинг плейс бехевора включался только тогда, когда персонаж спрятался
-                _characterArmature.enabled = false; //чтобы спрайт выключался сразу, когда идет процесс пряток
+                _playerMesh.enabled = false; //чтобы спрайт выключался сразу, когда идет процесс пряток
             }
             else
             {
                 _playerRigidbody2D.bodyType = RigidbodyType2D.Dynamic;
                 hidingPlaceBehaviour.HidedSprite.enabled = false; //чтобы спрайт хайдинг плейс бехевора выключался сразу, когда персонаж начинает вылезать
-                _characterArmature.enabled = true; //чтобы спрайт выключался только тогда, когда персонаж уже вылез
+                _playerMesh.enabled = true; //чтобы спрайт выключался только тогда, когда персонаж уже вылез
             }
         }
 
@@ -114,7 +124,22 @@ namespace Rescues
             _curveWay = curveWay;
             Transform.position = curveWay.GetStartPointPosition;
             CorrectDistance();
-            OnSceneLoad = Moving;
+            SetScale();
+            _playerMesh.enabled = true;
+            _canMove = true;
+        }
+
+        private void ChangePosition(float direction)
+        {
+            if (direction != 0)
+            {
+                direction = direction > 0 ? 1 : -1;
+            }
+
+            _distance += direction * _speed * Time.deltaTime;
+            Transform.position = _curveWay.PathCreator.path.GetPointAtDistance(_distance, EndOfPathInstruction.Stop);
+
+            SetScale();
         }
 
         private void SetScale()
@@ -131,7 +156,7 @@ namespace Rescues
                 _curveWay.StartCharacterPosition.x + _curveWay.LeftmostPoint.x;
         }
 
-        private void Flip()
+        private void FlipCharacter()
         {
             _characterArmature._armature.flipX = !_characterArmature._armature.flipX;
         }

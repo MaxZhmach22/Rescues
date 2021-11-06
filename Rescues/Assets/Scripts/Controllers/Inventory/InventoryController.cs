@@ -28,7 +28,7 @@ namespace Rescues
 
         public void Initialize()
         {
-            _inventory = Object.FindObjectOfType<InventoryBehaviour>();
+            _inventory = Object.FindObjectOfType<InventoryBehaviour>(true);
             _context.inventory = _inventory;
             _inventory.gameObject.SetActive(false);
 

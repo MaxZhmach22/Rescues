@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
+  _isInteractionLocked: 0
   ItemData: {fileID: 11400000, guid: ed13e98ed621db241b8d45b2b83dc0d8, type: 2}
   PickUpTime: 0.5
 --- !u!114 &2596028126344026137
@@ -151,7 +152,7 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8722040617495882299}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: CallDialogue
           m_Mode: 5
@@ -432,7 +433,7 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8722040617495882299}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: CallDialogue
           m_Mode: 5
@@ -1258,7 +1259,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8872831893072226108}
-  - component: {fileID: 8722040617495882299}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
@@ -1280,18 +1280,6 @@ Transform:
   m_Father: {fileID: 1085275017814944225}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8722040617495882299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8702778046043675619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2e0860d9f423304a8e839f011572e70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8804234847028565680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,6 +1336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraPosition: {fileID: 6630510803926078560}
+  _levelNPC: []
 --- !u!1 &9065175894411876520
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ namespace Rescues
         public EnemyBehaviour enemy;
         public LocationData activeLocation;
         public NotepadBehaviour notepad;
-        public DialogueBehaviour dialogueManager;
+        public DialogueUIController dialogueUIController;
 
         public event Action<IInteractable> AddObjectHandler = delegate (IInteractable interactable) { };
         private readonly SortedList<InteractableObjectType, List<IInteractable>> _onTriggers;

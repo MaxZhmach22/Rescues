@@ -515,6 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
+  _isInteractionLocked: 0
   ItemData: {fileID: 11400000, guid: c2fac2768336791408cb9ebe05c39015, type: 2}
   PickUpTime: 0.5
 --- !u!1 &1480003436105585683
@@ -821,7 +822,7 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476598453178057439}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: CallDialogue
           m_Mode: 5
@@ -833,7 +834,7 @@ MonoBehaviour:
             m_StringArgument: GootR
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 476598453178057439}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: SetQuestion
           m_Mode: 5
@@ -846,7 +847,7 @@ MonoBehaviour:
               \u0438\u0437 \u043A\u043E\u043C\u043D\u0430\u0442\u044B"
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 476598453178057439}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: SetValue
           m_Mode: 3
@@ -1061,6 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraPosition: {fileID: 9209868419581239934}
+  _levelNPC: []
 --- !u!1 &3245625287452608869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,6 +1380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
+  _isInteractionLocked: 0
   ItemData: {fileID: 11400000, guid: e346ba9fc758c1b41a92aef5ff4b6131, type: 2}
   PickUpTime: 0.5
 --- !u!114 &3074853108850302195
@@ -1400,7 +1403,7 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476598453178057439}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: CallDialogue
           m_Mode: 5
@@ -1421,7 +1424,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4135785429707111563}
-  - component: {fileID: 476598453178057439}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
@@ -1443,18 +1445,6 @@ Transform:
   m_Father: {fileID: 5636689624283554828}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &476598453178057439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5042890428022809989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2e0860d9f423304a8e839f011572e70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5076720352511983612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,7 +1549,7 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 476598453178057439}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
           m_MethodName: CallDialogue
           m_Mode: 5
@@ -2326,6 +2316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
+  _isInteractionLocked: 0
   ItemData: {fileID: 11400000, guid: b72bd5f33bf0c0b4d80347a3a090b77a, type: 2}
   PickUpTime: 0.5
 --- !u!1 &8064377285531869262
@@ -2927,6 +2918,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a92e6ec87f5ad4c038229934453c278f, type: 3}
+--- !u!4 &4939436602605292483 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7149498112034572307, guid: a92e6ec87f5ad4c038229934453c278f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2861045581491225552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8568950278106312719 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
@@ -2939,12 +2936,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12671e5468464ffb931aedbf36e82e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &4939436602605292483 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7149498112034572307, guid: a92e6ec87f5ad4c038229934453c278f,
-    type: 3}
-  m_PrefabInstance: {fileID: 2861045581491225552}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2861045582008222222
 PrefabInstance:
   m_ObjectHideFlags: 0

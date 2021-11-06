@@ -9,5 +9,6 @@
         Trap = 4,
         Puzzle = 5,
         Stand  = 6,
+        Dialogue
     }
 }

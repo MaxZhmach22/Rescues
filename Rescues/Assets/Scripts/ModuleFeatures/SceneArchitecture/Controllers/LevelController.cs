@@ -5,7 +5,7 @@ using Object = UnityEngine.Object;
 
 namespace Rescues
 {
-    public class LevelController : IInitializeController, ITearDownController
+    public class LevelController : IInitializeController
     {
 
         #region Fileds
@@ -20,7 +20,6 @@ namespace Rescues
         private Services _services;
         private GameObject _levelParent;
         private GateController _gateController;
-        private DialogueBehaviour _dialogueManager;
 
         #endregion
 
@@ -47,18 +46,6 @@ namespace Rescues
         }
 
         #endregion
-
-
-        #region ITearDownController
-
-        public void TearDown()
-        {
-            _dialogueManager.OnQuestSet -= _context.notepad.AddQuest;
-            _dialogueManager.OnQuestRemove -= _context.notepad.RemoveQuest;
-        }
-
-        #endregion
-
 
         #region Methods
 
@@ -97,11 +84,6 @@ namespace Rescues
                 bootLocation.LoadLocation();
                 _levelsData.SetLastLevelGate = gate;
                 _context.activeLocation = bootLocation;
-
-                _dialogueManager = Object.FindObjectOfType<DialogueBehaviour>();
-                _dialogueManager.OnQuestSet += _context.notepad.AddQuest;
-                _dialogueManager.OnQuestRemove += _context.notepad.RemoveQuest;
-
                 _curveWayController = new CurveWayController(bootLocation.LocationInstance.СurveWays);
                 _activeCurveWay = _curveWayController.GetCurve(enterGate, WhoCanUseCurve.Character);
                 _context.character.LocateCharacter(_activeCurveWay);

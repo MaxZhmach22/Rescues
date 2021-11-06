@@ -44,7 +44,7 @@ namespace Rescues
             {
                 if (_playerData == null)
                 {
-                    _playerData = Load<PlayerData>("Data/" + Instance._playerDataPath);
+                    _playerData = Load<PlayerData>("Data/Player/" + Instance._playerDataPath);
                 }
 
                 return _playerData;

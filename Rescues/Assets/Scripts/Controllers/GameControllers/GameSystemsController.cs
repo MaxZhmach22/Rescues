@@ -8,6 +8,7 @@
         {
             AddUpdateFeature(new MainControllers(context, services));
             AddLateUpdateFeature(new MainLateControllers(context, services));
+            AddFixedUpdateFeature(new MainFixedControllers(context, services));
         }
 
         #endregion
