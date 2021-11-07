@@ -8,7 +8,7 @@ namespace Rescues
         #region Fields
                    
         private readonly List<ITimeRemaining> _timeRemainings;
-        private readonly List<List<ITimeRemaining>> _sequentialЕimeRemainings;
+        private readonly TimeRemainingSequences _sequentialTimeRemainings;
 
         #endregion
 
@@ -18,7 +18,7 @@ namespace Rescues
         public TimeRemainingCleanUp()
         {
             _timeRemainings = TimeRemainingExtensions.TimeRemainings;
-            _sequentialЕimeRemainings = TimeRemainingExtensions.SequentialTimeRemainings;
+            _sequentialTimeRemainings = TimeRemainingExtensions.SequentialTimeRemainings;
         }
                    
         #endregion
@@ -29,7 +29,7 @@ namespace Rescues
         public void Cleanup()
         {
             _timeRemainings.Clear();
-            _sequentialЕimeRemainings.Clear();
+            _sequentialTimeRemainings.sequentialTimeRemainings.Clear();
         }
 
         #endregion

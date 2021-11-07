@@ -8,10 +8,8 @@ namespace Rescues
         #region Fields
 
         private readonly List<ITimeRemaining> _timeRemainings;
-        private readonly List<List<ITimeRemaining>> _sequentialTimeRemainings;
+        private readonly TimeRemainingSequences _timeRemainingSequences;
         private readonly UnityTimeServices _timeService;
-        private int _currentSequenceIndex = 0;
-        private int _currentSeqElementIndex = 0;
 
         #endregion
 
@@ -21,7 +19,7 @@ namespace Rescues
         public TimeRemainingController()
         {
             _timeRemainings = TimeRemainingExtensions.TimeRemainings;
-            _sequentialTimeRemainings = TimeRemainingExtensions.SequentialTimeRemainings;
+            _timeRemainingSequences = TimeRemainingExtensions.SequentialTimeRemainings;
             _timeService = Services.SharedInstance.UnityTimeServices;
         }
 
@@ -51,28 +49,31 @@ namespace Rescues
                 }
             }
 
-            if (_sequentialTimeRemainings.Count > _currentSequenceIndex &&
-                _sequentialTimeRemainings[_currentSequenceIndex].Count > _currentSeqElementIndex)
+            if (_timeRemainingSequences.currentSequenceIndex >= _timeRemainingSequences.sequentialTimeRemainings.Count)
             {
-                var sequenceElement = _sequentialTimeRemainings[_currentSequenceIndex][_currentSeqElementIndex];
+                _timeRemainingSequences.currentSequenceIndex = 0;
+            }
+            else
+            {
+                var sequences = _timeRemainingSequences.sequentialTimeRemainings;
+                var sequenceElement = sequences[_timeRemainingSequences.currentSequenceIndex]
+                    [_timeRemainingSequences.currentSeqElementIndex];
                 sequenceElement.CurrentTime -= time;
                 if (sequenceElement.CurrentTime <= 0.0f)
                 {
                     sequenceElement?.Method?.Invoke();
-                    _currentSeqElementIndex++;
+                    _timeRemainingSequences.currentSeqElementIndex++;
                 }
 
-                if (_currentSeqElementIndex >= _sequentialTimeRemainings[_currentSequenceIndex].Count)
+                if (_timeRemainingSequences.currentSeqElementIndex >= sequences[_timeRemainingSequences.
+                    currentSequenceIndex].Count)
                 {
-                    _sequentialTimeRemainings[_currentSequenceIndex].RemoveSequentialTimeRemaining();
-                    _currentSequenceIndex++;
+                    sequences[_timeRemainingSequences.
+                    currentSequenceIndex].RemoveSequentialTimeRemaining();
+                    _timeRemainingSequences.currentSequenceIndex++;
                 }
             }
-            else
-            {
-                _currentSequenceIndex = 0;
-                _currentSeqElementIndex = 0;
-            }
+
         }
 
         #endregion
