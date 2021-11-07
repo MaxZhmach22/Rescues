@@ -8,7 +8,7 @@ namespace Rescues
         #region Fields
 
         private static readonly List<ITimeRemaining> _timeRemainings = new List<ITimeRemaining>(10);
-        private static readonly List<List<ITimeRemaining>> _sequentialTimeRemainings = new List<List<ITimeRemaining>>(10);
+        private static readonly TimeRemainingSequences _timeRemainingSequences = new TimeRemainingSequences();
 
         #endregion
 
@@ -16,7 +16,7 @@ namespace Rescues
         #region Properties
 
         public static List<ITimeRemaining> TimeRemainings => _timeRemainings;
-        public static List<List<ITimeRemaining>> SequentialTimeRemainings => _sequentialTimeRemainings;
+        public static TimeRemainingSequences SequentialTimeRemainings => _timeRemainingSequences;
 
         #endregion
 
@@ -40,7 +40,7 @@ namespace Rescues
         
         public static void AddSequentialTimeRemaining(this List<ITimeRemaining> values, float newTime = -1.0f)
         {
-            if (_sequentialTimeRemainings.Contains(values))
+            if (_timeRemainingSequences.sequentialTimeRemainings.Contains(values))
             {
                 return;
             }
@@ -53,7 +53,7 @@ namespace Rescues
                 }
                 value.CurrentTime = value.Time; 
             }
-            _sequentialTimeRemainings.Add(values);
+            _timeRemainingSequences.sequentialTimeRemainings.Add(values);
         }
 
         public static void RemoveTimeRemaining(this ITimeRemaining value)
@@ -67,11 +67,12 @@ namespace Rescues
         
         public static void RemoveSequentialTimeRemaining(this List<ITimeRemaining> values)
         {
-            if (!_sequentialTimeRemainings.Contains(values))
+            if (!_timeRemainingSequences.sequentialTimeRemainings.Contains(values))
             {
                 return;
             }
-            _sequentialTimeRemainings.Remove(values);
+            _timeRemainingSequences.sequentialTimeRemainings.Remove(values);
+            _timeRemainingSequences.currentSeqElementIndex = 0;
         }
 
         #endregion
