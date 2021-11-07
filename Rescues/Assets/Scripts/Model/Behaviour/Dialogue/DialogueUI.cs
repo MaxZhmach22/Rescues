@@ -15,6 +15,7 @@ namespace Rescues
         public TextMeshProUGUI npcText;
         public Color npcLabelColor;
         public Image npcImage;
+        public Color npcImageNormalColor;
 
         [Header("Player"), Space(10)]
         public GameObject playerContainer;
@@ -22,6 +23,7 @@ namespace Rescues
         public PossibleAnswer[] playerTextChoices;
         public Color playerLabelColor;
         public Image playerImage;
+        public Color playerImageNormalColor;
 
         [Header("Other"), Space(10)]
         public GameObject dialogContainer;

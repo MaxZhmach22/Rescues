@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VIDE_Data;
 
+
 namespace Rescues
 {
     public sealed class DialogueUIController : IInitializeController, ITearDownController, IExecuteController
@@ -10,6 +11,7 @@ namespace Rescues
         #region Fields
 
         private const string EXTRA_DATA_DEFAULT = "ExtraData";
+        private const float DIMMING_FACTOR = 0.7f;
         private readonly GameContext _context;
         private readonly Services _services;
         private DialogueUI _dialogueUI;
@@ -47,6 +49,8 @@ namespace Rescues
 
             _dialogueUI = Object.FindObjectOfType<DialogueUI>(true);
             _dialogueUI.dialogContainer.SetActive(false);
+            _dialogueUI.npcImage.color = _dialogueUI.npcImageNormalColor;
+            _dialogueUI.playerImage.color = _dialogueUI.playerImageNormalColor;
             //Возможно расширение возможности и добавление команды в ExtraVars для дополнительного вызова
             SetNameColor();
             //Время на набор одного символа текста диалога, в данный момент технически не может превышать
@@ -82,7 +86,7 @@ namespace Rescues
 
         public void Execute()
         {
-            if (VD.isActive && _dialogueUI.npcText.text != "" && Input.GetButtonUp("Fire1"))
+            if (VD.isActive && !VD.nodeData.isPlayer && _dialogueUI.npcText.text != "" && Input.GetButtonUp("Fire1"))
             {
                 CallNext();
             }
@@ -138,6 +142,8 @@ namespace Rescues
 
             VD.BeginDialogue(dialogue);
             _dialogueUI.dialogContainer.SetActive(true);
+            _dialogueUI.playerContainer.SetActive(true);
+            _dialogueUI.npcContainer.SetActive(true);
         }
 
         public void End(VD.NodeData data)
@@ -157,32 +163,41 @@ namespace Rescues
 
         private void UpdateUI(VD.NodeData data)
         {
-            _dialogueUI.playerContainer.SetActive(false);
-            _dialogueUI.npcContainer.SetActive(false);
-
             if (data.isPlayer)
             {
+                if (_dialogueUI.npcImage.color == _dialogueUI.npcImageNormalColor)
+                {
+                    _dialogueUI.npcImage.color *= DIMMING_FACTOR;
+                    _dialogueUI.playerImage.color = _dialogueUI.playerImageNormalColor; 
+                }
                 SetPlayerChoices(data);
-                _dialogueUI.playerContainer.SetActive(true);
             }
             else
             {
+                if (_dialogueUI.playerImage.color == _dialogueUI.playerImageNormalColor)
+                {
+                    _dialogueUI.playerImage.color *= DIMMING_FACTOR; 
+                    _dialogueUI.npcImage.color = _dialogueUI.npcImageNormalColor;
+                }
+
+                foreach (var choise in _dialogueUI.playerTextChoices)
+                {
+                    choise.Disable();
+                }
+
                 DrawText(data.comments[data.commentIndex], _timeForWriteChar);
-                _dialogueUI.npcContainer.SetActive(true);
             }
         }
 
         private void CallNext()
         {
-            if (CutTextAnimation() == false)
-            {
-                VD.Next();
-            }
+            CutTextAnimation();
+            VD.Next();
         }
 
         private bool CutTextAnimation()
         {
-            if (TimeRemainingExtensions.SequentialTimeRemainings.Contains(_sequence))
+            if (TimeRemainingExtensions.SequentialTimeRemainings.sequentialTimeRemainings.Contains(_sequence))
             {
                 TimeRemainingExtensions.RemoveSequentialTimeRemaining(_sequence);
                 _dialogueUI.npcText.text = VD.nodeData.comments[VD.nodeData.commentIndex];
@@ -203,15 +218,15 @@ namespace Rescues
                     {
                         if (itemSlot.Item?.Name.ToLower() == data.extraVars["CheckItem"].ToString().ToLower())
                         {
-                            VD.assigned.overrideStartNode = int.Parse(VD.nodeData.extraVars["Yes"].ToString());
+                            VD.assigned.overrideStartNode = (int)VD.nodeData.extraVars["Yes"];
                             return;
                         }
-                    } 
+                    }
                 }
 
                 if (data.extraVars.ContainsKey("No"))
                 {
-                    VD.assigned.overrideStartNode = int.Parse(VD.nodeData.extraVars["No"].ToString()); 
+                    VD.assigned.overrideStartNode = (int)VD.nodeData.extraVars["No"];
                 }
             }
         }
@@ -334,6 +349,7 @@ namespace Rescues
                 },
                 time));
             }
+            _sequence.Add(new TimeRemaining(() => { VD.Next(); }, time));
             TimeRemainingExtensions.AddSequentialTimeRemaining(_sequence);
         }
 
@@ -352,7 +368,7 @@ namespace Rescues
             enteredObject.IsInteractable = true;
             var materialColor = enteredObject.GameObject.GetComponent<SpriteRenderer>().color;
             enteredObject.GameObject.GetComponent<SpriteRenderer>().DOColor(new Color(materialColor.r,
-                materialColor.g, materialColor.b, 0.5f), 1.0f);
+                materialColor.g * 1.2f, materialColor.b, 1f), 1.0f);
         }
 
         private void OnTriggerExitHandler(ITrigger enteredObject)
