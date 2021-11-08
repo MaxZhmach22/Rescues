@@ -1,4 +1,6 @@
-﻿namespace Rescues
+﻿using System;
+
+namespace Rescues
 {
     public interface IInitializeController : IController
     {
