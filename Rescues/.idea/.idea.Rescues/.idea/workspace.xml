@@ -70,23 +70,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34dae543-2f34-47cc-94c2-3245ae1fc3b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/UI/Saving.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/UI/Saving/SaveLoadingBase.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/UI/Saving/SaveLoadingBase.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Locations/Hotel/Current version/Character`sRoom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Locations/Hotel/Current version/Character`sRoom.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Locations/Hotel/Current version/Corridor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Locations/Hotel/Current version/Corridor.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Locations/Hotel/Current version/Reception 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Locations/Hotel/Current version/Reception 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Locations/Hotel/Current version/Room_1_night.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Locations/Hotel/Current version/Room_1_night.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Locations/Hotel/Current version/Salon_2ndFloor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Locations/Hotel/Current version/Salon_2ndFloor.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/UI/SaveLoadingBase.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/UI/SaveLoadingBase.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/UI/SavePrototype.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/UI/SavePrototype.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HotelScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HotelScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Context/GameContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Context/GameContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/DataSaving.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/DataSaving.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ByteConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ByteConverter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/FileContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/FileContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/GameSavingSerializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/GameSavingSerializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ItemListData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ItemListData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/LevelProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/LevelProgress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PlayersProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PlayersProgress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PuzzleListData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PuzzleListData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/QuestListData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/QuestListData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavingStruct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ISavingStruct.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavingStruct.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ISavingStruct.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/Serialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/Serialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/SavingTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/SavingTest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializeSaveLoadController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializeSaveLoadController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveLoadBaseBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveLoadBaseBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveLoadBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveLoadBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveLoadingPanelFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveLoadingPanelFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SavingPath/NEW.def" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,9 +189,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/DataSaving.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Enums/PuzzleCondition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/FileContext.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/NPC/Models/NPCStruct.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/NPC/Models/NPCWayPoints.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/NPC/Models/BaseNPC.cs" />
@@ -202,39 +204,42 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Data/LocationData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Data/NPCPatrollingData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Data/NPCData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PlayersProgress.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Enums/ItemCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavingStruct.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PuzzleListData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ItemListData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/QuestListData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavingEnum.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Enums/QuestCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/LoadBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitilizerSaveLoadMenuController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializersSaveLoadmenuController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/ScreenFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/ScreenInterface.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializersSaveLoadController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameControllers/MainLateControllers.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/GameMenu/GameMenuBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SaveFileController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/Serialization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Model/Location.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IInitializeController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Controllers/DataSavingController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Context/GameContext.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/SavingTest.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveLoadBaseBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/LevelProgress.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Controllers/LevelController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveLoadingPanelFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/ScreenFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/DataSaving.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/GameSavingSerializer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/LevelProgress.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/Serialization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/SavingTest.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Context/GameContext.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializeSaveLoadController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveLoadBaseBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveLoadBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/FileContext.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PlayersProgress.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ByteConverter.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/GameSavingSerializer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializeSaveLoadController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveLoadingPanelFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ISavingStruct.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/QuestListData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PuzzleListData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ItemListData.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1V9bGpai1gZ6Kn1FGeYyMAj5KRa" />
@@ -291,7 +296,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="48bd36b2-45ba-4ddc-be59-218c2703d472" name="Default Changelist" comment="" />
+      <changelist id="34dae543-2f34-47cc-94c2-3245ae1fc3b4" name="Default Changelist" comment="" />
       <created>1576668165303</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -338,6 +343,7 @@
       <workItem from="1636100367540" duration="1189000" />
       <workItem from="1636101946550" duration="11221000" />
       <workItem from="1636114161713" duration="10261000" />
+      <workItem from="1636358771085" duration="2409000" />
     </task>
     <servers />
   </component>

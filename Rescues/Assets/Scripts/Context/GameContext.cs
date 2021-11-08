@@ -18,7 +18,6 @@ namespace Rescues
         public LocationData activeLocation;
         public NotepadBehaviour notepad;
         public DialogueUIController dialogueUIController;
-        public DialogueBehaviour dialogueManager;
         public WorldGameData WorldGameData;
 
         public event Action<IInteractable> AddObjectHandler = delegate (IInteractable interactable) { };

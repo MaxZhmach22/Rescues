@@ -8,7 +8,9 @@ namespace Rescues
 {
     public static class ByteConverter
     {
-        public static IEnumerable<byte> AddToIntStream(int source)
+        #region Methods
+        
+        private static IEnumerable<byte> AddToIntStream(int source)
         {
             var newString = Convert.ToString(source);
             IEnumerable<byte> destination = Encoding.ASCII.GetBytes(newString);
@@ -137,9 +139,12 @@ namespace Rescues
         }
         private static void ConvertInputs(out string name,out int condition, string part)
         {
-            var splitedPart = part.Split('~');
-            name = splitedPart[0];
-            condition = Convert.ToInt32(splitedPart[1]);
+            var splitPart = part.Split('~');
+            name = splitPart[0];
+            condition = Convert.ToInt32(splitPart[1]);
         }
+
+        #endregion
+      
     }
 }

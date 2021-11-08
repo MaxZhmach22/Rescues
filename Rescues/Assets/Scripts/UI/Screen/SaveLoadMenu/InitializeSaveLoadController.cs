@@ -10,24 +10,24 @@ namespace Rescues
         #region Fields
 
         private readonly GameContext _context;
-        private readonly PhysicalServices _physicServices;
-        
+
         private GameSavingSerializer _gameSavingSerializer;
 
         #endregion
 
+        
         #region ClassLifeCycles
 
         public InitializeSaveLoadController(GameContext context, Services services)
         {
             _context = context;
-            _physicServices = services.PhysicalServices;
             _context.WorldGameData = new WorldGameData();
             _gameSavingSerializer = new GameSavingSerializer();
         }
 
         #endregion
 
+        
         #region IInitializeController
 
         public void Initialize()
@@ -44,13 +44,12 @@ namespace Rescues
         
         #endregion
 
+        
         #region Methods
 
         private void Loading(string obj)
         {
-            Debug.Log("Load Data");
             _gameSavingSerializer.Load(obj);
-            Debug.Log("Invoking");
             _context.WorldGameData.RestartLevel.Invoke();
         }
 

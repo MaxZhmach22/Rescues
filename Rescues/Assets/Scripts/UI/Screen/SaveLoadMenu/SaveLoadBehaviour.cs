@@ -29,11 +29,11 @@ namespace Rescues
 
         #endregion
 
+        
         #region UnityMethods
         private void OnEnable()
         {
             _backButton.onClick.AddListener(BackButtonClick);
-
             ReEnable?.Invoke();
             if (FileContexts!=null)
             {
@@ -46,7 +46,6 @@ namespace Rescues
                     _listOfInputField.Last().InputField.readOnly = true;
                     _listOfInputField.Last().se.AddListener(SelectedInput);
                 }
-                //SetSaveLoad(SaveOrLoad);
                 if (SaveOrLoad)
                 {
                     _saveLoadButton.onClick.AddListener(SaveButtonClick);
@@ -59,7 +58,6 @@ namespace Rescues
                 else
                     _saveLoadButton.onClick.AddListener(LoadButtonClick);
                 _saveLoadButton.enabled = false;
-                
             }
         }
 
@@ -67,6 +65,7 @@ namespace Rescues
         {
             _backButton.onClick.RemoveListener(BackButtonClick);
             _saveLoadButton.onClick?.RemoveAllListeners();
+            //destroying data
             foreach (var behaviour in _listOfInputField)
             {
                 Destroy(behaviour.transform.parent.gameObject);
@@ -76,6 +75,7 @@ namespace Rescues
 
         #endregion
 
+        
         #region Methods
         
         private void SelectedInput(string obj)

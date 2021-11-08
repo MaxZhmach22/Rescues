@@ -17,6 +17,12 @@ namespace Rescues
         private static PlayersProgress _playersProgress;
         private static List<LevelProgress> _levelsProgress;
         public Action RestartLevel = delegate { Debug.Log("Invoke restart"); };
+        
+        #endregion
+
+        
+        #region ClassLifeCycles
+
         public WorldGameData()
         {
             _playerPosition = null;
@@ -25,7 +31,8 @@ namespace Rescues
         }
 
         #endregion
-
+        
+        
         #region Methods
 
         public void SavePlayersPosition(Vector3 playersPosition)
@@ -64,6 +71,7 @@ namespace Rescues
 
         #endregion
 
+        
         #region Quests
 
         public void AddInLevelProgressQuest(int levelsIndex, QuestListData itemListData)
@@ -85,6 +93,7 @@ namespace Rescues
 
         #endregion
 
+        
         #region Puzzles
 
         public void AddInLevelProgressPuzzle(int levelsIndex, PuzzleListData itemListData)
@@ -102,8 +111,7 @@ namespace Rescues
         {
             _levelsProgress[levelsIndex].PuzzleListData.Remove(itemListData);
         }
-
-
+        
         #endregion
 
         public byte[] Serialize()

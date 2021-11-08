@@ -4,14 +4,24 @@ namespace Rescues
 {
     public sealed class FileContext
     {
-        public string CreationTime { get; private set; }
+        #region Fields
+
+        private string CreationTime { get; set; }
         public string FileName { get; private set; }
         private const string _dateFormat = "yyyy/MM/dd HH:mm:ss";
 
+        #endregion
+
+        
+        #region ClassLifeCycles
+
         public FileContext(FileInfo fileInfo)
-        {
-            CreationTime = fileInfo.CreationTimeUtc.ToString(_dateFormat);
-            FileName = Path.GetFileNameWithoutExtension(fileInfo.Name);
-        }
+                {
+                    CreationTime = fileInfo.CreationTimeUtc.ToString(_dateFormat);
+                    FileName = Path.GetFileNameWithoutExtension(fileInfo.Name);
+                }
+
+        #endregion
+        
     }
 }

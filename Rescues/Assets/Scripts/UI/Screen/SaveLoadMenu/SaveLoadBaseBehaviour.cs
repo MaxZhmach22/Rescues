@@ -6,14 +6,22 @@ namespace Rescues
 {
     public sealed class SaveLoadBaseBehaviour: MonoBehaviour, IPointerDownHandler
     {
+        #region Fields
+
         public InputField InputField;
-        //public event Action<string> InputFieldSelected;
         public InputField.SubmitEvent se = new InputField.SubmitEvent();
+
+        #endregion
+
+        
+        #region UnityMethods
+
         public void OnPointerDown(PointerEventData eventData)
         {
             var input = gameObject.GetComponent<InputField>();
             input.onEndEdit = se;
-            //InputFieldSelected?.Invoke(InputField);
-        }//.GetComponentsInChildren<Text>()[1].text
+        }
+
+        #endregion
     }
 }
