@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Rescues.NPC.Controllers;
-using Rescues.NPC.Models;
 using UnityEngine;
 
 
@@ -15,7 +13,9 @@ namespace Rescues
 
         [SerializeField] private Transform _cameraPosition;
         [SerializeField] private List<NPCPatrollingData> _levelNPC;
-
+        public Transform _items;
+        public Transform _puzzles;
+        
         public NPCLevelController NpcLevelController;
         public NPCStorage _storage;
         [NonSerialized] public Transform CurrentNPCStorage;

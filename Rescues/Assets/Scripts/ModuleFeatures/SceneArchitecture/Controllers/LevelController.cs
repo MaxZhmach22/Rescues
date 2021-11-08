@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -42,6 +43,7 @@ namespace Rescues
             _defaultBootScreen = Object.Instantiate((BootScreen)_levelsData.BootScreen, _levelParent.transform);
             _defaultBootScreen.name = "DefaultBootScreen";
             _defaultBootScreen.gameObject.SetActive(false);
+            _context.WorldGameData.RestartLevel += RestartLevel;
             LoadLevel(_levelsData.GetGate);
         }
 
@@ -75,7 +77,6 @@ namespace Rescues
                 var activeLocation = _locationController.Locations.Find(l => l.LocationActiveSelf);
                 if (activeLocation)
                     activeLocation.DisableOnScene();
-                
                 var enterGate = bootLocation.Gates.Find(g => g.ThisGateId == gate.GoToGateId);
                 if (!enterGate)
                     throw new Exception("В " + gate.GoToLevelName + " - " + gate.GoToLocationName +
@@ -87,9 +88,21 @@ namespace Rescues
                 _curveWayController = new CurveWayController(bootLocation.LocationInstance.СurveWays);
                 _activeCurveWay = _curveWayController.GetCurve(enterGate, WhoCanUseCurve.Character);
                 _context.character.LocateCharacter(_activeCurveWay);
+                if (!_context.WorldGameData.LookForLevelByNameBool(bootLocation.LocationName))
+                    _context.WorldGameData.AddNewLocation(bootLocation.LocationInstance,gate);
+                else
+                    _context.WorldGameData.OpenCurrentLocation(bootLocation.LocationInstance);
+                _context.WorldGameData.SavePlayersProgress(
+                    _context.WorldGameData.LookForLevelByNameInt(bootLocation.LocationName));
+                _context.WorldGameData.SavePlayersPosition(_context.character.Transform.position);
             }
         }
        
+        private void RestartLevel()
+        {
+            LoadLevel(_context.WorldGameData.GetLastGate());
+        }
+        
         private void LoadAndUnloadPrefabs(string loadLevelName)
         {
             _locationController?.UnloadData();
@@ -98,7 +111,6 @@ namespace Rescues
             _locationController = new LocationController(this, _context, loadLevelName, _levelParent.transform);
             _gateController?.Initialize();
         }
-        
         #endregion
     }
 }

@@ -1,4 +1,4 @@
-namespace Rescues.NPC.Controllers
+namespace Rescues
 {
     public enum NPCState: byte
     {
