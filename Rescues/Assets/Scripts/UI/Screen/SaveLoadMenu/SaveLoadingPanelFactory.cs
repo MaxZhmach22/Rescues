@@ -6,7 +6,7 @@ namespace Rescues
     {
         public GameObject Create(string whatUICreating, Transform parent)
         {
-            return (GameObject) Object.Instantiate(Resources.Load("Prefabs/UI/"+whatUICreating),parent);
+            return (GameObject) Object.Instantiate(Resources.Load("Prefabs/UI/Saving/"+whatUICreating),parent);
         }
     }
 }

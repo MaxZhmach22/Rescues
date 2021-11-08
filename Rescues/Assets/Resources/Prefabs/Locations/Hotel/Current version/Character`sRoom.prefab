@@ -450,6 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
+  _isInteractionLocked: 0
   ItemData: {fileID: 11400000, guid: c2fac2768336791408cb9ebe05c39015, type: 2}
   PickUpTime: 0.5
 --- !u!1 &1480003436105585683
@@ -931,6 +932,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraPosition: {fileID: 9209868419581239934}
+  _levelNPC: []
+  _items: {fileID: 5398212372194542168}
+  _puzzles: {fileID: 8977496709877032768}
 --- !u!1 &3245625287452608869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,6 +1252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
+  _isInteractionLocked: 0
   ItemData: {fileID: 0}
   PickUpTime: 0.5
 --- !u!1 &5076720352511983612
@@ -2109,6 +2114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
+  _isInteractionLocked: 0
   ItemData: {fileID: 11400000, guid: b72bd5f33bf0c0b4d80347a3a090b77a, type: 2}
   PickUpTime: 0.5
 --- !u!1 &8064377285531869262
