@@ -11,6 +11,5 @@ namespace Rescues
         public QuestCondition QuestCondition { get; set; }
 
         #endregion
-      
     }
 }

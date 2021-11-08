@@ -11,6 +11,5 @@ namespace Rescues
         public int PlayerCurrentPositionInProgress;
 
         #endregion
-        
     }
 }

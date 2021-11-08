@@ -11,6 +11,5 @@ namespace Rescues
         public PuzzleCondition PuzzleCondition { get; set; }
 
         #endregion
-    
     }
 }

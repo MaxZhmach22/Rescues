@@ -12,11 +12,12 @@ namespace Rescues
     public sealed class WorldGameData
     {
         #region Fields
-
+        
+        //TODO: set player's position
         private static string _playerPosition;
         private static PlayersProgress _playersProgress;
         private static List<LevelProgress> _levelsProgress;
-        public Action RestartLevel = delegate { Debug.Log("Invoke restart"); };
+        public Action RestartLevel = delegate {};
         
         #endregion
 

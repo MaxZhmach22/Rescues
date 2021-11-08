@@ -14,6 +14,5 @@ namespace Rescues
         public List<PuzzleListData> PuzzleListData = new List<PuzzleListData>();
 
         #endregion
-       
     }
 }

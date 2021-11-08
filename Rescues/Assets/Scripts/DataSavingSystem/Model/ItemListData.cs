@@ -11,8 +11,5 @@ namespace Rescues
         public ItemCondition ItemCondition { get; set; }
 
         #endregion
-     
     }
-
-    
 }

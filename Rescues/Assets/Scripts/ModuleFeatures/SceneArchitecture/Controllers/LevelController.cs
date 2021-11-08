@@ -100,7 +100,6 @@ namespace Rescues
        
         private void RestartLevel()
         {
-            Debug.Log("Restart");
             LoadLevel(_context.WorldGameData.GetLastGate());
         }
         

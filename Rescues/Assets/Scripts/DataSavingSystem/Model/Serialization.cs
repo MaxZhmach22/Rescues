@@ -12,6 +12,5 @@ namespace Rescues
             Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), @"..\..\"));
 
         #endregion
-
     }
 }
