@@ -2,7 +2,15 @@
 {
     public enum DialogueCommands
     {
-        SetNpcName = 0,
-        SetPlayerName = 1,
+        Yes = 0,
+        No = 1,
+        SetPlayerName = 2,
+        SetNpcName = 3,
+        CheckItem = 4,
+        SetNpcSprite = 5,
+        SetPlayerSprite = 6,
+        GiveItem = 7,
+        PlayMusic = 8,
+        SetStartNode = 9,
     }
 }

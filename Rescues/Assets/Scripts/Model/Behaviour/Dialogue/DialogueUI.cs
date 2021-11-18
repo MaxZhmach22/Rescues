@@ -16,6 +16,10 @@ namespace Rescues
         public Color npcLabelColor;
         public Image npcImage;
         public Color npcImageNormalColor;
+        [Range(1, 10)]
+        public int writeStep;
+        [Range(1, 10)]
+        public int writeSpeed;
 
         [Header("Player"), Space(10)]
         public GameObject playerContainer;
@@ -28,7 +32,7 @@ namespace Rescues
         [Header("Other"), Space(10)]
         public GameObject dialogContainer;
         public Image background;
-        public NodeSoundContainer nodeSoundContainer; 
+        public NodeSoundContainer nodeSoundContainer;
 
         #endregion
     }
