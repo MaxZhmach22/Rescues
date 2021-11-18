@@ -21,6 +21,7 @@ namespace Rescues
         private Services _services;
         private GameObject _levelParent;
         private GateController _gateController;
+        private AudioController _audioController;
 
         #endregion
 
@@ -32,6 +33,7 @@ namespace Rescues
             _context = context;
             _services = services;
             _gateController = new GateController(context);
+            _audioController = new AudioController();
         }
 
         public void Initialize()
