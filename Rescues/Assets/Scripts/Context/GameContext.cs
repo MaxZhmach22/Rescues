@@ -13,10 +13,12 @@ namespace Rescues
         public CharacterModel character;
         public InventoryBehaviour inventory;
         public GameMenuBehaviour gameMenu;
+        public SaveLoadBehaviour saveLoadBehaviour;
         public EnemyBehaviour enemy;
         public LocationData activeLocation;
         public NotepadBehaviour notepad;
         public DialogueUIController dialogueUIController;
+        public WorldGameData WorldGameData;
 
         public event Action<IInteractable> AddObjectHandler = delegate (IInteractable interactable) { };
         private readonly SortedList<InteractableObjectType, List<IInteractable>> _onTriggers;
