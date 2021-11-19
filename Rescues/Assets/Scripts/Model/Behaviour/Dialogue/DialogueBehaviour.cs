@@ -15,7 +15,7 @@ namespace Rescues
 
         #region UnityMethods
 
-        private void Awake()
+        private void OnValidate()
         {
             assignDialog = GetComponent<VIDE_Assign>();
         } 

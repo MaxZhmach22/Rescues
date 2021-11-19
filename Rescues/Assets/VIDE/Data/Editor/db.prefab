@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileIndex: 0
-  skinIndex: 0
+  skinIndex: 3
   loadTag: 
   startID: 0
   curFocusID: 0
@@ -94,18 +94,18 @@ MonoBehaviour:
         \u0432 \u0432\u0430\u0448\u0435\u043C \u0433\u043E\u0440\u043E\u0434\u0435,
         \u0438 \u0445\u043E\u0442\u0435\u043B\u0438 \u0431\u044B \u0441\u043D\u044F\u0442\u044C
         \u043A\u043E\u043C\u043D\u0430\u0442\u0443 \u043D\u0430 \u043D\u043E\u0447\u044C."
-      extraData: SetNpcSprite
+      extraData: 
       inputSetIndex: 1
       outputNodeIndex: 2
       outActionIndex: -1
-      showmore: 1
+      showmore: 0
       outRect:
         serializedVersion: 2
         x: 301
         y: 63
         width: 30
         height: 63
-      sprites: {fileID: 21300000, guid: 490641638817ea54a89dfc596e780979, type: 3}
+      sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     - text: "\u0425\u043E\u0442\u0435\u043B, \u043D\u043E \u0443\u0432\u0438\u0434\u0435\u0432
@@ -120,7 +120,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 300
-        y: 156
+        y: 127
         width: 30
         height: 48
       sprites: {fileID: 0}
@@ -137,7 +137,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 300
-        y: 205
+        y: 176
         width: 30
         height: 33
       sprites: {fileID: 0}
@@ -153,7 +153,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 300
-        y: 239
+        y: 210
         width: 30
         height: 33
       sprites: {fileID: 0}
@@ -165,7 +165,7 @@ MonoBehaviour:
       x: 320
       y: 180
       width: 348
-      height: 315
+      height: 286
     pTag: 
     expand: 0
     sprite: {fileID: 0}
@@ -448,7 +448,7 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 1
-  - commentCount: 2
+  - commentCount: 1
     s_comment:
     - text: "\u041F\u0443\u0441\u0442\u044C \u0432\u0430\u0441 \u043D\u0435 \u0441\u043C\u0443\u0449\u0430\u0435\u0442
         \u0432\u043D\u0435\u0448\u043D\u0438\u0439 \u0432\u0438\u0434! \u0423\u0432\u0435\u0440\u044F\u044E,
@@ -456,7 +456,7 @@ MonoBehaviour:
         \u043D\u043E\u043C\u0435\u0440\u043E\u043C \u0438 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435\u043C."
       extraData: ExtraData
       inputSetIndex: 10
-      outputNodeIndex: 11
+      outputNodeIndex: 16
       outActionIndex: -1
       showmore: 0
       outRect:
@@ -468,30 +468,13 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: "\u0414\u0430 \u0438 \u043A \u0442\u043E\u043C\u0443 \u0436\u0435, \u044D\u0442\u043E
-        \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
-        \u043E\u0442\u0435\u043B\u044C \u0432 \u0433\u043E\u0440\u043E\u0434\u0435."
-      extraData: ExtraData
-      inputSetIndex: 10
-      outputNodeIndex: -1
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
     ID: 10
     rect:
       serializedVersion: 2
-      x: 970
-      y: 250
+      x: 710
+      y: 230
       width: 348
-      height: 203
+      height: 169
     pTag: 
     expand: 0
     sprite: {fileID: 0}
@@ -687,6 +670,38 @@ MonoBehaviour:
       y: 710
       width: 348
       height: 129
+    pTag: 
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "\u0414\u0430 \u0438 \u043A \u0442\u043E\u043C\u0443 \u0436\u0435, \u044D\u0442\u043E
+        \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
+        \u043E\u0442\u0435\u043B\u044C \u0432 \u0433\u043E\u0440\u043E\u0434\u0435."
+      extraData: ExtraData
+      inputSetIndex: 16
+      outputNodeIndex: 11
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 301
+        y: 63
+        width: 30
+        height: 33
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 16
+    rect:
+      serializedVersion: 2
+      x: 1080
+      y: 230
+      width: 348
+      height: 139
     pTag: 
     expand: 0
     sprite: {fileID: 0}

@@ -136,7 +136,7 @@ namespace Rescues
                 direction = direction > 0 ? 1 : -1;
             }
 
-            _distance += direction * _speed * Time.deltaTime;
+            _distance = Mathf.Clamp(_distance + direction * _speed * Time.deltaTime, 0, _curveWay.PathCreator.path.length);
             Transform.position = _curveWay.PathCreator.path.GetPointAtDistance(_distance, EndOfPathInstruction.Stop);
 
             SetScale();
