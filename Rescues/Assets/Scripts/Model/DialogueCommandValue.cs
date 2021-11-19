@@ -17,6 +17,8 @@ namespace Rescues
             { DialogueCommands.SetPlayerSprite, "SetPlayerSprite" },
             { DialogueCommands.Yes, "Yes" },
             { DialogueCommands.SetStartNode, "SetStartNode" },
+            { DialogueCommands.SwitchNpcContainerState, "SwitchNpcContainerState" },
+            { DialogueCommands.ActivateObject, "ActivateObject" },
         };
     }
 }

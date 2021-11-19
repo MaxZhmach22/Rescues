@@ -695,10 +695,8 @@ MonoBehaviour:
     ID: 12
     pTag: 
     sprite: {fileID: 0}
-    vars:
-    - 1,56326
-    varKeys:
-    - SetStartNode
+    vars: []
+    varKeys: []
     isPlayer: 0
   - commentCount: 2
     s_comment:
@@ -804,6 +802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 7
   _isInteractionLocked: 0
+  <Id>k__BackingField: 
   assignDialog: {fileID: 4672800081982748541}
 --- !u!1 &584633333882608083
 GameObject:
@@ -2547,6 +2546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 6
   _isInteractionLocked: 0
+  <Id>k__BackingField: 
   StandWindow: {fileID: 82461972379826494}
 --- !u!114 &1677183718369130054
 MonoBehaviour:
@@ -3617,6 +3617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 2
   _isInteractionLocked: 0
+  <Id>k__BackingField: 
   ItemData: {fileID: 11400000, guid: 8e2f62e3303b76c4b9c020b00a63b7ce, type: 2}
   PickUpTime: 0.5
 --- !u!1 &3060815145078252384
@@ -4787,6 +4788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 2
   _isInteractionLocked: 0
+  <Id>k__BackingField: 
   ItemData: {fileID: 11400000, guid: 881618781bbba7d4881c1084c90e0772, type: 2}
   PickUpTime: 0.5
 --- !u!1 &5231153321012499600
@@ -6180,7 +6182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 7
-  _isInteractionLocked: 0
+  _isInteractionLocked: 1
+  <Id>k__BackingField: door
   assignDialog: {fileID: 8323207077417528581}
 --- !u!1 &6279703785405383889
 GameObject:
@@ -6371,6 +6374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 2
   _isInteractionLocked: 0
+  <Id>k__BackingField: 
   ItemData: {fileID: 11400000, guid: a074f039d3208c84e8b3c490bac913ea, type: 2}
   PickUpTime: 0.5
 --- !u!1 &6615082887903989357
@@ -6681,6 +6685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 2
   _isInteractionLocked: 0
+  <Id>k__BackingField: 
   ItemData: {fileID: 11400000, guid: 30095eaf594323b42beb2df57250c6d4, type: 2}
   PickUpTime: 0.5
 --- !u!114 &415659509285051064
@@ -8876,6 +8881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 5
   _isInteractionLocked: 0
+  <Id>k__BackingField: 
   Puzzle: {fileID: 5235566011315741230, guid: d0950d6b9c26b469dbaac675321a4991, type: 3}
   ItemData: {fileID: 11400000, guid: 94bbec4b67b144a889865f5e8a89cd34, type: 2}
   finishEvents: []

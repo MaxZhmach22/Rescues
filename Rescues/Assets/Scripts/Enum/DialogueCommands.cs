@@ -12,5 +12,7 @@
         GiveItem = 7,
         PlayMusic = 8,
         SetStartNode = 9,
+        SwitchNpcContainerState = 10,
+        ActivateObject = 11,
     }
 }

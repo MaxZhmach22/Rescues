@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Rescues
 {
-    public abstract class InteractableObjectBehavior: MonoBehaviour, ITrigger
+    public abstract class InteractableObjectBehavior : MonoBehaviour, ITrigger
     {
         #region Fields
 
@@ -32,18 +32,19 @@ namespace Rescues
         /// <summary>
         /// Блокирует взаимодействие игрока с этим триггером
         /// </summary>
-        public bool IsInteractionLocked 
-        { 
+        public bool IsInteractionLocked
+        {
             get => _isInteractionLocked;
-            set 
+            set
             {
                 _isInteractionLocked = value;
-            } 
+            }
         }
 
         public string Description { get; set; }
         public GameObject GameObject => gameObject;
         public InteractableObjectType Type { get => _type; }
+        [field: SerializeField] public string Id { get; set; }
 
         #endregion
 
@@ -57,7 +58,7 @@ namespace Rescues
                 OnTriggerEnterHandler.Invoke(this);
             }
         }
-        
+
         private void OnTriggerExit2D(Collider2D other)
         {
             if (OnFilterHandler?.Invoke(other) == true && _isInteractionLocked == false)
