@@ -128,10 +128,7 @@ namespace Rescues
 
         public void Begin(VIDE_Assign dialogue)
         {
-            _dialogueUI.playerImage.sprite = dialogue.defaultPlayerSprite;
-            _dialogueUI.npcImage.sprite = dialogue.defaultNPCSprite;
-            _dialogueUI.playerLabel.text = _context.character.Name;
-            _dialogueUI.npcLabel.text = dialogue.alias;
+            InitialPrefferences(dialogue);
 
             VD.OnNodeChange += UpdateUI;
             VD.OnNodeChange += SetName;
@@ -145,9 +142,6 @@ namespace Rescues
             VD.OnEnd += End;
 
             VD.BeginDialogue(dialogue);
-            _dialogueUI.dialogContainer.SetActive(true);
-            _dialogueUI.playerContainer.SetActive(true);
-            _dialogueUI.npcContainer.SetActive(true);
         }
 
         public void End(VD.NodeData data)
@@ -194,6 +188,20 @@ namespace Rescues
 
                 DrawText(data.comments[data.commentIndex], _timeForWriteChar);
             }
+        }
+
+        private void InitialPrefferences(VIDE_Assign dialogue)
+        {
+            _dialogueUI.playerImage.sprite = dialogue.defaultPlayerSprite;
+            _dialogueUI.npcImage.sprite = dialogue.defaultNPCSprite;
+            _dialogueUI.playerLabel.text = _context.character.Name;
+            _dialogueUI.npcLabel.text = dialogue.alias;
+            _dialogueUI.dialogContainer.SetActive(true);
+            _dialogueUI.playerContainer.SetActive(true);
+            _dialogueUI.npcContainer.SetActive(true);
+            _dialogueUI.background.enabled = true;
+            _dialogueUI.npcBackGround.enabled = false;
+            _dialogueUI.playerBackground.enabled = false;
         }
 
         private void CallNext()
