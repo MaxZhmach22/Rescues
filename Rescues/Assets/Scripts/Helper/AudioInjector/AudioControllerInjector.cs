@@ -4,9 +4,16 @@ using System.Reflection;
 
 namespace Rescues
 {
-    public static class AssetsInjector
+    public static class AudioControllerInjector
     {
-        private static readonly Type _injectAssetAttributeType = typeof(InjectAudioInterfacesAttribute);
+        #region Fields
+
+        private static readonly Type _injectAudioInterfacesAttribute = typeof(InjectAudioInterfacesAttribute);
+
+        #endregion
+
+
+        #region Methods
 
         public static T Inject<T>(this AudioControllerContext context, T target)
         {
@@ -15,8 +22,7 @@ namespace Rescues
             for (int i = 0; i < allFields.Length; i++)
             {
                 var fieldInfo = allFields[i];
-                var injectAssetAttribute =
-                fieldInfo.GetCustomAttribute(_injectAssetAttributeType) as InjectAudioInterfacesAttribute;
+                var injectAssetAttribute = fieldInfo.GetCustomAttribute(_injectAudioInterfacesAttribute) as InjectAudioInterfacesAttribute;
                 if (injectAssetAttribute == null)
                 {
                     continue;
@@ -25,6 +31,8 @@ namespace Rescues
                 fieldInfo.SetValue(target, objectToInject);
             }
             return target;
-        }
+        } 
+
+        #endregion
     }
 }

@@ -1,9 +1,9 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 namespace Rescues
 {
-    public sealed class AudioController : IController, IAudioController, IAudioSnapsHots
+    public sealed class AudioController : IAudioController, IAudioSnapsHots
     {
         #region Fields
 
@@ -18,12 +18,23 @@ namespace Rescues
 
         public AudioController()
         {
-            _mixer = Resources.Load<AudioMixerData>("Data/Audio/AudioMixer");
-            _context = Resources.Load<AudioControllerContext>("Data/Audio/AudioControllerContext");
+            _mixer = Resources.Load<AudioMixerData>(AssetsPathGameObject.AudioData[AudioDataType.AudioMixer]);
+            _context = Resources.Load<AudioControllerContext>(AssetsPathGameObject.AudioData[AudioDataType.AudioControllerContext]);
             _audioModel = new AudioModel();
             _context.BindAuidoController(this);
             _mixer.Master.GetFloat(_audioModel.MasterVolume, out var currentValue);
             _audioModel.SetCurrentValue(currentValue);
+        }
+
+        #endregion
+
+
+        #region Methods
+
+        public void LoadMainMusicTheme(Transform levelParent)
+        {
+            var mainMusicTheme = Resources.Load(AssetsPathGameObject.AudioData[AudioDataType.HotelMusicTheme]);
+            Object.Instantiate(mainMusicTheme, levelParent);
         }
 
         #endregion
@@ -69,11 +80,16 @@ namespace Rescues
                  _audioModel.VoiceVolume,
                  _audioModel.CheckValue(value));
 
+        #endregion
+
+
+        #region IAudioSnapsHots
+
         public void MuffledMusic() =>
             _mixer.MuffledMusic.TransitionTo(Time.deltaTime);
 
         public void UnMuffledMusic() =>
-            _mixer.UnMuffledMusic.TransitionTo(Time.deltaTime);
+            _mixer.UnMuffledMusic.TransitionTo(Time.deltaTime); 
 
         #endregion
     }

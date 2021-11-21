@@ -9,8 +9,6 @@ namespace Rescues
     {
         #region Fields
 
-        private AudioControllerContext _audioContext;
-        [InjectAudioInterfaces] private IAudioSnapsHots _audioSnapsHots;
         [SerializeField] List<StandItem> _standItemSlots;
         [SerializeField] List<string> _dontNeedItemPhrases;
         [SerializeField] GameObject _standItemWindow;
@@ -73,13 +71,7 @@ namespace Rescues
 
         #endregion
 
-        private void Start()
-        {
-            _audioContext = Resources.Load<AudioControllerContext>("Data/Audio/AudioControllerContext");
-            _audioContext.Inject(this);
-        }
-
-
+        
         #region Methods
 
         private void OpenStandItem(int number, StandItemData standItem)
@@ -95,7 +87,7 @@ namespace Rescues
             _slotNumber = number;
             _standItemImage.sprite = standItem.Sprite;
             _standItemWindow.SetActive(true);
-            _audioSnapsHots.MuffledMusic();
+           
         }
 
         public void OpenStandItemWindow()
@@ -115,7 +107,6 @@ namespace Rescues
             {
                 _isItemOpened = false;
                 Debug.Log("в ui");
-                _audioSnapsHots.UnMuffledMusic();
                 _standItemWindow.SetActive(false);
                 for (int i = _standItemSlots.Count - 1; i > 0; i--)
                 {
