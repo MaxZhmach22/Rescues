@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -102,6 +101,17 @@ namespace Rescues
         private void OnEnable()
         {
             DisplayText(_lastViewedCategory);
+        }
+
+        private void OnDestroy()
+        {
+            _questsBookmark.onClick.RemoveAllListeners();
+            _dialoguesBookmark.onClick.RemoveAllListeners();
+            _charactersBookmark.onClick.RemoveAllListeners();
+            _loreBookmark.onClick.RemoveAllListeners();
+
+            _leftButton.onClick.RemoveAllListeners();
+            _rightButton.onClick.RemoveAllListeners();
         }
 
         #endregion
