@@ -9,6 +9,7 @@
         Trap = 4,
         Puzzle = 5,
         Stand  = 6,
-        Dialogue
+        Dialogue =7,
+        NotepadTrigger = 8
     }
 }

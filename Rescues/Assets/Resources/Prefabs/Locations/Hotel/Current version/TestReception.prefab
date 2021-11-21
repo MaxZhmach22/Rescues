@@ -256,6 +256,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 8711757594332164718}
+          m_TargetAssemblyTypeName: Rescues.NotepadTriggerBehaviour, Assembly-CSharp
+          m_MethodName: TriggerNotepadEntries
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &8046546384543181364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -294,8 +306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54764ac3c43b48478d00c543a719a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 8
-  _isInteractionLocked: 0
   _notepadTriggers:
   - _category: 1
     _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
@@ -859,6 +869,7 @@ GameObject:
   - component: {fileID: 8943093013662842161}
   - component: {fileID: 5987640759611793887}
   - component: {fileID: 1209689559631535290}
+  - component: {fileID: 6761233264120785481}
   m_Layer: 0
   m_Name: Key_Room
   m_TagString: Untagged
@@ -985,14 +996,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54764ac3c43b48478d00c543a719a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 8
-  _isInteractionLocked: 0
   _notepadTriggers:
   - _category: 1
     _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
       \u043E\u0442\u0435\u043B\u044C"
     _bulletpointID: -1
     _action: 3
+--- !u!114 &6761233264120785481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104346005935161961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onTriggerEnterEvents: []
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents:
+  - IsRepeating: 0
+    Time: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1209689559631535290}
+          m_TargetAssemblyTypeName: Rescues.NotepadTriggerBehaviour, Assembly-CSharp
+          m_MethodName: TriggerNotepadEntries
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1118394703829469591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1999,6 +2040,7 @@ Transform:
   - {fileID: 1114805856511553089}
   - {fileID: 7453713909804277325}
   - {fileID: 7306020917971839538}
+  - {fileID: 3348369689493337831}
   m_Father: {fileID: 2132265067942336059}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2131,6 +2173,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 511533114010379319}
+          m_TargetAssemblyTypeName: Rescues.NotepadTriggerBehaviour, Assembly-CSharp
+          m_MethodName: TriggerNotepadEntries
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &6070180465078884702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2169,8 +2223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54764ac3c43b48478d00c543a719a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 8
-  _isInteractionLocked: 0
   _notepadTriggers:
   - _category: 2
     _entryName: "\u041F\u0435\u0440\u0432\u044B\u0439 \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440
@@ -2411,8 +2463,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54764ac3c43b48478d00c543a719a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 8
-  _isInteractionLocked: 0
   _notepadTriggers:
   - _category: 4
     _entryName: "\u041D\u043E\u0436"
@@ -2464,6 +2514,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 7377974524128488657}
+          m_TargetAssemblyTypeName: Rescues.NotepadTriggerBehaviour, Assembly-CSharp
+          m_MethodName: TriggerNotepadEntries
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2598,6 +2660,180 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!1 &3284445550602686121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3348369689493337831}
+  - component: {fileID: 8574109046961782512}
+  - component: {fileID: 4114754704117303824}
+  - component: {fileID: 2373674162096287682}
+  - component: {fileID: 1256132161044030140}
+  m_Layer: 0
+  m_Name: FirstNotepadEntryTrigger
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3348369689493337831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3284445550602686121}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.96, y: -3.22, z: 21.610567}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 801062842662750211}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &8574109046961782512
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3284445550602686121}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f,
+    type: 3}
+  m_Color: {r: 0.8679245, g: 0.81720906, b: 0.12691349, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &4114754704117303824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3284445550602686121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onTriggerEnterEvents:
+  - IsRepeating: 0
+    Time: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1256132161044030140}
+          m_TargetAssemblyTypeName: Rescues.NotepadTriggerBehaviour, Assembly-CSharp
+          m_MethodName: TriggerNotepadEntries
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 3284445550602686121}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  _onTriggerExitEvents: []
+  _onButtonInTriggerEvents: []
+--- !u!61 &2373674162096287682
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3284445550602686121}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1256132161044030140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3284445550602686121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f54764ac3c43b48478d00c543a719a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _notepadTriggers:
+  - _category: 1
+    _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
+      \u043E\u0442\u0435\u043B\u044C"
+    _bulletpointID: 0
+    _action: 1
 --- !u!1 &3419836794956249972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3484,6 +3720,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 6485664529859045564}
+          m_TargetAssemblyTypeName: Rescues.NotepadTriggerBehaviour, Assembly-CSharp
+          m_MethodName: TriggerNotepadEntries
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!61 &5540468639037394754
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3522,8 +3770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54764ac3c43b48478d00c543a719a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 8
-  _isInteractionLocked: 0
   _notepadTriggers:
   - _category: 2
     _entryName: "\u0422\u0440\u0435\u0442\u0438\u0439 \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440
@@ -4801,7 +5047,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onTriggerEnterEvents: []
   _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _onButtonInTriggerEvents:
+  - IsRepeating: 0
+    Time: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2621142481366021411}
+          m_TargetAssemblyTypeName: Rescues.NotepadTriggerBehaviour, Assembly-CSharp
+          m_MethodName: TriggerNotepadEntries
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &1286901961942329819
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4840,8 +5103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54764ac3c43b48478d00c543a719a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 8
-  _isInteractionLocked: 0
   _notepadTriggers:
   - _category: 2
     _entryName: "\u0412\u0442\u043E\u0440\u043E\u0439 \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440
@@ -6959,45 +7220,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01243d5917f8dd48afecb2b427b1ce6, type: 3}
---- !u!1 &82461972379826494 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1423793387978271685, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1361954268274479867}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2712639778731219827 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3982195482189203848, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1361954268274479867}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &592498292535014297 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1936081914070884706, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1361954268274479867}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3261145141541282390 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4586713956279447725, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1361954268274479867}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &3348956073461113521 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4368284925260640330, guid: f01243d5917f8dd48afecb2b427b1ce6,
     type: 3}
   m_PrefabInstance: {fileID: 1361954268274479867}
   m_PrefabAsset: {fileID: 0}
@@ -7025,6 +7250,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3261145141541282390 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4586713956279447725, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361954268274479867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3348956073461113521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4368284925260640330, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361954268274479867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &592498292535014297 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1936081914070884706, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361954268274479867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &82461972379826494 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1423793387978271685, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361954268274479867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4697608423133027833
 PrefabInstance:
   m_ObjectHideFlags: 0
