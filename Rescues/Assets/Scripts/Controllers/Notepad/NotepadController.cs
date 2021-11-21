@@ -8,6 +8,7 @@ namespace Rescues
         #region Fields
         private readonly GameContext _context;
         private NotepadBehaviour _notepadBehaviour;
+        private NotepadTriggerBehaviour[] _notepadTriggerBehaviours;
         #endregion
 
         #region ClassLifeCycles
@@ -26,14 +27,9 @@ namespace Rescues
             _notepadBehaviour.Initialize();
             _context.notepad = _notepadBehaviour;
 
-            var notepadTriggers = _context.GetTriggers(InteractableObjectType.NotepadTrigger);
-            foreach (var trigger in notepadTriggers)
-            {
-                var notepadTriggerBehaviour = trigger as InteractableObjectBehavior;
-                notepadTriggerBehaviour.OnFilterHandler += OnFilterHandler;
-                notepadTriggerBehaviour.OnTriggerEnterHandler += OnTriggerEnterHandler;
-                notepadTriggerBehaviour.OnTriggerExitHandler += OnTriggerExitHandler;
-            }
+            _notepadTriggerBehaviours = Object.FindObjectsOfType<NotepadTriggerBehaviour>(true);
+            foreach (var ntb in _notepadTriggerBehaviours)
+                ntb.TriggerActivation += ProcessTriggers;
         }
 
         #endregion
@@ -42,14 +38,8 @@ namespace Rescues
 
         public void TearDown()
         {
-            var notepadTriggers = _context.GetTriggers(InteractableObjectType.NotepadTrigger);
-            foreach (var trigger in notepadTriggers)
-            {
-                var notepadTriggerBehaviour = trigger as InteractableObjectBehavior;
-                notepadTriggerBehaviour.OnFilterHandler -= OnFilterHandler;
-                notepadTriggerBehaviour.OnTriggerEnterHandler -= OnTriggerEnterHandler;
-                notepadTriggerBehaviour.OnTriggerExitHandler -= OnTriggerExitHandler;
-            }
+            foreach (var ntb in _notepadTriggerBehaviours)
+                ntb.TriggerActivation -= ProcessTriggers;
         }
 
         #endregion
@@ -66,19 +56,10 @@ namespace Rescues
 
         #region Methods
 
-        private bool OnFilterHandler(Collider2D obj)
+        private void ProcessTriggers(NotepadTrigger[] triggers)
         {
-            return obj.CompareTag(TagManager.PLAYER);
-        }
-
-        private void OnTriggerEnterHandler(ITrigger enteredObject)
-        {
-            enteredObject.IsInteractable = true;
-        }
-
-        private void OnTriggerExitHandler(ITrigger enteredObject)
-        {
-            enteredObject.IsInteractable = false;
+            foreach (var trigger in triggers)
+                _notepadBehaviour.ProcessTrigger(trigger);
         }
 
         #endregion

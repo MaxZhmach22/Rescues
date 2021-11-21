@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -18,13 +17,7 @@ namespace Rescues
         [SerializeField] private TextMeshProUGUI _notepadText;
 
         private NotepadTextContent _notepadTextContent;
-
-        private List<NotepadEntry> _quests = new List<NotepadEntry>();
-        private List<NotepadEntry> _dialogues = new List<NotepadEntry>();
-        private List<NotepadEntry> _characters = new List<NotepadEntry>();
-        private List<NotepadEntry> _lore = new List<NotepadEntry>();
-
-        private List<NotepadEntry> _currentCategory;
+        private NotepadEntriesHolder _notepadEntriesHolder;
 
         private NoteCategory _lastViewedCategory;
 
@@ -35,6 +28,7 @@ namespace Rescues
         public void Initialize()
         {
             _notepadTextContent = new NotepadTextContent();
+            _notepadEntriesHolder = new NotepadEntriesHolder();
 
             _questsBookmark.onClick.AddListener(() => DisplayText(NoteCategory.Quest));
             _dialoguesBookmark.onClick.AddListener(() => DisplayText(NoteCategory.Dialogue));
@@ -43,16 +37,6 @@ namespace Rescues
 
             _leftButton.onClick.AddListener(() => TurnThePage(false));
             _rightButton.onClick.AddListener(() => TurnThePage(true));
-
-            _quests.Add(new NotepadEntry {
-                EntryName = "Заселиться в отель",
-                IsCrossedOut = false,
-            BulletPoints = new List<NotepadBulletpoint> 
-                { 
-                    new NotepadBulletpoint { Id = 0, IsCrossedOut = false }
-                }
-            }
-                );
         }
 
         public void ProcessTrigger(NotepadTrigger entry)
@@ -61,17 +45,17 @@ namespace Rescues
             {
                 case NotepadEntryAction.Add:
                     {
-                        AddEntry(entry.Category, entry.EntryName, entry.BulletpointID);
+                        _notepadEntriesHolder.AddEntry(entry.Category, entry.EntryName, entry.BulletpointID);
                         break;
                     }
                 case NotepadEntryAction.CrossOut:
                     {
-                        CrossOutEntry(entry.Category, entry.EntryName, entry.BulletpointID);
+                        _notepadEntriesHolder.CrossOutEntry(entry.Category, entry.EntryName, entry.BulletpointID);
                         break;
                     }
                 case NotepadEntryAction.Remove:
                     {
-                        RemoveEntry(entry.Category, entry.EntryName, entry.BulletpointID);
+                        _notepadEntriesHolder.RemoveEntry(entry.Category, entry.EntryName, entry.BulletpointID);
                         break;
                     }
                 default:
@@ -81,93 +65,13 @@ namespace Rescues
             }
         }
 
-        private void AddEntry(NoteCategory category, string entryName, int bulletpointId)
-        {
-            _currentCategory = SelectCategory(category);
-
-            var entryIndex = _currentCategory.FindIndex(x => x.EntryName.Equals(entryName));
-
-            if (entryIndex < 0)
-            {
-
-                _currentCategory.Add(new NotepadEntry
-                {
-                    EntryName = entryName,
-                    BulletPoints = new List<NotepadBulletpoint> { 
-                        new NotepadBulletpoint { Id = bulletpointId < 0 ? 0 : bulletpointId
-                        } 
-                    }
-                });
-            }
-            else
-            {
-                _currentCategory[entryIndex].AddBulletpoint(bulletpointId);
-            }
-        }
-
-        private void RemoveEntry(NoteCategory category, string entryName, int bulletpointId)
-        {
-            _currentCategory = SelectCategory(category);
-
-            var entryIndex = _currentCategory.FindIndex(x => x.EntryName.Equals(entryName));
-
-            if (entryIndex < 0)
-                return;
-
-            if (bulletpointId >= 0)
-                _currentCategory[entryIndex].RemoveBulletpoint(bulletpointId);
-            else
-                _currentCategory.RemoveAt(entryIndex);
-        }
-
-        private void CrossOutEntry(NoteCategory category, string entryName, int bulletpointId)
-        {
-            _currentCategory = SelectCategory(category);
-
-            var entryIndex = _currentCategory.FindIndex(x => x.EntryName.Equals(entryName));
-
-            if (entryIndex < 0)
-                return;
-
-            if (bulletpointId >= 0)
-                _currentCategory[entryIndex].CrossOutBulletpoint(bulletpointId);
-            else
-                _currentCategory[entryIndex].CrossOutEntry();
-        }
-
-        private List<NotepadEntry> SelectCategory(NoteCategory category)
-        {
-            switch (category)
-            {
-                case NoteCategory.Quest:
-                    {
-                        return _quests;
-                    }
-                case NoteCategory.Dialogue:
-                    {
-                        return _dialogues;
-                    }
-                case NoteCategory.Character:
-                    {
-                        return _characters;
-                    }
-                case NoteCategory.Lore:
-                    {
-                        return _lore;
-                    }
-                default:
-                    {
-                        throw new System.Exception("Компонент NotepadTriggerBehaviour должен иметь настроенное поле Category");
-                    }
-            }
-        }
-
         private void DisplayText(NoteCategory category)
         {
             if (category == NoteCategory.None)
                 category = NoteCategory.Quest;
 
-            _notepadText.text = _notepadTextContent.GetTextToDisplay(category, SelectCategory(category));
+            _notepadText.text = _notepadTextContent.GetTextToDisplay(category, 
+                                                                    _notepadEntriesHolder.GetEntries(category));
             _notepadText.pageToDisplay = 1;
 
             _lastViewedCategory = category;
@@ -197,6 +101,17 @@ namespace Rescues
         private void OnEnable()
         {
             DisplayText(_lastViewedCategory);
+        }
+
+        private void OnDestroy()
+        {
+            _questsBookmark.onClick.RemoveAllListeners();
+            _dialoguesBookmark.onClick.RemoveAllListeners();
+            _charactersBookmark.onClick.RemoveAllListeners();
+            _loreBookmark.onClick.RemoveAllListeners();
+
+            _leftButton.onClick.RemoveAllListeners();
+            _rightButton.onClick.RemoveAllListeners();
         }
 
         #endregion
