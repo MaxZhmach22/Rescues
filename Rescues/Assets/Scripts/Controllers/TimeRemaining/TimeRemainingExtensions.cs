@@ -37,21 +37,16 @@ namespace Rescues
             value.CurrentTime = value.Time;
             _timeRemainings.Add(value);
         }
-        
+
         public static void AddSequentialTimeRemaining(this List<ITimeRemaining> values, float newTime = -1.0f)
         {
-            if (_timeRemainingSequences.sequentialTimeRemainings.Contains(values))
-            {
-                return;
-            }
-
             foreach (var value in values)
             {
                 if (newTime >= 0)
                 {
                     value.Time = newTime;
                 }
-                value.CurrentTime = value.Time; 
+                value.CurrentTime = value.Time;
             }
             _timeRemainingSequences.sequentialTimeRemainings.Add(values);
         }
@@ -64,7 +59,7 @@ namespace Rescues
             }
             _timeRemainings.Remove(value);
         }
-        
+
         public static void RemoveSequentialTimeRemaining(this List<ITimeRemaining> values)
         {
             if (!_timeRemainingSequences.sequentialTimeRemainings.Contains(values))
