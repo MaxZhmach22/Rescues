@@ -21,7 +21,6 @@ namespace Rescues
         private Services _services;
         private GameObject _levelParent;
         private GateController _gateController;
-        private AudioController _audioController;
 
         #endregion
 
@@ -33,7 +32,6 @@ namespace Rescues
             _context = context;
             _services = services;
             _gateController = new GateController(context);
-            _audioController = new AudioController();
         }
 
         public void Initialize()
@@ -45,7 +43,6 @@ namespace Rescues
             _defaultBootScreen = Object.Instantiate((BootScreen)_levelsData.BootScreen, _levelParent.transform);
             _defaultBootScreen.name = "DefaultBootScreen";
             _defaultBootScreen.gameObject.SetActive(false);
-            _audioController.LoadMainMusicTheme(_levelParent.transform);
             //_context.WorldGameData.RestartLevel += RestartLevel;
             LoadLevel(_levelsData.GetGate);
         }
