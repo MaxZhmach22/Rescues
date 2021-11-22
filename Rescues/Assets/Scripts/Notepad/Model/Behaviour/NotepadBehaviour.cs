@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 
+
 namespace Rescues
 {
     public sealed class NotepadBehaviour : MonoBehaviour
@@ -22,6 +23,7 @@ namespace Rescues
         private NoteCategory _lastViewedCategory;
 
         #endregion
+
 
         #region Methods
 
@@ -60,7 +62,7 @@ namespace Rescues
                     }
                 default:
                     {
-                        throw new System.Exception("Компонент NotepadTriggerBehaviour на объекте должен иметь настроенное поле Category");
+                        throw new System.Exception("Each NotepadTrigger is NotepadTriggerBehaviour component must have value assigned to its Category field");
                     }
             }
         }
@@ -95,6 +97,7 @@ namespace Rescues
         }
 
         #endregion
+
 
         #region UnityMethods
 

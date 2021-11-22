@@ -1,11 +1,16 @@
 using System;
 
+
 namespace Rescues
 {
     [Serializable]
-    public sealed class NotepadBulletpoint
+    public struct NotepadBulletpoint
     {
+        #region Fields
+
         public int Id;
         public bool IsCrossedOut;
+
+        #endregion
     }
 }

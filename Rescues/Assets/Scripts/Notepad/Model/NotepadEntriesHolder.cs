@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
+
 
 namespace Rescues
 {
@@ -17,6 +17,7 @@ namespace Rescues
         private List<NotepadEntry> _currentCategory;
 
         #endregion
+
 
         #region Methods
 
@@ -98,12 +99,11 @@ namespace Rescues
                     }
                 default:
                     {
-                        throw new System.Exception("Компонент NotepadTriggerBehaviour должен иметь настроенное поле Category");
+                        throw new System.Exception("Each NotepadTrigger is NotepadTriggerBehaviour component must have value assigned to its Category field");
                     }
             }
         }
 
         #endregion
-
     }
 }

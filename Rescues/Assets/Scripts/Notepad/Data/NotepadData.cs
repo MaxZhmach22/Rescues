@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 
+
 namespace Rescues
 {
     [CreateAssetMenu(fileName = "NotepadData", menuName = "Data/Notepad/NotepadData")]
@@ -15,6 +16,7 @@ namespace Rescues
 
         #endregion
 
+
         #region Properties
 
         public string Quests
@@ -22,7 +24,7 @@ namespace Rescues
             get 
             {
                 if (_quests == null)
-                    throw new Exception("Текстовый файл Quests должен быть указан в NotepadData");
+                    throw new Exception("Text file for Quests must be set in NotepadData");
 
                 return _quests.text;
             }  
@@ -33,7 +35,7 @@ namespace Rescues
             get
             {
                 if (_dialogues == null)
-                    throw new Exception("Текстовый файл Dialogues должен быть указан в NotepadData");
+                    throw new Exception("Text file for Dialogues must be set in NotepadData");
 
                 return _dialogues.text;
             }
@@ -45,7 +47,7 @@ namespace Rescues
             get
             {
                 if (_characters == null)
-                    throw new Exception("Текстовый файл Characters должен быть указан в NotepadData");
+                    throw new Exception("Text file for Characters must be set in NotepadData");
 
                 return _characters.text;
             }
@@ -56,7 +58,7 @@ namespace Rescues
             get
             {
                 if (_lore == null)
-                    throw new Exception("Текстовый файл Lore должен быть указан в NotepadData");
+                    throw new Exception("Text file for Lore должен must be set in NotepadData");
 
                 return _lore.text;
             }

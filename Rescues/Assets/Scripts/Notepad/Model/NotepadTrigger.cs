@@ -1,10 +1,11 @@
 using System;
 using UnityEngine;
 
+
 namespace Rescues
 {
     [Serializable]
-    public sealed class NotepadTrigger
+    public struct NotepadTrigger
     {
         #region Fields
 
@@ -14,6 +15,7 @@ namespace Rescues
         [SerializeField] private NotepadEntryAction _action;
 
         #endregion
+
 
         #region Properties
 

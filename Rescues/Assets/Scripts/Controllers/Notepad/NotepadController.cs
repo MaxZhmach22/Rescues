@@ -6,18 +6,23 @@ namespace Rescues
     public sealed class NotepadController : IInitializeController, ITearDownController, IExecuteController
     {
         #region Fields
+
         private readonly GameContext _context;
         private NotepadBehaviour _notepadBehaviour;
         private NotepadTriggerBehaviour[] _notepadTriggerBehaviours;
+
         #endregion
 
+
         #region ClassLifeCycles
+
         public NotepadController(GameContext context)
         {
             _context = context;
         }
 
         #endregion
+
 
         #region IInitializeController
 
@@ -34,6 +39,7 @@ namespace Rescues
 
         #endregion
 
+
         #region ITearDownController
 
         public void TearDown()
@@ -44,6 +50,7 @@ namespace Rescues
 
         #endregion
 
+
         #region IExecuteController
 
         public void Execute()
@@ -53,6 +60,7 @@ namespace Rescues
         }
 
         #endregion
+
 
         #region Methods
 

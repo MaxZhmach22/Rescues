@@ -1,14 +1,22 @@
 using System;
 using System.Collections.Generic;
 
+
 namespace Rescues
 {
     [Serializable]
     public sealed class NotepadEntry 
     {
+        #region Fields
+
         public string EntryName;
         public bool IsCrossedOut;
         public List<NotepadBulletpoint> BulletPoints;
+
+        #endregion
+
+
+        #region Methods
 
         public void AddBulletpoint(int id)
         {
@@ -23,7 +31,13 @@ namespace Rescues
             var index = BulletPoints.FindIndex(x => x.Id.Equals(id));
 
             if (index >= 0)
-                BulletPoints[index].IsCrossedOut = true;
+            {
+                var bulletPoint = BulletPoints[index];
+
+                bulletPoint.IsCrossedOut = true;
+
+                BulletPoints[index] = bulletPoint;
+            }
         }
 
         public void RemoveBulletpoint(int id)
@@ -38,5 +52,7 @@ namespace Rescues
             IsCrossedOut = true;
             BulletPoints.Clear();
         }
+
+        #endregion
     }
 }

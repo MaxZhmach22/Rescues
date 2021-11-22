@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
+
 namespace Rescues
 {
     public sealed class NotepadTextContent
@@ -10,14 +11,15 @@ namespace Rescues
         #region Fields
 
         private NotepadData _notepadData;
-        private string DATA_PATH = "Data/Notepad";
-        private string STRIKE_OPEN = "<s>";
-        private string STRIKE_CLOSE = "</s>";
-        private string UNDER_OPEN = "<u>";
-        private string UNDER_CLOSE = "</u>";
-        private string TAB = "    ";
+        private const string DATA_PATH = "Data/Notepad";
+        private const string STRIKE_OPEN = "<s>";
+        private const string STRIKE_CLOSE = "</s>";
+        private const string UNDER_OPEN = "<u>";
+        private const string UNDER_CLOSE = "</u>";
+        private const string TAB = "    ";
 
         #endregion
+
 
         #region ClassLifeCycles
 
@@ -26,12 +28,13 @@ namespace Rescues
             var notepadData = Resources.LoadAll<NotepadData>(DATA_PATH);
 
             if (notepadData.Length == 0)
-                throw new System.Exception("Файл NotepadData должен быть создан в папке Resources/Data/Notepad");
+                throw new System.Exception("NotepadData file must be present in Resources/Data/Notepad folder");
 
             _notepadData = notepadData[0];
         }
 
         #endregion
+
 
         #region Methods
 
