@@ -46,7 +46,7 @@ namespace Rescues
             _defaultBootScreen.name = "DefaultBootScreen";
             _defaultBootScreen.gameObject.SetActive(false);
             _audioController.LoadMainMusicTheme(_levelParent.transform);
-            _context.WorldGameData.RestartLevel += RestartLevel;
+            //_context.WorldGameData.RestartLevel += RestartLevel;
             LoadLevel(_levelsData.GetGate);
         }
 

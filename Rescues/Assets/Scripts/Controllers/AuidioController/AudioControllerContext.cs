@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Rescues
 {
     [CreateAssetMenu(fileName = nameof(AudioControllerContext), menuName = "Data/Audio/" + nameof(AudioControllerContext), order = 0)]
-    public class AudioControllerContext : ScriptableObject
+    public sealed class AudioControllerContext : ScriptableObject
     {
         #region Fields
 

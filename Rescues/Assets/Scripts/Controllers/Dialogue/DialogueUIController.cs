@@ -16,8 +16,10 @@ namespace Rescues
         private readonly Services _services;
         private DialogueUI _dialogueUI;
         private float _timeForWriteChar;
+        private int _writeStep;
         private List<ITimeRemaining> _sequence;
         private List<IInteractable> _items;
+        private List<IInteractable> _dialogues;
 
         #endregion
 
@@ -38,8 +40,8 @@ namespace Rescues
         public void Initialize()
         {
             _items = _context.GetTriggers(InteractableObjectType.Item);
-            var dialogues = _context.GetTriggers(InteractableObjectType.Dialogue);
-            foreach (var dialogue in dialogues)
+            _dialogues = _context.GetTriggers(InteractableObjectType.Dialogue);
+            foreach (var dialogue in _dialogues)
             {
                 var dialogueBehaviour = dialogue as InteractableObjectBehavior;
                 dialogueBehaviour.OnFilterHandler += OnFilterHandler;
@@ -53,9 +55,8 @@ namespace Rescues
             _dialogueUI.playerImage.color = _dialogueUI.playerImageNormalColor;
             //Возможно расширение возможности и добавление команды в ExtraVars для дополнительного вызова
             SetNameColor();
-            //Время на набор одного символа текста диалога, в данный момент технически не может превышать
-            //Time.deltaTime, однако теоретически скорость можно увеличить
-            _timeForWriteChar = _services.UnityTimeServices.DeltaTime();
+            _timeForWriteChar = _services.UnityTimeServices.DeltaTime() * 10 / _dialogueUI.writeSpeed;
+            _writeStep = _dialogueUI.writeStep;
             _sequence = new List<ITimeRemaining>();
             _context.dialogueUIController = this;
 
@@ -127,23 +128,20 @@ namespace Rescues
 
         public void Begin(VIDE_Assign dialogue)
         {
-            _dialogueUI.playerImage.sprite = dialogue.defaultPlayerSprite;
-            _dialogueUI.npcImage.sprite = dialogue.defaultNPCSprite;
-            _dialogueUI.playerLabel.text = _context.character.Name;
-            _dialogueUI.npcLabel.text = dialogue.alias;
+            InitialPrefferences(dialogue);
 
             VD.OnNodeChange += UpdateUI;
             VD.OnNodeChange += SetName;
             VD.OnNodeChange += PlayNodeSound;
             VD.OnNodeChange += GivePlayerItem;
-            VD.OnNodeChange += CheckItem;
+            VD.OnNodeChange += CheckItemAndOverrideStartNode;
             VD.OnNodeChange += SetBackground;
+            VD.OnNodeChange += SetStartNode;
+            VD.OnNodeChange += SwitchNpcContainerState;
+            VD.OnNodeChange += ActivateInteractableObject;
             VD.OnEnd += End;
 
             VD.BeginDialogue(dialogue);
-            _dialogueUI.dialogContainer.SetActive(true);
-            _dialogueUI.playerContainer.SetActive(true);
-            _dialogueUI.npcContainer.SetActive(true);
         }
 
         public void End(VD.NodeData data)
@@ -152,11 +150,14 @@ namespace Rescues
             VD.OnNodeChange -= SetName;
             VD.OnNodeChange -= PlayNodeSound;
             VD.OnNodeChange -= GivePlayerItem;
-            VD.OnNodeChange -= CheckItem;
+            VD.OnNodeChange -= CheckItemAndOverrideStartNode;
             VD.OnNodeChange -= SetBackground;
+            VD.OnNodeChange -= SetStartNode;
+            VD.OnNodeChange -= SwitchNpcContainerState;
+            VD.OnNodeChange -= ActivateInteractableObject;
             VD.OnEnd -= End;
 
-            CutTextAnimation();
+            _dialogueUI.npcText.text = "";
             _dialogueUI.dialogContainer.SetActive(false);
             VD.EndDialogue();
         }
@@ -168,7 +169,7 @@ namespace Rescues
                 if (_dialogueUI.npcImage.color == _dialogueUI.npcImageNormalColor)
                 {
                     _dialogueUI.npcImage.color *= DIMMING_FACTOR;
-                    _dialogueUI.playerImage.color = _dialogueUI.playerImageNormalColor; 
+                    _dialogueUI.playerImage.color = _dialogueUI.playerImageNormalColor;
                 }
                 SetPlayerChoices(data);
             }
@@ -176,7 +177,7 @@ namespace Rescues
             {
                 if (_dialogueUI.playerImage.color == _dialogueUI.playerImageNormalColor)
                 {
-                    _dialogueUI.playerImage.color *= DIMMING_FACTOR; 
+                    _dialogueUI.playerImage.color *= DIMMING_FACTOR;
                     _dialogueUI.npcImage.color = _dialogueUI.npcImageNormalColor;
                 }
 
@@ -189,44 +190,88 @@ namespace Rescues
             }
         }
 
+        private void InitialPrefferences(VIDE_Assign dialogue)
+        {
+            _dialogueUI.playerImage.sprite = dialogue.defaultPlayerSprite;
+            _dialogueUI.npcImage.sprite = dialogue.defaultNPCSprite;
+            _dialogueUI.playerLabel.text = _context.character.Name;
+            _dialogueUI.npcLabel.text = dialogue.alias;
+            _dialogueUI.dialogContainer.SetActive(true);
+            _dialogueUI.playerContainer.SetActive(true);
+            _dialogueUI.npcContainer.SetActive(true);
+            _dialogueUI.background.enabled = true;
+            _dialogueUI.npcBackGround.enabled = false;
+            _dialogueUI.playerBackground.enabled = false;
+        }
+
         private void CallNext()
         {
             CutTextAnimation();
             VD.Next();
         }
 
-        private bool CutTextAnimation()
+        private void CutTextAnimation()
         {
-            if (TimeRemainingExtensions.SequentialTimeRemainings.sequentialTimeRemainings.Contains(_sequence))
-            {
-                TimeRemainingExtensions.RemoveSequentialTimeRemaining(_sequence);
-                _dialogueUI.npcText.text = VD.nodeData.comments[VD.nodeData.commentIndex];
-
-                return true;
-            }
-
-            return false;
+            _sequence.RemoveSequentialTimeRemaining();
+            _dialogueUI.npcText.text = VD.nodeData.comments[VD.nodeData.commentIndex];
         }
 
-        private void CheckItem(VD.NodeData data)
+        private void SetStartNode(VD.NodeData data)
         {
-            if (data.extraVars.ContainsKey("CheckItem"))
+            if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.SetStartNode]))
             {
-                if (data.extraVars.ContainsKey("Yes"))
+                var tempArray = VD.ToIntArray(data.extraVars[DialogueCommandValue.Command[DialogueCommands.
+                    SetStartNode]].ToString());
+                foreach (DialogueBehaviour dialogue in _dialogues)
+                {
+                    if (dialogue.assignDialog.assignedID == tempArray[1])
+                    {
+                        dialogue.assignDialog.overrideStartNode = tempArray[0];
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void ActivateInteractableObject(VD.NodeData data)
+        {
+            if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.ActivateObject]))
+            {
+                var tempCollection = _context.GetListInteractable();
+                foreach (InteractableObjectBehavior interactable in tempCollection)
+                {
+                    if (interactable.Id.ToLower() == data.extraVars[DialogueCommandValue.Command[DialogueCommands.
+                        ActivateObject]].ToString().ToLower())
+                    {
+                        interactable.IsInteractionLocked = false;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void CheckItemAndOverrideStartNode(VD.NodeData data)
+        {
+            if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.CheckItem]))
+            {
+                if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.Yes]))
                 {
                     foreach (var itemSlot in _context.inventory.itemSlots)
                     {
-                        if (itemSlot.Item?.Name.ToLower() == data.extraVars["CheckItem"].ToString().ToLower())
+                        if (itemSlot.Item?.Name.ToLower() == data.
+                            extraVars[DialogueCommandValue.Command[DialogueCommands.CheckItem]].ToString().ToLower())
                         {
-                            VD.assigned.overrideStartNode = (int)VD.nodeData.extraVars["Yes"];
+                            VD.assigned.overrideStartNode =
+                                (int)data.extraVars[DialogueCommandValue.Command[DialogueCommands.Yes]];
                             return;
                         }
                     }
                 }
 
-                if (data.extraVars.ContainsKey("No"))
+                if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.No]))
                 {
-                    VD.assigned.overrideStartNode = (int)VD.nodeData.extraVars["No"];
+                    VD.assigned.overrideStartNode = (int)data.extraVars[DialogueCommandValue.
+                        Command[DialogueCommands.No]];
                 }
             }
         }
@@ -248,14 +293,16 @@ namespace Rescues
 
         private void SetName(VD.NodeData data)
         {
-            if (data.extraVars.ContainsKey("SetNpcName"))
+            if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.SetNpcName]))
             {
-                _dialogueUI.npcLabel.text = data.extraVars["SetNpcName"].ToString();
+                _dialogueUI.npcLabel.text = data.extraVars[DialogueCommandValue.Command[DialogueCommands.
+                    SetNpcName]].ToString();
             }
 
-            if (data.extraVars.ContainsKey("SetPlayerName"))
+            if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.SetPlayerName]))
             {
-                _dialogueUI.playerLabel.text = data.extraVars["SetPlayerName"].ToString();
+                _dialogueUI.playerLabel.text = data.extraVars[DialogueCommandValue.
+                    Command[DialogueCommands.SetPlayerName]].ToString();
             }
         }
 
@@ -263,12 +310,13 @@ namespace Rescues
         {
             if (data.creferences[choise].sprites != null && data.creferences[choise].extraData != EXTRA_DATA_DEFAULT)
             {
-                if (data.creferences[choise].extraData == "SetNpcSprite")
+                if (data.creferences[choise].extraData == DialogueCommandValue.Command[DialogueCommands.SetNpcSprite])
                 {
                     _dialogueUI.npcImage.sprite = data.creferences[choise].sprites;
                 }
 
-                if (data.creferences[choise].extraData == "SetPlayerSprite")
+                if (data.creferences[choise].extraData == DialogueCommandValue.
+                    Command[DialogueCommands.SetPlayerSprite])
                 {
                     _dialogueUI.playerImage.sprite = data.creferences[choise].sprites;
                 }
@@ -297,16 +345,35 @@ namespace Rescues
 
         private void GivePlayerItem(VD.NodeData data)
         {
-            if (data.extraVars.ContainsKey("GiveItem"))
+            if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.GiveItem]))
             {
                 foreach (ItemBehaviour item in _items)
                 {
-                    if (item.ItemData?.Name.ToLower() == data.extraVars["GiveItem"].ToString().ToLower())
+                    if (item.ItemData?.Name.ToLower() == data.
+                        extraVars[DialogueCommandValue.Command[DialogueCommands.GiveItem]].ToString().ToLower())
                     {
                         item.gameObject.SetActive(false);
                         _context.inventory.AddItem(item.ItemData);
                     }
                 }
+            }
+        }
+
+        private void SwitchBackgroundMode()
+        {
+            if (_dialogueUI.background.enabled)
+            {
+                _dialogueUI.playerBackground.enabled = true;
+                _dialogueUI.playerBackground.sprite = _dialogueUI.background.sprite;
+                _dialogueUI.playerBackground.color = _dialogueUI.background.color;
+                _dialogueUI.background.enabled = false;
+            }
+            else
+            {
+                _dialogueUI.background.enabled = true;
+                _dialogueUI.background.sprite = _dialogueUI.playerBackground.sprite;
+                _dialogueUI.background.color = _dialogueUI.playerBackground.color;
+                _dialogueUI.playerBackground.enabled = false;
             }
         }
 
@@ -319,12 +386,21 @@ namespace Rescues
             }
         }
 
+        private void SwitchNpcContainerState(VD.NodeData data)
+        {
+            if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.SwitchNpcContainerState]))
+            {
+                _dialogueUI.npcContainer.SetActive(!_dialogueUI.npcContainer.activeSelf);
+                SwitchBackgroundMode();
+            }
+        }
+
         private void PlayNodeSound(VD.NodeData data)
         {
-            if (data.extraVars.ContainsKey("PlayMusic"))
+            if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.PlayMusic]))
             {
-                var path = ($"{AssetsPathGameObject.Object[GameObjectType.DialoguesComponents]}" +
-                    $"{VD.nodeData.extraVars["PlayMusic"]}");
+                var path = ($"{AssetsPathGameObject.Object[GameObjectType.DialoguesComponents]}Audio/" +
+                    $"{data.extraVars[DialogueCommandValue.Command[DialogueCommands.PlayMusic]]}");
                 _dialogueUI.nodeSoundContainer.Initialization(Resources.Load<AudioClip>(path));
 
             }
@@ -334,21 +410,25 @@ namespace Rescues
         {
             _sequence.Clear();
             _dialogueUI.npcText.text = "";
-            for (int i = 0; i < text.Length; i++)
+            int start = 0;
+            int tempStep = _writeStep;
+            while (start < text.Length)
             {
-                float lastHeight = _dialogueUI.npcText.preferredHeight;
-                if (_dialogueUI.npcText.preferredHeight > lastHeight)
+                if ((start + tempStep) >= text.Length)
                 {
-                    _dialogueUI.npcText.text += System.Environment.NewLine;
+                    tempStep = text.Length - start;
                 }
 
-                var tempLetter = text[i];
+                var tempSubstring = text.Substring(start, tempStep);
                 _sequence.Add(new TimeRemaining(() =>
                 {
-                    _dialogueUI.npcText.text += tempLetter;
+                    _dialogueUI.npcText.text += tempSubstring;
                 },
                 time));
+
+                start += tempStep;
             }
+
             _sequence.Add(new TimeRemaining(() => { VD.Next(); }, time));
             TimeRemainingExtensions.AddSequentialTimeRemaining(_sequence);
         }

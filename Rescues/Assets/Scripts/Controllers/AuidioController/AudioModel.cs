@@ -3,7 +3,7 @@
 
 namespace Rescues
 {
-    public class AudioModel
+    public sealed class AudioModel
     {
         #region CONSTANT
 

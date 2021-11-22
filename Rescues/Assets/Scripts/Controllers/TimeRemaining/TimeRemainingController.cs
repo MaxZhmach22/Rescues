@@ -49,31 +49,21 @@ namespace Rescues
                 }
             }
 
-            if (_timeRemainingSequences.currentSequenceIndex >= _timeRemainingSequences.sequentialTimeRemainings.Count)
-            {
-                _timeRemainingSequences.currentSequenceIndex = 0;
-            }
-            else
+            if (_timeRemainingSequences.sequentialTimeRemainings.Count > 0)
             {
                 var sequences = _timeRemainingSequences.sequentialTimeRemainings;
-                var sequenceElement = sequences[_timeRemainingSequences.currentSequenceIndex]
-                    [_timeRemainingSequences.currentSeqElementIndex];
+                var sequenceElement = sequences[0][_timeRemainingSequences.currentSeqElementIndex];
+
                 sequenceElement.CurrentTime -= time;
                 if (sequenceElement.CurrentTime <= 0.0f)
                 {
                     sequenceElement?.Method?.Invoke();
-                    _timeRemainingSequences.currentSeqElementIndex++;
-                }
-
-                if (_timeRemainingSequences.currentSeqElementIndex >= sequences[_timeRemainingSequences.
-                    currentSequenceIndex].Count)
-                {
-                    sequences[_timeRemainingSequences.
-                    currentSequenceIndex].RemoveSequentialTimeRemaining();
-                    _timeRemainingSequences.currentSequenceIndex++;
-                }
+                    if (++_timeRemainingSequences.currentSeqElementIndex >= sequences[0].Count)
+                    {
+                        sequences[0].RemoveSequentialTimeRemaining();
+                    }
+                }               
             }
-
         }
 
         #endregion

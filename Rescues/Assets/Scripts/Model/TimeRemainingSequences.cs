@@ -7,7 +7,6 @@ namespace Rescues
     {
         #region Fields
 
-        public int currentSequenceIndex;
         public int currentSeqElementIndex;
         public List<List<ITimeRemaining>> sequentialTimeRemainings;
 
@@ -19,7 +18,7 @@ namespace Rescues
         public TimeRemainingSequences()
         {
             sequentialTimeRemainings = new List<List<ITimeRemaining>>();
-        } 
+        }
 
         #endregion
     }
