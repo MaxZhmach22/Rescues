@@ -474,11 +474,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -183.5
       objectReference: {fileID: 0}
-    - target: {fileID: 831148561401746706, guid: d31aef6911eb09d4693f34150652c847,
-        type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2438603602790679568, guid: d31aef6911eb09d4693f34150652c847,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -743,32 +738,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7027128565702397351, guid: d31aef6911eb09d4693f34150652c847,
-        type: 3}
-      propertyPath: _audioContext
-      value: 
-      objectReference: {fileID: 11400000, guid: 0883e3b236c3b3a46bcad33be234eff5,
-        type: 2}
-    - target: {fileID: 7738256942581719614, guid: d31aef6911eb09d4693f34150652c847,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7738256942581719614, guid: d31aef6911eb09d4693f34150652c847,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7738256942581719614, guid: d31aef6911eb09d4693f34150652c847,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7738256942614960326, guid: d31aef6911eb09d4693f34150652c847,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 44.41992
       objectReference: {fileID: 0}
     - target: {fileID: 7738256943631090397, guid: d31aef6911eb09d4693f34150652c847,
         type: 3}
