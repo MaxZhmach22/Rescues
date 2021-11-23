@@ -308,13 +308,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _notepadTriggers:
   - _category: 1
-    _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
-      \u043E\u0442\u0435\u043B\u044C"
+    _entryID: Q_Htl_01
     _bulletpointID: 1
     _action: 1
   - _category: 1
-    _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
-      \u043E\u0442\u0435\u043B\u044C"
+    _entryID: Q_Htl_01
     _bulletpointID: 0
     _action: 3
 --- !u!1 &584633333882608083
@@ -982,6 +980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 2
   _isInteractionLocked: 0
+  <Id>k__BackingField: 
   ItemData: {fileID: 11400000, guid: 30095eaf594323b42beb2df57250c6d4, type: 2}
   PickUpTime: 0.5
 --- !u!114 &1209689559631535290
@@ -998,8 +997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _notepadTriggers:
   - _category: 1
-    _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
-      \u043E\u0442\u0435\u043B\u044C"
+    _entryID: Q_Htl_01
     _bulletpointID: -1
     _action: 3
 --- !u!114 &6761233264120785481
@@ -1567,6 +1565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 6
   _isInteractionLocked: 0
+  <Id>k__BackingField: 
   StandWindow: {fileID: 82461972379826494}
 --- !u!114 &1677183718369130054
 MonoBehaviour:
@@ -2225,22 +2224,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _notepadTriggers:
   - _category: 2
-    _entryName: "\u041F\u0435\u0440\u0432\u044B\u0439 \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440
-      \u0441 \u0445\u043E\u0437\u044F\u0438\u043D\u043E\u043C"
+    _entryID: D_Htl_Hoz_01
     _bulletpointID: 0
     _action: 1
   - _category: 3
-    _entryName: "\u0425\u043E\u0437\u044F\u0438\u043D \u043E\u0442\u0435\u043B\u044F"
+    _entryID: Ch_Htl_01
     _bulletpointID: 0
     _action: 1
   - _category: 1
-    _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
-      \u043E\u0442\u0435\u043B\u044C"
+    _entryID: Q_Htl_01
     _bulletpointID: 1
     _action: 3
   - _category: 1
-    _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
-      \u043E\u0442\u0435\u043B\u044C"
+    _entryID: Q_Htl_01
     _bulletpointID: 2
     _action: 1
 --- !u!1 &2926875825446737903
@@ -2449,6 +2445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 2
   _isInteractionLocked: 0
+  <Id>k__BackingField: 
   ItemData: {fileID: 11400000, guid: 8e2f62e3303b76c4b9c020b00a63b7ce, type: 2}
   PickUpTime: 0.5
 --- !u!114 &7377974524128488657
@@ -2465,17 +2462,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _notepadTriggers:
   - _category: 4
-    _entryName: "\u041D\u043E\u0436"
+    _entryID: L_Htl_01
     _bulletpointID: 0
     _action: 1
   - _category: 1
-    _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
-      \u043E\u0442\u0435\u043B\u044C"
+    _entryID: Q_Htl_01
     _bulletpointID: 3
     _action: 2
   - _category: 1
-    _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
-      \u043E\u0442\u0435\u043B\u044C"
+    _entryID: Q_Htl_01
     _bulletpointID: 4
     _action: 1
 --- !u!114 &2068795959390010209
@@ -2830,8 +2825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _notepadTriggers:
   - _category: 1
-    _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
-      \u043E\u0442\u0435\u043B\u044C"
+    _entryID: Q_Htl_01
     _bulletpointID: 0
     _action: 1
 --- !u!1 &3419836794956249972
@@ -3589,6 +3583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 2
   _isInteractionLocked: 0
+  <Id>k__BackingField: 
   ItemData: {fileID: 11400000, guid: 881618781bbba7d4881c1084c90e0772, type: 2}
   PickUpTime: 0.5
 --- !u!1 &5035029922842190303
@@ -3772,18 +3767,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _notepadTriggers:
   - _category: 2
-    _entryName: "\u0422\u0440\u0435\u0442\u0438\u0439 \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440
-      \u0441 \u0445\u043E\u0437\u044F\u0438\u043D\u043E\u043C"
+    _entryID: D_Htl_Hoz_03
     _bulletpointID: 0
     _action: 1
   - _category: 1
-    _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
-      \u043E\u0442\u0435\u043B\u044C"
+    _entryID: Q_Htl_01
     _bulletpointID: 4
     _action: 3
   - _category: 1
-    _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
-      \u043E\u0442\u0435\u043B\u044C"
+    _entryID: Q_Htl_01
     _bulletpointID: 5
     _action: 1
 --- !u!1 &5231153321012499600
@@ -5105,18 +5097,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _notepadTriggers:
   - _category: 2
-    _entryName: "\u0412\u0442\u043E\u0440\u043E\u0439 \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440
-      \u0441 \u0445\u043E\u0437\u044F\u0438\u043D\u043E\u043C"
+    _entryID: D_Htl_Hoz_02
     _bulletpointID: 0
     _action: 1
   - _category: 1
-    _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
-      \u043E\u0442\u0435\u043B\u044C"
+    _entryID: Q_Htl_01
     _bulletpointID: 2
     _action: 3
   - _category: 1
-    _entryName: "\u0417\u0430\u0441\u0435\u043B\u0438\u0442\u044C\u0441\u044F \u0432
-      \u043E\u0442\u0435\u043B\u044C"
+    _entryID: Q_Htl_01
     _bulletpointID: 3
     _action: 1
 --- !u!1 &6279703785405383889
@@ -5276,6 +5265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 2
   _isInteractionLocked: 0
+  <Id>k__BackingField: 
   ItemData: {fileID: 11400000, guid: a074f039d3208c84e8b3c490bac913ea, type: 2}
   PickUpTime: 0.5
 --- !u!1 &6878558503253456712
@@ -6858,6 +6848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 5
   _isInteractionLocked: 0
+  <Id>k__BackingField: 
   Puzzle: {fileID: 5235566011315741230, guid: d0950d6b9c26b469dbaac675321a4991, type: 3}
   ItemData: {fileID: 11400000, guid: 94bbec4b67b144a889865f5e8a89cd34, type: 2}
   finishEvents: []

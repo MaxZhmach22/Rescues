@@ -10,7 +10,7 @@ namespace Rescues
         #region Fields
 
         [SerializeField] private NoteCategory _category;
-        [SerializeField] private string _entryName;
+        [SerializeField] private string _entryID;
         [SerializeField, Min(-1)] private int _bulletpointID;
         [SerializeField] private NotepadEntryAction _action;
 
@@ -20,7 +20,7 @@ namespace Rescues
         #region Properties
 
         public NoteCategory Category => _category;
-        public string EntryName => _entryName;
+        public string EntryID => _entryID;
         public int BulletpointID => _bulletpointID;
         public NotepadEntryAction Action => _action;
 

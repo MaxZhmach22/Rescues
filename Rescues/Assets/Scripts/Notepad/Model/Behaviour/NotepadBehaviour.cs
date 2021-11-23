@@ -47,22 +47,22 @@ namespace Rescues
             {
                 case NotepadEntryAction.Add:
                     {
-                        _notepadEntriesHolder.AddEntry(entry.Category, entry.EntryName, entry.BulletpointID);
+                        _notepadEntriesHolder.AddEntry(entry.Category, entry.EntryID, entry.BulletpointID);
                         break;
                     }
                 case NotepadEntryAction.CrossOut:
                     {
-                        _notepadEntriesHolder.CrossOutEntry(entry.Category, entry.EntryName, entry.BulletpointID);
+                        _notepadEntriesHolder.CrossOutEntry(entry.Category, entry.EntryID, entry.BulletpointID);
                         break;
                     }
                 case NotepadEntryAction.Remove:
                     {
-                        _notepadEntriesHolder.RemoveEntry(entry.Category, entry.EntryName, entry.BulletpointID);
+                        _notepadEntriesHolder.RemoveEntry(entry.Category, entry.EntryID, entry.BulletpointID);
                         break;
                     }
                 default:
                     {
-                        throw new System.Exception("Each NotepadTrigger is NotepadTriggerBehaviour component must have value assigned to its Category field");
+                        throw new System.Exception("Each NotepadTrigger in NotepadTriggerBehaviour component must have value assigned to its Category field");
                     }
             }
         }
