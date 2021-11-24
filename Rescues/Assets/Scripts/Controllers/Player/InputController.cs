@@ -161,6 +161,12 @@ namespace Rescues
                             LockState();
                         }
 
+                        var eventSystem = GetInteractableObject<EventSystemBehaviour>(InteractableObjectType.EventSystem);
+                        if (eventSystem != null)
+                        {
+                            eventSystem.ActivateButtonInTriggerEvent();
+                        }
+
                         var item = GetInteractableObject<ItemBehaviour>(InteractableObjectType.Item);
                         if (item != null)
                         {
