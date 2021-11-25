@@ -43,26 +43,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268dc70b105993846a123be43345df63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileIndex: 15
+  fileIndex: 16
   skinIndex: 3
   loadTag: 
   startID: 0
   curFocusID: 0
-  currentID: 56679
+  currentID: 9209
   autosave: 0
   previewPanning: 0
-  currentDiag: 15
+  currentDiag: 16
   locEdit: 0
   pNodeID: 18
   aNodeID: 2
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: "\u0412\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u0435\u0433\u043E
-        \u0432\u044B\u043A\u0438\u043D\u0443\u043B\u0438 \u0432 \u043C\u0443\u0441\u043E\u0440"
+    - text: "\u041A\u0430\u0436\u0435\u0442\u0441\u044F \u0437\u0432\u043E\u043D\u043E\u043A
+        \u0441\u043B\u043E\u043C\u0430\u043D"
       extraData: ExtraData
       inputSetIndex: 0
-      outputNodeIndex: 2
+      outputNodeIndex: 1
       outActionIndex: -1
       showmore: 0
       outRect:
@@ -77,8 +77,8 @@ MonoBehaviour:
     ID: 0
     rect:
       serializedVersion: 2
-      x: 30
-      y: 150
+      x: -10
+      y: 60
       width: 348
       height: 249
     pTag: 
@@ -91,10 +91,9 @@ MonoBehaviour:
     isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: "\u0410 \u0432\u043E\u0442 \u0438 \u044F\u0437\u044B\u0447\u0435\u043A!
-        \u041E\u0442\u043B\u0438\u0447\u043D\u043E, \u0442\u0435\u043F\u0435\u0440\u044C
-        \u043C\u043E\u0436\u043D\u043E \u043F\u043E\u0447\u0438\u043D\u0438\u0442\u044C
-        \u0437\u0432\u043E\u043D\u043E\u043A. "
+    - text: "\u0414\u0443\u043C\u0430\u044E \u0435\u0433\u043E \u043C\u043E\u0436\u043D\u043E
+        \u043F\u043E\u0447\u0438\u043D\u0438\u0442\u044C, \u043D\u0430\u0434\u043E
+        \u0442\u043E\u043B\u044C\u043A\u043E \u043D\u0430\u0439\u0442\u0438 \u044F\u0437\u044B\u0447\u043E\u043A. "
       extraData: ExtraData
       inputSetIndex: 1
       outputNodeIndex: -1
@@ -112,28 +111,60 @@ MonoBehaviour:
     ID: 1
     rect:
       serializedVersion: 2
-      x: 850
-      y: 140
+      x: 400
+      y: 10
       width: 348
-      height: 283
+      height: 259
     pTag: 
     expand: 1
     sprite: {fileID: 0}
     vars:
-    - "\u042F\u0437\u044B\u0447\u0435\u043A"
-    - 2-9209
+    - 0-56679
     varKeys:
-    - GiveItem
     - SetStartNode
     isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: "\"\u0418\u0441\u043A\u0430\u0442\u044C \u0432 \u043C\u0443\u0441\u043E\u0440\u0435\""
+    - text: "\u0422\u0430\u043A, \u043D\u0443\u0436\u043D\u043E \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C
+        \u044F\u0437\u044B\u0447\u043E\u043A \u043D\u0430 \u043C\u0435\u0441\u0442\u043E"
       extraData: ExtraData
       inputSetIndex: 2
-      outputNodeIndex: 1
+      outputNodeIndex: 3
       outActionIndex: -1
       showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 301
+        y: 63
+        width: 30
+        height: 33
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 2
+    rect:
+      serializedVersion: 2
+      x: -20
+      y: 350
+      width: 348
+      height: 259
+    pTag: 
+    expand: 1
+    sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - SwitchNpcContainerState
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0413\u043E\u0442\u043E\u0432\u043E, \u0442\u0435\u043F\u0435\u0440\u044C
+        \u0434\u043E\u043B\u0436\u043D\u043E \u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C"
+      extraData: ExtraData
+      inputSetIndex: 3
+      outputNodeIndex: 4
+      outActionIndex: -1
+      showmore: 1
       outRect:
         serializedVersion: 2
         x: 301
@@ -143,27 +174,30 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    ID: 2
+    ID: 3
     rect:
       serializedVersion: 2
-      x: 440
-      y: 150
+      x: 380
+      y: 350
       width: 348
-      height: 225
+      height: 278
     pTag: 
     expand: 1
     sprite: {fileID: 0}
-    vars: []
-    varKeys: []
+    vars:
+    - RRing
+    varKeys:
+    - ActivateObject
     isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: "\u0422\u0430\u043C \u0442\u043E\u043B\u044C\u043A\u043E \u043C\u0443\u0441\u043E\u0440"
+    - text: "\u0422\u0435\u043F\u0435\u0440\u044C \u043C\u043E\u0436\u043D\u043E
+        \u043F\u043E\u0437\u0432\u043E\u043D\u0438\u0442\u044C \u0432 \u0437\u0432\u043E\u043D\u043E\u043A."
       extraData: ExtraData
-      inputSetIndex: 3
+      inputSetIndex: 4
       outputNodeIndex: -1
       outActionIndex: -1
-      showmore: 0
+      showmore: 1
       outRect:
         serializedVersion: 2
         x: 0
@@ -173,59 +207,26 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    ID: 3
+    ID: 4
     rect:
       serializedVersion: 2
-      x: 40
-      y: 440
+      x: 780
+      y: 350
       width: 348
-      height: 249
+      height: 312
     pTag: 
     expand: 1
     sprite: {fileID: 0}
     vars:
-    - 
+    - RHoz
+    - RRing,
     varKeys:
-    - SwitchNpcContainerState
+    - ActivateObject
+    - ActivateEvent
     isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: "\u041E\u0431\u044B\u0447\u043D\u0430\u044F \u0441\u0442\u0430\u0440\u0430\u044F
-        \u043C\u0443\u0441\u043E\u0440\u043A\u0430"
-      extraData: ExtraData
-      inputSetIndex: 4
-      outputNodeIndex: 5
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 23
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 5
-    rect:
-      serializedVersion: 2
-      x: 40
-      y: -140
-      width: 348
-      height: 249
-    pTag: 
-    expand: 1
-    sprite: {fileID: 0}
-    vars:
-    - 
-    varKeys:
-    - SwitchNpcContainerState
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u042F \u043D\u0435 \u0441\u0442\u0430\u043D\u0443 \u0431\u0435\u0437
-        \u043F\u0440\u0438\u0447\u0438\u043D\u044B \u043A\u043E\u043F\u0430\u0442\u044C\u0441\u044F
-        \u0432 \u0447\u0443\u0436\u043E\u043C \u043C\u0443\u0441\u043E\u0440\u0435. "
+    - text: "\u041D\u0443\u0436\u043D\u043E \u043D\u0430\u0439\u0442\u0438 \u044F\u0437\u044B\u0447\u0435\u043A. "
       extraData: ExtraData
       inputSetIndex: 5
       outputNodeIndex: -1
@@ -243,18 +244,127 @@ MonoBehaviour:
     ID: 6
     rect:
       serializedVersion: 2
-      x: 440
-      y: -140
+      x: 0
+      y: -260
       width: 348
-      height: 259
+      height: 249
     pTag: 
     expand: 1
     sprite: {fileID: 0}
     vars:
     - 
     varKeys:
-    - 
+    - SwitchNpcContainerState
     isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u042F \u0443\u0436\u0435 \u0437\u0434\u0435\u0441\u044C, \u043C\u043E\u0436\u0435\u0442
+        \u043F\u0435\u0440\u0435\u0441\u0442\u0430\u043D\u0435\u0442\u0435 \u0437\u0432\u043E\u043D\u0438\u0442\u044C?"
+      extraData: 
+      inputSetIndex: 6
+      outputNodeIndex: 7
+      outActionIndex: -1
+      showmore: 1
+      outRect:
+        serializedVersion: 2
+        x: 301
+        y: 63
+        width: 30
+        height: 33
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 8
+    rect:
+      serializedVersion: 2
+      x: 730
+      y: 690
+      width: 348
+      height: 288
+    pTag: 
+    expand: 1
+    sprite: {fileID: 0}
+    vars:
+    - "\u0425\u043E\u0437\u044F\u0438\u043D \u043E\u0442\u0435\u043B\u044F"
+    varKeys:
+    - SetNpcName
+    isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: "\u041F\u0440\u043E\u0441\u0442\u0438\u0442\u0435, \u044F \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E."
+      extraData: ExtraData
+      inputSetIndex: 7
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u0417\u0430\u0445\u043E\u0447\u0443, \u0431\u0443\u0434\u0443 \u0437\u0432\u043E\u043D\u0438\u0442\u044C! "
+      extraData: 
+      inputSetIndex: 7
+      outputNodeIndex: 8
+      outActionIndex: -1
+      showmore: 1
+      outRect:
+        serializedVersion: 2
+        x: 300
+        y: 87
+        width: 30
+        height: 23
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 9
+    rect:
+      serializedVersion: 2
+      x: 1140
+      y: 720
+      width: 348
+      height: 182
+    pTag: 
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430 \u043D\u0435
+        \u043D\u0430\u0434\u043E!"
+      extraData: ExtraData
+      inputSetIndex: 8
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 12
+    rect:
+      serializedVersion: 2
+      x: 1550
+      y: 760
+      width: 348
+      height: 129
+    pTag: 
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
     gameObjectName: '[No object]'
@@ -272,14 +382,40 @@ MonoBehaviour:
     param_float: 0
     rect:
       serializedVersion: 2
-      x: 1250
-      y: 140
+      x: 810
+      y: 30
       width: 200
       height: 166
-    ID: 4
+    ID: 5
     outPlayerIndex: -1
     outActionIndex: -1
     more: 1
-    ovrStartNode: 3
+    ovrStartNode: 6
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    nameIndex: 0
+    methodIndex: 0
+    paramIndex: -1
+    opts:
+    - '[No method]'
+    nameOpts:
+    - '[No object]'
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    rect:
+      serializedVersion: 2
+      x: 1240
+      y: 340
+      width: 200
+      height: 166
+    ID: 7
+    outPlayerIndex: -1
+    outActionIndex: -1
+    more: 1
+    ovrStartNode: 8
     renameDialogue: 
   S_selNodes: []
