@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using VIDE_Data;
@@ -106,7 +107,7 @@ namespace Rescues
                     {
                         _cameraServices.LockCamera();
                     }
-                }                              
+                }
             }
         }
 
@@ -138,6 +139,22 @@ namespace Rescues
             return behaviour;
         }
 
+        private List<T> GetInteractableObjects<T>(InteractableObjectType type) where T : class
+        {
+            var interactableObjects = _context.GetTriggers(type);
+            List<T> behaviours = new List<T>();
+
+            foreach (var trigger in interactableObjects)
+            {
+                if (trigger.IsInteractable)
+                {
+                    behaviours.Add(trigger as T);
+                }
+            }
+
+            return behaviours;
+        }
+
         private void SwitchState(PlayerStates playerState)
         {
             _cancelState.Invoke();
@@ -161,10 +178,13 @@ namespace Rescues
                             LockState();
                         }
 
-                        var eventSystem = GetInteractableObject<EventSystemBehaviour>(InteractableObjectType.EventSystem);
-                        if (eventSystem != null)
+                        var eventSystems = GetInteractableObjects<EventSystemBehaviour>(InteractableObjectType.EventSystem);
+                        if (eventSystems != null)
                         {
-                            eventSystem.ActivateButtonInTriggerEvent();
+                            foreach (var es in eventSystems)
+                            {
+                                es.ActivateButtonInTriggerEvent();
+                            }
                         }
 
                         var item = GetInteractableObject<ItemBehaviour>(InteractableObjectType.Item);
