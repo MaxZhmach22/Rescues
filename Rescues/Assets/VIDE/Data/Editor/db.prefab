@@ -120,11 +120,11 @@ MonoBehaviour:
     expand: 1
     sprite: {fileID: 0}
     vars:
-    - 2-9209
     - "\u042F\u0437\u044B\u0447\u0435\u043A"
+    - 2-9209
     varKeys:
-    - SetStartNode
     - GiveItem
+    - SetStartNode
     isPlayer: 1
   - commentCount: 1
     s_comment:
@@ -179,12 +179,81 @@ MonoBehaviour:
       x: 40
       y: 440
       width: 348
-      height: 129
+      height: 249
     pTag: 
-    expand: 0
+    expand: 1
     sprite: {fileID: 0}
-    vars: []
-    varKeys: []
+    vars:
+    - 
+    varKeys:
+    - SwitchNpcContainerState
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u041E\u0431\u044B\u0447\u043D\u0430\u044F \u0441\u0442\u0430\u0440\u0430\u044F
+        \u043C\u0443\u0441\u043E\u0440\u043A\u0430"
+      extraData: ExtraData
+      inputSetIndex: 4
+      outputNodeIndex: 5
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 301
+        y: 63
+        width: 30
+        height: 23
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 5
+    rect:
+      serializedVersion: 2
+      x: 40
+      y: -140
+      width: 348
+      height: 249
+    pTag: 
+    expand: 1
+    sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - SwitchNpcContainerState
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u042F \u043D\u0435 \u0441\u0442\u0430\u043D\u0443 \u0431\u0435\u0437
+        \u043F\u0440\u0438\u0447\u0438\u043D\u044B \u043A\u043E\u043F\u0430\u0442\u044C\u0441\u044F
+        \u0432 \u0447\u0443\u0436\u043E\u043C \u043C\u0443\u0441\u043E\u0440\u0435. "
+      extraData: ExtraData
+      inputSetIndex: 5
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 6
+    rect:
+      serializedVersion: 2
+      x: 440
+      y: -140
+      width: 348
+      height: 259
+    pTag: 
+    expand: 1
+    sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - 
     isPlayer: 1
   S_actionNodes:
   - pauseHere: 0
