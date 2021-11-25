@@ -166,7 +166,7 @@ namespace Rescues
                         _cancelState = () => { };
 
                         var dialogue = GetInteractableObject<DialogueBehaviour>(InteractableObjectType.Dialogue);
-                        if (dialogue != null)
+                        if (dialogue != null && !dialogue.IsInteractionLocked)
                         {
                             _context.dialogueUIController.Begin(dialogue.assignDialog);
                             VD.OnEnd += (data) => _isStateLocked = false;
@@ -183,12 +183,15 @@ namespace Rescues
                         {
                             foreach (var es in eventSystems)
                             {
-                                es.ActivateButtonInTriggerEvent();
+                                if (!es.IsInteractionLocked)
+                                {
+                                    es.ActivateButtonInTriggerEvent();
+                                }
                             }
                         }
 
                         var item = GetInteractableObject<ItemBehaviour>(InteractableObjectType.Item);
-                        if (item != null)
+                        if (item != null && !item.IsInteractionLocked)
                         {
                             LockState();
                             //TODO Need animation for this
@@ -202,7 +205,7 @@ namespace Rescues
                         }
 
                         var puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
-                        if (puzzleObject != null && !puzzleObject.Puzzle.IsFinished && !puzzleObject.Puzzle.IsActive)
+                        if (puzzleObject != null && !puzzleObject.Puzzle.IsFinished && !puzzleObject.IsInteractionLocked)
                         {
                             puzzleObject.Puzzle.Activate();
                             //Intercept control
@@ -215,7 +218,7 @@ namespace Rescues
                 case PlayerStates.PickUp:
                     {
                         var trap = GetInteractableObject<TrapBehaviour>(InteractableObjectType.Trap);
-                        if (trap != null)
+                        if (trap != null && !trap.IsInteractionLocked)
                         {
                             if (_context.inventory.Contains(trap.TrapInfo.RequiredTrapItem))
                             {
@@ -238,7 +241,7 @@ namespace Rescues
                 case PlayerStates.GoByGateWay:
                     {
                         var gate = GetInteractableObject<Gate>(InteractableObjectType.Gate);
-                        if (gate != null)
+                        if (gate != null && !gate.IsInteractionLocked)
                         {
                             LockState();
                             //TODO Need animation for this
@@ -266,14 +269,14 @@ namespace Rescues
                         {
                             //TODO not implemented
                             var hidingPlace = GetInteractableObject<HidingPlaceBehaviour>(InteractableObjectType.HidingPlace);
-                            if (hidingPlace != null)
+                            if (hidingPlace != null && !hidingPlace.IsInteractionLocked)
                             {
                                 _context.character.StartHiding(hidingPlace);
                             }
 
                             //TODO not working yet
                             var stand = GetInteractableObject<StandBehaviour>(InteractableObjectType.Stand);
-                            if (stand != null)
+                            if (stand != null && !stand.IsInteractionLocked)
                             {
                                 stand.StandWindow.SetActive(true);
                                 _cancelState += () =>

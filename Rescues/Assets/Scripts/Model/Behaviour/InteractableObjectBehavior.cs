@@ -33,7 +33,7 @@ namespace Rescues
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (OnFilterHandler?.Invoke(other) == true && IsInteractionLocked == false)
+            if (OnFilterHandler?.Invoke(other) == true)
             {
                 OnTriggerEnterHandler.Invoke(this);
             }
@@ -41,7 +41,7 @@ namespace Rescues
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (OnFilterHandler?.Invoke(other) == true && IsInteractionLocked == false)
+            if (OnFilterHandler?.Invoke(other) == true)
             {
                 OnTriggerExitHandler.Invoke(this);
             }
