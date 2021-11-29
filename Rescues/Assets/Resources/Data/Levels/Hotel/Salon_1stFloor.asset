@@ -24,6 +24,8 @@ MonoBehaviour:
     MoveLeftXLimit: -21
     MoveRightXLimit: 23
     CameraFreeMoveLimit: 50
+    CameraAccelerateStep: 3
+    DeadZone: 2
     CameraDragSpeed: 50
   _customBootScreen: {fileID: 5293078557666880198, guid: 350dbdcc61ef74de087b99c5df45793d,
     type: 3}

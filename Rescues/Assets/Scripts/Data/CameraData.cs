@@ -11,5 +11,7 @@ public struct CameraData
     public float MoveLeftXLimit;
     public float MoveRightXLimit;
     public float CameraFreeMoveLimit;
+    public float CameraAccelerateStep;
+    public float DeadZone;
     public int CameraDragSpeed;
 }
