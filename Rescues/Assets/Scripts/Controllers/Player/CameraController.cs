@@ -113,7 +113,7 @@ namespace Rescues
                     _cameraAcceleration);
                 if (x >= _activeCamera.MoveLeftXLimit && x <= _activeCamera.MoveRightXLimit)
                 {
-                    _cameraAcceleration *= 1 + _cameraAccelerateStep * _timeServices.DeltaTime();
+                    _cameraAcceleration *= 1 + _cameraAccelerateStep * _timeServices.FixedDeltaTime();
                 }
                 else
                 {
