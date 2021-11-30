@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909c073486854737afecf0d2b2c734a6, type: 3}
   m_Name: Knife
   m_EditorClassIdentifier: 
+  itemID: RustKnife
   Name: "\u041D\u043E\u0436"
   Description: "\u0420\u0430\u043D\u044C\u0448\u0435 \u044D\u0442\u043E \u0431\u044B\u043B
     \u0445\u043E\u0440\u043E\u0448\u0438\u0439 \u043A\u0443\u0445\u043E\u043D\u043D\u044B\u0439
@@ -20,4 +21,4 @@ MonoBehaviour:
     \u0438 \u0442\u0435\u043F\u0435\u0440\u044C \u043E\u043D \u043C\u0430\u043B\u043E
     \u043D\u0430 \u0447\u0442\u043E \u0433\u043E\u0434\u0435\u043D\n"
   Icon: {fileID: 21300000, guid: 231b741a8594faf489853a5b82b8028c, type: 3}
-  IsDestructuble: 1
+  IsDestructuble: 0
