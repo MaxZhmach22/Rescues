@@ -7,7 +7,7 @@ namespace Rescues
     {
         #region Fields
 
-        private const float ACCELERATION_COEFFICIENT = 0.01f;
+        private const float ACCELERATION_COEFFICIENT = 0.001f;
 
         private readonly GameContext _context;
         private readonly CameraServices _cameraServices;
@@ -120,7 +120,7 @@ namespace Rescues
                 cameraPositionX = Mathf.Lerp(cameraPositionX, _characterPositionX, _cameraAcceleration);
                 if (cameraPositionX >= _activeCamera.MoveLeftXLimit && cameraPositionX <= _activeCamera.MoveRightXLimit)
                 {
-                    _cameraAcceleration *= 1 + _cameraAccelerateStep * Time.deltaTime;
+                    _cameraAcceleration += _cameraAccelerateStep * Time.deltaTime;
                 }
                 else
                 {
@@ -132,6 +132,7 @@ namespace Rescues
 
             _cameraServices.CameraMain.transform.position = new Vector3(cameraPositionX, _activeCamera.Position_Y_Offset,
                 _cameraServices.CameraDepthConst);
+            Debug.Log(_cameraAcceleration);
         }
 
         #endregion
