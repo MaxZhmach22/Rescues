@@ -23,7 +23,7 @@ namespace Rescues
         public float MoveLeftXLimit;
         [Tooltip("Right border of level")]
         public float MoveRightXLimit;
-        [Range(1f, 10f)]
+        [Range(1f, 50f)]
         [Tooltip("Camera movement acceleration")]
         public float CameraAccelerateStep;
         [Range(0f, 10f)]
