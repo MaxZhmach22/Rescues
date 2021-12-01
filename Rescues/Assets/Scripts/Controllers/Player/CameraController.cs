@@ -131,7 +131,6 @@ namespace Rescues
 
             _cameraServices.CameraMain.transform.position = new Vector3(cameraPositionX, _activeCamera.Position_Y_Offset,
                 _cameraServices.CameraDepthConst);
-            Debug.Log(_cameraAcceleration);
         }
 
         #endregion
